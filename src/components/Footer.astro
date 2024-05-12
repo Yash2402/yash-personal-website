@@ -1,0 +1,48 @@
+---
+import { footerLinks } from "../data/footerLinks.ts";
+import "@fontsource/medula-one";
+---
+
+<div class="mt-[45px] mx-[75px]">
+  <nav class="flex flex-row items-center justify-between">
+    <p class="mx-[35px]">designed and developed by <span>Yash Sharma</span></p>
+    <div class="flex flex-row items-center space-x-[30px] mx-[35px]">
+      {
+        footerLinks.map((footerLink) => (
+          <li class="list-none">
+            <a class="text-[#000000]" href={footerLink.href}>
+              {footerLink.title}
+            </a>
+          </li>
+        ))
+      }
+    </div>
+  </nav>
+</div>
+
+<style>
+  li a {
+    color: #000000;
+    font-family: "Medula One";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  p span {
+    color: var(--Light-Mode-LM---Logo, #0b7da5);
+    font-family: "Medula One";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  p {
+    color: #000000; 
+    font-family: "Medula One";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+</style>

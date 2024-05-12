@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import { navLinks } from "../data/navLinks";
+
+import yash from "../imgs/yash.svg";
+import LM_to_DM from "../imgs/LM to DM.svg";
+
+import "@fontsource/medula-one";
+---
+
+<header class="mt-[45px] mx-[75px]">
+  <nav
+    class="bg-[#D9D9D9] rounded-[25px] px-[25px] py-4 flex flex-row items-center justify-between"
+  >
+    <Image src={yash} alt="Personal Logo" height={80} width={124} />
+
+    <div class="flex flex-row items-center space-x-[83px]">
+      {
+        navLinks.map((navLink) => (
+          <li class="list-none">
+            <a class="text-[#67a0b5] hover:text-[#007099]" href={navLink.href}>{navLink.title}</a>
+          </li>
+        ))
+      }
+      <button>
+
+      <Image
+        src={LM_to_DM}
+        height={35}
+        width={35}
+        alt="Light mode to Dark Mode switcher"
+      />
+      </button>
+    </div>
+  </nav>
+</header>
+
+<style>
+  li a {
+    font-family: "Medula One";
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+</style>
