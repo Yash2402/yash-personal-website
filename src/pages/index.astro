@@ -5,12 +5,13 @@ import Footer from "../components/Footer.astro";
 import "@fontsource-variable/playfair-display";
 import { Image } from "astro:assets";
 import display_img from "../imgs/example.png"
+import logo from "../imgs/y.svg"
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={logo} />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
