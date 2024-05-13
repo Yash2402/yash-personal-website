@@ -5,16 +5,14 @@ import { navLinks } from "../data/navLinks";
 import yash from "../imgs/yash.svg";
 import LM_to_DM from "../imgs/LM to DM.svg";
 
-import '@fontsource/ibm-plex-sans-hebrew';
-// Supports weights 100-900
-import '@fontsource-variable/noto-serif-georgian';
+import "@fontsource/ibm-plex-sans-hebrew";
 ---
 
 <header class="mt-[45px] mx-[75px]">
   <nav
     class="bg-[#D9D9D9] rounded-[25px] px-[25px] py-4 flex flex-row items-center justify-between"
   >
-    <Image src={yash} alt="Personal Logo" height={80} width={124} />
+    <Image src={yash} alt="Personal Logo" height={50} width={94} />
     <div class="flex flex-row items-center space-x-[45px]">
       {
         navLinks.map((navLink) => (
@@ -25,11 +23,11 @@ import '@fontsource-variable/noto-serif-georgian';
           </li>
         ))
       }
-      <button
+      <button class="mt-[7px]"
         ><Image
           src={LM_to_DM}
-          height={35}
-          width={35}
+          height={30}
+          width={30}
           alt="Light mode to Dark Mode switcher"
         /></button
       >
@@ -39,8 +37,8 @@ import '@fontsource-variable/noto-serif-georgian';
 
 <style>
   li a {
-    font-family: "Noto Serif Georgian Variable";
-    font-size: 25px;
+    font-family: "IBM Plex Sans Hebrew";
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
