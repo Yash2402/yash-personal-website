@@ -4,7 +4,7 @@ import Footer from "../components/Footer.astro";
 // Supports weights 400-900
 import "@fontsource-variable/playfair-display";
 import { Image } from "astro:assets";
-import displayimg from "../imgs/%.png"
+import displayimg from "../imgs/%.svg"
 ---
 
 <html lang="en">
@@ -15,7 +15,7 @@ import displayimg from "../imgs/%.png"
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body>
+  <body class="bg-[#EEEEEE]">
     <Nav />
     <main class="flex flex-col items-center justify-start mx-[120px] my-[84px]">
       <div class="flex flex-row w-full justify-between items-center">
@@ -31,7 +31,7 @@ import displayimg from "../imgs/%.png"
       </div>
     </main> 
 	<main class="flex flex-col items-center justify-start mx-[120px] mt-[225px] mb-[90px]">
-		<Image class="bg-[#D9D9D9] rounded-[16px] px-[10px] py-[10px]"src={displayimg} height={365} width={1500} alt="Display Item"/>
+		<Image class="bg-[#D9D9D9] rounded-[16px] px-[10px] py-[10px]" src={displayimg} height={365} width={1500} alt="Display Item"/>
 	</main>
     <Footer />
   </body>

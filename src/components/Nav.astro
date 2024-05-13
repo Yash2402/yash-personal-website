@@ -5,7 +5,7 @@ import { navLinks } from "../data/navLinks";
 import yash from "../imgs/yash.svg";
 import LM_to_DM from "../imgs/LM to DM.svg";
 
-import "@fontsource/medula-one";
+import '@fontsource/ibm-plex-sans-hebrew';
 ---
 
 <header class="mt-[45px] mx-[75px]">
@@ -13,7 +13,7 @@ import "@fontsource/medula-one";
     class="bg-[#D9D9D9] rounded-[25px] px-[25px] py-4 flex flex-row items-center justify-between"
   >
     <Image src={yash} alt="Personal Logo" height={80} width={124} />
-    <div class="flex flex-row items-center space-x-[83px]">
+    <div class="flex flex-row items-center space-x-[45px]">
       {
         navLinks.map((navLink) => (
           <li class="list-none">
@@ -37,8 +37,8 @@ import "@fontsource/medula-one";
 
 <style>
   li a {
-    font-family: "Medula One";
-    font-size: 35px;
+    font-family: "IBM Plex Sans Hebrew";
+    font-size: 25px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
