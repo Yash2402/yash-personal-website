@@ -1,0 +1,65 @@
+---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { Image } from "astro:assets";
+import line from "../imgs/line.svg"
+---
+
+<html lang="en" class="bg-[#EEEEEE] scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="y.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>projects</title>
+  </head>
+  <body>
+    <Nav />
+    <main class="flex flex-col items-start w-full mx-[120px] my-[50px]">
+      <h class="mb-[40px]">PROJECTS</h>
+      <h1 class="mb-[25px]">Sand Simulation - Cellular Automaton</h1>
+      <p>
+        In October 2023, I build this project inspired by a video from The
+        Coding Train, which explored Cellular Automaton. This project not
+        only piqued my interest but also served as a creative outlet for experimenting
+        with simulations. Using Cellular Automaton, I simulated the behaviour
+        of sand, water, and smoke, showcasing the fascinating capabilities of cellular
+        automaton in generating complex patterns and behaviours.
+      </p>
+      <h1 class="mt-[25px] mb-[25px]">Handwritten Digit Recognition AI</h1>
+      <p></p>
+    </main>
+    <Image class="px-[100px]" src={line} height={5} width={1528} alt="line"/>
+    <Footer />
+  </body>
+</html>
+<style>
+  main h {
+    color: var(--Light-Mode-LM---Title, #000);
+    text-align: center;
+    font-family: Comfortaa;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1.2px;
+  }
+  main h1 {
+    color: var(--Light-Mode-LM---Title, #000);
+    font-family: "IBM Plex Sans Hebrew";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -1.2px;
+  }
+  main p {
+    width: 1280px;
+    color: var(--Light-Mode-LM---Para, #585858);
+    font-family: Cardo;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 135.292%; /* 33.823px */
+  }
+</style>
