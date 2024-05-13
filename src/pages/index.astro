@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import "@fontsource-variable/playfair-display";
 import { Image } from "astro:assets";
 import display_img from "../imgs/example.png"
+import line from "../imgs/line.svg"
 ---
 
 <html lang="en">
@@ -33,7 +34,8 @@ import display_img from "../imgs/example.png"
 	<main class="flex flex-col items-center justify-start mx-[160px] mt-[100px] mb-[65px]">
 		<Image class="bg-[#D9D9D9] rounded-[16px] px-[10px] py-[10px]" src={display_img} height={200} width={1000} alt="Display Item"/>
 	</main>
-    <Footer />
+	<Image class="px-[100px]" src={line} height={5} width={1528} alt="line"/>
+    <Footer/>
   </body>
 </html>
 

@@ -1,0 +1,36 @@
+---
+import yash from "../imgs/yash.svg";
+import { Image } from "astro:assets";
+import "@fontsource-variable/playfair-display";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>about</title>
+  </head>
+  <body>
+    <main class="flex flex-row mx-[100px] my-[83px]">
+      <Image src={yash} alt="Personal Logo" height={80} width={124} />
+      <div class="row-start-4 place-content-center">
+        404 Not Found<br/>
+        This page is under construction 🚜.<br/>
+        Meanwhile visit the Home page.
+      </div>
+    </main>
+  </body>
+</html>
+
+<style>
+  div {
+    color: black;
+    font-family: "Playfair Display";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+    letter-spacing: -1.05px;
+  }
+</style>
