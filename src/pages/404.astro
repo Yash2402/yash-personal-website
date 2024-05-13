@@ -1,0 +1,65 @@
+---
+import yash from "../imgs/yash.svg";
+import { Image } from "astro:assets";
+import "@fontsource-variable/playfair-display";
+import "@fontsource/ibm-plex-sans-hebrew";
+---
+
+<html lang="en" class="bg-[#EEEEEE]">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="404.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>404</title>
+  </head>
+  <body>
+    <main>
+      <div class="flex flex-col items-center w-full mt-[45px]">
+        <a href="/"
+          ><Image
+            class="mb-[170px]"
+            src={yash}
+            alt="Personal Logo"
+            height={60}
+            width={104}
+          /></a>
+        <main class="bg-[#D9D9D9] rounded-[16px] px-20 py-20 flex flex-col items-center w-[600px]">
+          <h1 class="mb-10">404 Not Found</h1>
+          <p>
+            This page does not exists :(<br />
+            Meanwhile visit the <a href="/">Home</a> page.
+          </p>
+        </main>
+      </div>
+    </main>
+  </body>
+</html>
+
+<style>
+  div {
+    color: #585858;
+    font-family: "Playfair Display";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.05px;
+  }
+  div main h1{
+    color: black;
+    font-family: "IBM Plex Sans Hebrew";
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -1.05px;
+  }
+  a {
+    color: #0b7da5;
+    font-family: "Playfair Display";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.05px;
+  }
+</style>
