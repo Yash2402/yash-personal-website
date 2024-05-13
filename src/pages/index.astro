@@ -1,8 +1,10 @@
 ---
 import Nav from "../components/Nav.astro";
-import Footer from "../components/Footer.astro"
+import Footer from "../components/Footer.astro";
 // Supports weights 400-900
 import "@fontsource-variable/playfair-display";
+import { Image } from "astro:assets";
+import displayimg from "../imgs/%.png"
 ---
 
 <html lang="en">
@@ -15,7 +17,7 @@ import "@fontsource-variable/playfair-display";
   </head>
   <body>
     <Nav />
-    <main class="flex flex-col items-center justify-start mx-[100px] my-[84px]">
+    <main class="flex flex-col items-center justify-start mx-[120px] my-[84px]">
       <div class="flex flex-row w-full justify-between items-center">
         <p class="left">
           Hey, I am <br />
@@ -27,8 +29,11 @@ import "@fontsource-variable/playfair-display";
           <span>Mechanical Engineering.</span>
         </p>
       </div>
-    </main>
-	<Footer />
+    </main> 
+	<main class="flex flex-col items-center justify-start mx-[120px] mt-[225px] mb-[90px]">
+		<Image class="bg-[#D9D9D9] rounded-[16px] px-[10px] py-[10px]"src={displayimg} height={365} width={1500} alt="Display Item"/>
+	</main>
+    <Footer />
   </body>
 </html>
 

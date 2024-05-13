@@ -13,24 +13,24 @@ import "@fontsource/medula-one";
     class="bg-[#D9D9D9] rounded-[25px] px-[25px] py-4 flex flex-row items-center justify-between"
   >
     <Image src={yash} alt="Personal Logo" height={80} width={124} />
-
     <div class="flex flex-row items-center space-x-[83px]">
       {
         navLinks.map((navLink) => (
           <li class="list-none">
-            <a class="text-[#67a0b5] hover:text-[#007099]" href={navLink.href}>{navLink.title}</a>
+            <a class="text-[#67a0b5] hover:text-[#007099]" href={navLink.href}>
+              {navLink.title}
+            </a>
           </li>
         ))
       }
-      <button>
-
-      <Image
-        src={LM_to_DM}
-        height={35}
-        width={35}
-        alt="Light mode to Dark Mode switcher"
-      />
-      </button>
+      <button
+        ><Image
+          src={LM_to_DM}
+          height={35}
+          width={35}
+          alt="Light mode to Dark Mode switcher"
+        /></button
+      >
     </div>
   </nav>
 </header>
