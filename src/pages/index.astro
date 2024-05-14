@@ -26,13 +26,13 @@ import line from "../imgs/line.svg"
         </p>
 
         <p class="right">
-          I am currently in university as a sophomore studying <br />
+          I am currently in university as a <span1>sophomore</span1> studying <br />
           <span>Mechanical Engineering.</span>
         </p>
       </div>
     </main> 
 	<main class="flex flex-col items-center justify-start mx-[160px] mt-[100px] mb-[65px]">
-		<Image class="bg-[#D9D9D9] rounded-[16px] px-[10px] py-[10px]" src={display_img} height={200} width={1000} alt="Display Item"/>
+		<Image class="bg-[#D9D9D942] rounded-[16px] px-[10px] py-[10px]" src={display_img} height={200} width={1000} alt="Display Item"/>
 	</main>
 	<Image class="px-[100px]" src={line} height={5} width={1700} alt="line"/>
     <Footer/>
@@ -64,6 +64,15 @@ import line from "../imgs/line.svg"
     font-family: "Playfair Display";
     font-size: 35px;
     font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+    letter-spacing: -1.05px;
+  }
+  .right span1 {
+    color: var(--Light-Mode-LM---Para, #585858);
+    font-family: "Playfair Display";
+    font-size: 35px;
+    font-style: italic;
     font-weight: 100;
     line-height: normal;
     letter-spacing: -1.05px;
