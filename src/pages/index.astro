@@ -4,14 +4,14 @@ import Footer from "../components/Footer.astro";
 // Supports weights 400-900
 import "@fontsource-variable/playfair-display";
 import { Image } from "astro:assets";
-import display_img from "../imgs/example.png"
-import line from "../imgs/line.svg"
+import display_img from "../imgs/example.png";
+import line from "../imgs/line.svg";
 ---
 
 <html lang="en" class="bg-[#EEEEEE] scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="y.svg"/>
+    <link rel="icon" type="image/svg+xml" href="y.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>yash</title>
@@ -26,16 +26,25 @@ import line from "../imgs/line.svg"
         </p>
 
         <p class="right">
-          I am currently in university as a <span1>sophomore</span1> studying <br />
+          I am currently in university as a <span1>sophomore</span1> studying <br
+          />
           <span>Mechanical Engineering.</span>
         </p>
       </div>
-    </main> 
-	<main class="flex flex-col items-center justify-start mx-[160px] mt-[100px] mb-[65px]">
-		<Image class="bg-[#D9D9D942] rounded-[16px] px-[10px] py-[10px]" src={display_img} height={200} width={1000} alt="Display Item"/>
-	</main>
-	<Image class="px-[100px]" src={line} height={5} width={1700} alt="line"/>
-    <Footer/>
+    </main>
+    <main
+      class="flex flex-col items-center justify-start mx-[160px] mt-[100px] mb-[65px]"
+    >
+      <Image
+        class="bg-[#D9D9D942] rounded-[16px] px-[10px] py-[10px]"
+        src={display_img}
+        height={200}
+        width={1000}
+        alt="Display Item"
+      />
+    </main>
+    
+    <Footer />
   </body>
 </html>
 
@@ -77,4 +86,5 @@ import line from "../imgs/line.svg"
     line-height: normal;
     letter-spacing: -1.05px;
   }
+
 </style>
