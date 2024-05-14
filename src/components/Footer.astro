@@ -1,22 +1,42 @@
 ---
-import { footerLinks } from "../data/footerLinks.ts";
+import { footerLinksContact } from "../data/footerLinks.ts";
+import { footerLinksPortfolio } from "../data/footerLinks.ts";
 import "@fontsource/medula-one";
+import "@fontsource/ibm-plex-sans-hebrew";
 ---
 
 <div class="mb-[45px] mt-[20px] mx-[75px]">
   <nav class="flex flex-row items-center justify-between">
-
     <p class="mx-[35px]">designed and developed by <span>yash sharma</span></p>
-    <div class="flex flex-row items-center space-x-[30px] mx-[35px]">
-      {
-        footerLinks.map((footerLink) => (
-          <li class="list-none">
-            <a class="text-[#000000]" href={footerLink.href}>
-              {footerLink.title}
-            </a>
-          </li>
-        ))
-      }
+    <div class="flex flex-row space-x-20">
+      <div class="flex flex-col items-center space-y-2">
+        <p>Contacts</p>
+        <div class="flex flex-row items-center space-x-[20px]">
+          {
+            footerLinksContact.map((footerLink) => (
+              <li class="list-none">
+                <a class="text-[#000000]" href={footerLink.href}>
+                  {footerLink.title}
+                </a>
+              </li>
+            ))
+          }
+        </div>
+      </div>
+      <div class="flex flex-col items-center space-y-2">
+        <p>Portfolio</p>
+        <div class="flex flex-row items-center space-x-[20px]">
+          {
+            footerLinksPortfolio.map((footerLink) => (
+              <li class="list-none">
+                <a class="text-[#000000]" href={footerLink.href}>
+                  {footerLink.title}
+                </a>
+              </li>
+            ))
+          }
+        </div>
+      </div>
     </div>
   </nav>
 </div>
@@ -24,26 +44,29 @@ import "@fontsource/medula-one";
 <style>
   li a {
     color: #000000;
-    font-family: "Medula One";
-    font-size: 25px;
+    font-family: "IBM Plex Sans Hebrew";
+    font-size: 18px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 100;
     line-height: normal;
+    letter-spacing: -1.05px;
   }
   p span {
     color: var(--Light-Mode-LM---Logo, #0b7da5);
-    font-family: "Medula One";
-    font-size: 25px;
+    font-family: "IBM Plex Sans Hebrew";
+    font-size: 18px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 100;
     line-height: normal;
+    letter-spacing: -1.05px;
   }
   p {
-    color: #000000; 
-    font-family: "Medula One";
-    font-size: 25px;
+    color: #000000;
+    font-family: "IBM Plex Sans Hebrew";
+    font-size: 18px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 100;
     line-height: normal;
+    letter-spacing: -1.05px;
   }
 </style>
