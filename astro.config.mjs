@@ -8,4 +8,5 @@ export default defineConfig({
   output: "static",
   adapter: vercel(),
   integrations: [tailwind()],
+  optimizeFonts: false
 });

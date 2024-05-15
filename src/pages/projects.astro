@@ -1,8 +1,9 @@
 ---
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-import { Image } from "astro:assets";
-import line from "../imgs/line.svg";
+import "@fontsource-variable/comfortaa"
+import "@fontsource-variable/playfair-display"
+import "@fontsource/ibm-plex-sans-hebrew"
 ---
 
 <html lang="en" class="bg-[#EEEEEE] scroll-smooth">
@@ -16,11 +17,11 @@ import line from "../imgs/line.svg";
   <body>
     <Nav />
     <main class="flex flex-col items-start w-full mt-[33px] md:mt-[50px]">
-      <h class="mx-[40px] mb-[15px] md:mx-[120px] md:mb-[30px]">PROJECTS</h>
-      <h1 class="mx-[40px] mb-[10px] md:mx-[120px] md:mb-[20px]">
+      <h class="mx-[40px] mb-[15px] text-[16px] md:text-[20px] md:mx-[120px] md:mb-[30px]">PROJECTS</h>
+      <h1 class="mx-[40px] mb-[10px] text-[25px] md:text-[30px] md:mx-[120px] md:mb-[20px]">
         Sand Simulation - Cellular Automaton
       </h1>
-      <p class="mx-[40px] md:mx-[120px]">
+      <p class="mx-[40px] text-[18px] md:text-[20px] md:mx-[120px]">
         In October 2023, I build this project inspired by a video from The
         Coding Train, which explored Cellular Automaton. This project not only
         piqued my interest but also served as a creative outlet for
@@ -29,10 +30,10 @@ import line from "../imgs/line.svg";
         capabilities of cellular automaton in generating complex patterns and
         behaviours.
       </p>
-      <h1 class="mx-[40px] my-[10px] md:mx-[120px] md:my-[20px]">
+      <h1 class="mx-[40px] my-[10px] text-[25px] md:text-[30px] md:mx-[120px] md:my-[20px]">
         Handwritten Digit Recognition AI
       </h1>
-      <p class="mx-[40px] md:mx-[120px]">
+      <p class="mx-[40px] text-[18px] md:text-[20px] md:mx-[120px]">
         This project represents my initial step into the world of artificial
         intelligence and machine learning. Completed in January 2024, it
         showcases my foundational understanding of neural networks, gradient
@@ -41,8 +42,8 @@ import line from "../imgs/line.svg";
         3Blue1Brown and Samson Zhang's YouTube channels, I embarked on this
         journey to delve deeper into AI.
       </p>
-      <h1 class="mx-[40px] my-[10px] md:mx-[120px] md:my-[20px]">Spring Simulation</h1>
-      <p class="mx-[40px] md:mx-[120px]">
+      <h1 class="mx-[40px] my-[10px] text-[25px] md:text-[30px] md:mx-[120px] md:my-[20px]">Spring Simulation</h1>
+      <p class="mx-[40px] text-[18px] md:text-[20px] md:mx-[120px]">
         As a passionate enthusiast of physics and simulations, I undertook a
         project during my 12th-grade year in August 2022 to delve into the
         intricacies of physics-based simulations. The objective was to develop a
@@ -51,8 +52,8 @@ import line from "../imgs/line.svg";
         focused on the code quality, I will fix this in future and optimise it.
         I will make this project in C++ using SDL or Raylib library too.
       </p>
-      <h1 class="mx-[40px] my-[10px] md:mx-[120px] md:my-[20px]">Ray Casting</h1>
-      <p class="mx-[40px] md:mx-[120px]"></p>
+      <h1 class="mx-[40px] my-[10px] text-[25px] md:text-[30px] md:mx-[120px] md:my-[20px]">Ray Casting</h1>
+      <p class="mx-[40px] text-[18px] md:text-[20px] md:mx-[120px]"></p>
     </main>
     <Footer  />
   </body>
@@ -61,8 +62,7 @@ import line from "../imgs/line.svg";
   main h {
     color: var(--Light-Mode-LM---Title, #000);
     text-align: center;
-    font-family: Comfortaa;
-    font-size: 20px;
+    font-family: "Comfortaa";
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -71,7 +71,6 @@ import line from "../imgs/line.svg";
   main h1 {
     color: var(--Light-Mode-LM---Title, #000);
     font-family: "IBM Plex Sans Hebrew";
-    font-size: 30px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -80,8 +79,7 @@ import line from "../imgs/line.svg";
   main p {
     width: auto;
     color: var(--Light-Mode-LM---Para, #585858);
-    font-family: Cardo;
-    font-size: 22px;
+    font-family: "Playfair Display";
     font-style: normal;
     font-weight: 400;
     line-height: 135.292%; /* 33.823px */

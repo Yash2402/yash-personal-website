@@ -1,64 +1,30 @@
 ---
-import { footerLinksContact } from "../data/footerLinks.ts";
-import { footerLinksPortfolio } from "../data/footerLinks.ts";
+import { footerLinks} from "../data/footerLinks.ts";
 import { Image } from "astro:assets";
 import yash from "../imgs/yash.svg";
 import "@fontsource/ibm-plex-sans-hebrew";
 ---
 
-<footer class="hidden md:mx-[100px]">
-  <hr />
-  <div class="md:mb-[45px] md:mt-[15px] md:mx-[75px]">
-    <nav class="flex flex-row items-center justify-between">
-      <div class="flex flex-row justify-start space-x-2 mx-[35px]">
-        <a href="/"
-          ><Image src={yash} alt="Personal Logo" height={30} width={50} /></a
-        >
-        <p>
-          designed and developed by <span>yash sharma</span>
-        </p>
-      </div>
-      <!-- <p class="mx-[35px]">
-      designed and developed by <span>yash sharma</span>
-    </p> -->
-      <div class="flex flex-row space-x-[50px] mr-[35px]">
-        <!-- <div class="flex flex-col items-center space-y-2"> -->
-        <!-- <p>Contacts</p> -->
-        <div class="flex flex-row items-center space-x-[20px]">
-          {
-            footerLinksContact.map((footerLink) => (
-              <li class="list-none">
-                <a class="text-[#000000]" href={footerLink.href}>
-                  {footerLink.title}
-                </a>
-              </li>
-            ))
-          }
+<footer class="mt-5">
+  <hr class="hidden md:bg-[#e0e0e0] md:mx-[100px]"></hr>
+    <nav class="hidden md:mx-[120px] md:mt-4 md:flex md:flex-row md:items-center md:justify-between">
+        <div class="hidden md:flex md:flex-row md:items-center md:justify-between md:space-x-2">
+          <a href="/"> <Image src={yash} alt="Personal Logo" height={30} width={50} /> </a>
+          <p class="text-[16px] md:text-[18px]">designed and developed by <span class="text-[18px]">yash sharma</span></p>
         </div>
-        <!-- </div> -->
-        <!-- <div class="flex flex-col items-center space-y-2"> -->
-        <!-- <p>Portfolio</p> -->
-        <div class="flex flex-row items-center space-x-[20px]">
-          {
-            footerLinksPortfolio.map((footerLink) => (
-              <li class="list-none">
-                <a class="text-[#000000]" href={footerLink.href}>
-                  {footerLink.title}
-                </a>
-              </li>
-            ))
-          }
+        <div class="flex flex-row items-center justify-between space-x-3 md:flex md:flex-row md:items-center md:justify-between md:space-x-10">
+          <div class="flex flex-row items-center justify-between space-x-4 md:flex md:flex-row md:items-center md:justify-between md:space-x-5"> { footerLinks.map( (footerLink) => ( <li class="list-none"> <a class="text-[#000000] text-[16px] md:text-[18px]" href={footerLink.href}> {footerLink.title} </a> </li> ) ) } </div>
         </div>
-        <!-- </div> -->
-      </div>
     </nav>
-  </div>
+    <nav class="md:hidden mx-[34px] my-[24px]">
+        <div class="flex flex-row items-center justify-between space-x-4 md:flex md:flex-row md:items-center md:justify-between md:space-x-5"> { footerLinks.map( (footerLink) => ( <li class="list-none"> <a class="text-[#000000] text-[16px] md:text-[18px]" href={footerLink.href}> {footerLink.title} </a> </li> ) ) } </div>
+    </nav>
 </footer>
 <style>
+
   li a {
     color: #000000;
     font-family: "IBM Plex Sans Hebrew";
-    font-size: 18px;
     font-style: normal;
     font-weight: 100;
     line-height: normal;
@@ -67,7 +33,6 @@ import "@fontsource/ibm-plex-sans-hebrew";
   p span {
     color: var(--Light-Mode-LM---Logo, #0b7da5);
     font-family: "IBM Plex Sans Hebrew";
-    font-size: 18px;
     font-style: normal;
     font-weight: 100;
     line-height: normal;
@@ -76,19 +41,14 @@ import "@fontsource/ibm-plex-sans-hebrew";
   p {
     color: #000000;
     font-family: "IBM Plex Sans Hebrew";
-    font-size: 18px;
     font-style: normal;
     font-weight: 100;
     line-height: normal;
     letter-spacing: -1.05px;
   }
   hr {
-    color: #e0e0e0;
     display: block;
-    margin-left: 100px;
-    margin-right: 100px;
     border-style: inset;
-    stroke-width: 5px;
     opacity: 0.36;
   }
 </style>
