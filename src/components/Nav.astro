@@ -9,12 +9,12 @@ import menu from "../imgs/Menu.svg"
 import "@fontsource/ibm-plex-sans-hebrew";
 ---
 
-<header class="mx-[20px] mt-[23px] sm:mt-[45px] sm:mx-[75px]">
+<header class="mx-[20px] mt-[23px] md:mt-[45px] md:mx-[75px]">
   <nav
-    class="bg-[#e0e0e0] flex flex-row items-center justify-between rounded-[15px] px-[15px] py-3 sm:rounded-[25px] sm:px-[25px] sm:py-4 sm:flex sm:flex-row sm:items-center sm:justify-between"
+    class="bg-[#e0e0e0] flex flex-row items-center justify-between rounded-[15px] px-[15px] py-3 md:rounded-[25px] md:px-[25px] md:py-4 md:flex md:flex-row md:items-center md:justify-between"
   >
     <a href="/"><Image src={yash} alt="Personal Logo" height={51} width={79} /></a>
-    <div class="hidden sm:flex sm:flex-row sm:items-center sm:space-x-[45px]">
+    <div class="hidden md:flex md:flex-row md:items-center md:space-x-[45px]">
       {
         navLinks.map((navLink) => (
           <li class="list-none">
@@ -33,7 +33,7 @@ import "@fontsource/ibm-plex-sans-hebrew";
         /></button
       >
     </div>
-    <div class=" flex flex-row items-center space-x-[24px] sm:hidden">
+    <div class=" flex flex-row items-center space-x-[24px] md:hidden">
       <button class="mt-[7px]"
         ><Image
           src={LM_to_DM}
