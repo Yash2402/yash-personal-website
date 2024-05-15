@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import "@fontsource-variable/playfair-display";
 import { Image } from "astro:assets";
 import display_img from "../imgs/example.png";
+import display_img_mobile from "../imgs/display_img_mobile.svg";
 import leftSlider from "../imgs/left_slider.svg";
 import rightSlider from "../imgs/right_slider.svg";
 ---
@@ -19,22 +20,19 @@ import rightSlider from "../imgs/right_slider.svg";
   </head>
   <body>
     <Nav />
-    <main class="flex flex-col items-center justify-start mx-[120px] my-[84px]">
-      <div class="flex flex-row w-full justify-between items-center">
-        <p class="left">
+    <main class="flex flex-col items-center justify-start mx-8 my-11 md:flex md:flex-col md:items-center md:justify-start md:mx-[120px] md:my-[84px]">
+      <div class="flex flex-col items-start w-full space-y-8 md:flex md:flex-row md:w-full md:justify-between md:items-center">
+        <p class="text-[30px] md:text-[45px] left">
           Hey, I am <br />
           Yash Sharma.
         </p>
 
-        <p class="right">
-          I am currently in university as a <span1>sophomore</span1> studying <br
-          />
-          <span>Mechanical Engineering.</span>
+        <p class="text-[27px] md:text-[35px] right"> I am currently in university as a <span1 class="text-[27px] md:text-[35px]">sophomore</span1> studying <br/> <span class="text-[27px] md:text-[35px]">Mechanical Engineering.</span>
         </p>
       </div>
     </main>
     <main
-      class="flex flex-row items-center justify-center space-x-4 mx-[160px] mt-[100px] mb-[65px]"
+      class="flex flex-row items-center justify-between mx-9 md:flex md:flex-row md:items-center md:justify-between md:space-x-4 md:mx-40 md:mt-35 md:mb-20"
     >
       <button
         ><Image
@@ -45,12 +43,12 @@ import rightSlider from "../imgs/right_slider.svg";
         /></button
       >
       <Image
-        class="bg-[#D9D9D942] rounded-[16px] px-[10px] py-[10px] shadow-2xl"
+        class="md:bg-[#D9D9D942] md:rounded-[16px] md:px-[10px] md:py-[10px] md:shadow-xl"
         src={display_img}
-        height={200}
-        width={1000}
+        height={350}
+        width={1200}
         alt="Display Item"
-      />
+        />
       <button
         ><Image
           src={rightSlider}
@@ -69,38 +67,34 @@ import rightSlider from "../imgs/right_slider.svg";
   .left {
     color: var(--Light-Mode-LM---Title, #000);
     font-family: "Playfair Display";
-    font-size: 45px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    letter-spacing: -1.35px;
+    letter-spacing: -0.81px;
   }
   .right {
     color: var(--Light-Mode-LM---Para, #585858);
     font-family: "Playfair Display";
-    font-size: 35px;
     font-style: normal;
     font-weight: 100;
     line-height: normal;
-    letter-spacing: -1.05px;
+    letter-spacing: -0.66px;
   }
 
   .right span {
     color: var(--Light-Mode-LM---Title, #000);
     font-family: "Playfair Display";
-    font-size: 35px;
     font-style: normal;
     font-weight: 100;
     line-height: normal;
-    letter-spacing: -1.05px;
+    letter-spacing: -0.66px;
   }
   .right span1 {
     color: var(--Light-Mode-LM---Para, #585858);
     font-family: "Playfair Display";
-    font-size: 35px;
     font-style: italic;
     font-weight: 100;
     line-height: normal;
-    letter-spacing: -1.05px;
+    letter-spacing: -0.66px;
   }
 </style>

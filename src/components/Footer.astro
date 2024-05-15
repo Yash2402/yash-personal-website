@@ -5,19 +5,19 @@ import yash from "../imgs/yash.svg";
 import "@fontsource/ibm-plex-sans-hebrew";
 ---
 
-<footer class="mt-5">
-  <hr class="hidden md:bg-[#e0e0e0] md:mx-[100px]"></hr>
+<footer class="mb-5">
+  <hr class="invisible md:visible md:bg-[#e0e0e0] md:mx-[100px]"></hr>
     <nav class="hidden md:mx-[120px] md:mt-4 md:flex md:flex-row md:items-center md:justify-between">
         <div class="hidden md:flex md:flex-row md:items-center md:justify-between md:space-x-2">
-          <a href="/"> <Image src={yash} alt="Personal Logo" height={30} width={50} /> </a>
-          <p class="text-[16px] md:text-[18px]">designed and developed by <span class="text-[18px]">yash sharma</span></p>
+          <a href="/"> <Image src={yash} alt="Personal Logo" height={35} width={55} /> </a>
+          <p class="text-[20px]">designed and developed by <span class="text-[20px]">Yash Sharma</span></p>
         </div>
         <div class="flex flex-row items-center justify-between space-x-3 md:flex md:flex-row md:items-center md:justify-between md:space-x-10">
-          <div class="flex flex-row items-center justify-between space-x-4 md:flex md:flex-row md:items-center md:justify-between md:space-x-5"> { footerLinks.map( (footerLink) => ( <li class="list-none"> <a class="text-[#000000] text-[16px] md:text-[18px]" href={footerLink.href}> {footerLink.title} </a> </li> ) ) } </div>
+          <div class="flex flex-row items-center justify-between space-x-4 md:flex md:flex-row md:items-center md:justify-between md:space-x-5"> { footerLinks.map( (footerLink) => ( <li class="list-none"> <a class="text-[#000000] text-[18px] md:text-[20px]" href={footerLink.href}> {footerLink.title} </a> </li> ) ) } </div>
         </div>
     </nav>
     <nav class="md:hidden mx-[34px] my-[24px]">
-        <div class="flex flex-row items-center justify-between space-x-4 md:flex md:flex-row md:items-center md:justify-between md:space-x-5"> { footerLinks.map( (footerLink) => ( <li class="list-none"> <a class="text-[#000000] text-[16px] md:text-[18px]" href={footerLink.href}> {footerLink.title} </a> </li> ) ) } </div>
+        <div class="flex flex-row items-center justify-between space-x-4 md:flex md:flex-row md:items-center md:justify-between md:space-x-5"> { footerLinks.map( (footerLink) => ( <li class="list-none"> <a class="text-[#000000] text-[18px] md:text-[20px]" href={footerLink.href}> {footerLink.title} </a> </li> ) ) } </div>
     </nav>
 </footer>
 <style>
