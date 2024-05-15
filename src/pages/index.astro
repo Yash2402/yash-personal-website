@@ -5,10 +5,11 @@ import Footer from "../components/Footer.astro";
 import "@fontsource-variable/playfair-display";
 import { Image } from "astro:assets";
 import display_img from "../imgs/example.png";
-import line from "../imgs/line.svg";
+import leftSlider from "../imgs/left_slider.svg";
+import rightSlider from "../imgs/right_slider.svg";
 ---
 
-<html lang="en" class="bg-[#EEEEEE] scroll-smooth">
+<html lang="en" class="bg-[#EEEEEE] scroll-smooth antialiased">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="y.svg" />
@@ -33,17 +34,33 @@ import line from "../imgs/line.svg";
       </div>
     </main>
     <main
-      class="flex flex-col items-center justify-start mx-[160px] mt-[100px] mb-[65px]"
+      class="flex flex-row items-center justify-center space-x-4 mx-[160px] mt-[100px] mb-[65px]"
     >
+      <button
+        ><Image
+          src={leftSlider}
+          height={40}
+          width={40}
+          alt="Display img slider"
+        /></button
+      >
       <Image
-        class="bg-[#D9D9D942] rounded-[16px] px-[10px] py-[10px]"
+        class="bg-[#D9D9D942] rounded-[16px] px-[10px] py-[10px] shadow-2xl"
         src={display_img}
         height={200}
         width={1000}
         alt="Display Item"
       />
+      <button
+        ><Image
+          src={rightSlider}
+          height={40}
+          width={40}
+          alt="Display img slider"
+        /></button
+      >
     </main>
-    
+
     <Footer />
   </body>
 </html>
@@ -86,5 +103,4 @@ import line from "../imgs/line.svg";
     line-height: normal;
     letter-spacing: -1.05px;
   }
-
 </style>
