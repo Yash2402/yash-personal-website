@@ -17,9 +17,10 @@ import "@fontsource/ibm-plex-sans-hebrew"
   </head>
   <body>
     <Nav />
-    <main class="flex flex-col items-start w-full space-y-2 mt-[50px]">
-      <h class="mx-[120px] mb-[40px]">ABOUT</h>
-      <p class="mx-[120px] mr-[700px]">
+    <main class="flex flex-col items-start mx-[35px] mt-[25px] md:mx-[100px] md:mt-[30px]">
+      <h class="mb-[15px] text-[16px] md:text-[20px] md:mb-[30px]">ABOUT</h>
+      <div class="space-y-2 md:space-y-4">
+      <p class="text-[16px] md:text-[20px]">
         Hello I am Yash Sharma. Welcome to my corner of internet. I am currently
         a sophomore at university studying Mechanical Engineering. I have always
         been interested in Engineering, that's make me pick this as a major. I
@@ -32,7 +33,7 @@ import "@fontsource/ibm-plex-sans-hebrew"
         where my fascination with computers began. I would spend hours just
         removing and re-placing components on the motherboard.
       </p>
-      <p class="mx-[120px] mr-[700px]">
+      <p class="text-[16px] md:text-[20px]">
         Curiosity has taken me to interesting places in my life and given me a
         lot of opportunities I would not have had otherwise. I believe it is an
         important trait for a person to have. Curiosity guids me to amazing
@@ -45,10 +46,8 @@ import "@fontsource/ibm-plex-sans-hebrew"
         curious journey, from fun projects to exciting discoveries. Let's learn
         together and see where curiosity takes us!
       </p>
-      <p class="mx-[120px] mr-[700px]">I've always been a knowledge seeker</p>
-      <p class="mx-[120px] mr-[700px]">
-        
-      </p>
+      <p class="text-[16px] md:text-[20px]">I've always been a knowledge seeker</p>
+    </div>
     </main>
     <Footer />
   </body>
@@ -57,20 +56,9 @@ import "@fontsource/ibm-plex-sans-hebrew"
   main h {
     color: var(--Light-Mode-LM---Title, #000);
     text-align: center;
-
     font-family: "Comfortaa Variable", system-ui;
-    font-size: 20px;
     font-style: normal;
     font-weight: 700;
-    line-height: normal;
-    letter-spacing: -1.2px;
-  }
-  main h1 {
-    color: var(--Light-Mode-LM---Title, #000);
-      font-family: 'IBM Plex Sans Hebrew', sans-serif;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 600;
     line-height: normal;
     letter-spacing: -1.2px;
   }
@@ -78,7 +66,6 @@ import "@fontsource/ibm-plex-sans-hebrew"
     width: auto;
     color: var(--Light-Mode-LM---Para, #585858);
     font-family: 'Playfair Display Variable', serif;
-    font-size: 20px;
     font-style: normal;
     font-weight: 100;
     line-height: 135.292%; /* 33.823px */
