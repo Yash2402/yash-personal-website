@@ -7,6 +7,7 @@ import "@fontsource-variable/playfair-display"
 import "@fontsource/ibm-plex-sans-hebrew"
 import { Image } from "astro:assets";
 import display_img from "../imgs/example.png";
+import display_img_mobile from "../imgs/display_img_mobile.svg";
 import leftSlider from "../imgs/left_slider.svg";
 import rightSlider from "../imgs/right_slider.svg";
 ---
@@ -22,7 +23,7 @@ import rightSlider from "../imgs/right_slider.svg";
   <body>
     <Nav />
     <main class="flex flex-col items-center justify-start mx-8 my-11 md:flex md:flex-col md:items-center md:justify-start md:mx-[120px] md:my-[84px]">
-      <div class="flex flex-col items-start w-full space-y-8 md:flex md:flex-row md:w-full md:justify-between md:items-center">
+      <div class="flex flex-col items-between space-y-8 md:flex md:flex-row md:w-full md:justify-between md:items-center">
         <p class="text-[30px] md:text-[45px] left">
           Hey, I am <br />
           Yash Sharma.
@@ -33,28 +34,36 @@ import rightSlider from "../imgs/right_slider.svg";
       </div>
     </main>
     <main
-      class="flex flex-row items-center justify-between mx-9 md:flex md:flex-row md:items-center md:justify-between md:space-x-4 md:mx-40 md:mt-35 md:mb-20"
+      class="flex flex-row items-center justify-between mx-9 md:flex md:flex-row md:items-center md:mx-[100px] md:mt-35 md:mb-20"
     >
       <button
-        ><Image
+        ><Image class="hidden-mobile"
           src={leftSlider}
-          height={40}
-          width={40}
+          height={50}
+          width={50}
           alt="Display img slider"
         /></button
       >
-      <Image
-        class="md:bg-[#D9D9D942] md:rounded-[16px] md:px-[10px] md:py-[10px] md:shadow-xl"
-        src={display_img}
+      <Image class="md:hidden"
+        src={display_img_mobile}
+        height={330}
+        width={330}
+        alt="Display Item Mobile"
+        />
+      <div class="hidden-mobile md:mx-10 md:w-full md:flex md:justify-center md:bg-[#D9D9D942] md:rounded-[16px] md:px-[10px] md:py-[10px] md:shadow-xl">
+        <div class="md:w-full md:flex md:justify-center md:bg-[#000000] md:rounded-[8px]">
+        <Image
+        src={display_img_mobile}
         height={350}
-        width={1200}
+        width={350}
         alt="Display Item"
         />
+      </div></div>
       <button
-        ><Image
+        ><Image class="hidden-mobile"
           src={rightSlider}
-          height={40}
-          width={40}
+          height={50}
+          width={50}
           alt="Display img slider"
         /></button
       >
@@ -98,4 +107,9 @@ import rightSlider from "../imgs/right_slider.svg";
     line-height: normal;
     letter-spacing: -0.66px;
   }
+  @media (max-width: 768px) {
+        .hidden-mobile {
+          display: none;
+        }
+      }
 </style>
