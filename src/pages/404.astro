@@ -1,6 +1,7 @@
 ---
 import yash from "../imgs/yash.svg";
 import { Image } from "astro:assets";
+import Footer from "../components/Footer.astro";
 import "@fontsource-variable/comfortaa"
 import "@fontsource-variable/playfair-display"
 import "@fontsource/ibm-plex-sans-hebrew"
@@ -16,17 +17,18 @@ import "@fontsource/ibm-plex-sans-hebrew"
   </head>
   <body>
     <main>
-      <div class="flex flex-col items-center mx-[35px] mt-[45px] space-y-[275px] md:space-y-[200px] md:flex md:flex-col md:items-center md:mt-[45px]">
+      <div class="flex flex-col items-center mb-[200px] mx-[35px] mt-[45px] space-y-[200px] md:space-y-[200px] md:flex md:flex-col md:items-center md:mt-[45px]">
         <a href="/"><Image src={yash} alt="Personal Logo" height={60} width={104}/></a>
         <main class="bg-[#ffffffff] rounded-[16px] flex flex-col items-center px-5 py-5 md:px-20 md:py-20 md:flex md:flex-col md:items-center">
-          <h1 class="text-[25px] mb-5 md:text-[40px] md:mb-10">404 Not Found</h1>
+          <h1 class="text-[35px] mb-5 md:text-[50px] md:mb-10">404 Not Found</h1>
           <p class="text-[20px] md:text-[30px]">
             Sorry, this page does not exists :( <br />
-            meanwhile visit the <a class="text-[20px] md:text-[30px]" href="/">Home</a> page.
+            meanwhile visit the <a class="text-[#0b7da5]" href="/">home</a> page.
           </p>
         </main>
       </div>
     </main>
+    <Footer/>
   </body>
 </html>
 
@@ -37,20 +39,20 @@ import "@fontsource/ibm-plex-sans-hebrew"
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    letter-spacing: -1.05px;
+    letter-spacing: -0.81px;
   }
   div main h1{
     color: black;
     font-family: 'IBM Plex Sans Hebrew', sans-serif;
     font-weight: 700;
-    letter-spacing: -1.05px;
+    letter-spacing: -0.81px;
   }
-  a {
-    color: #0b7da5;
+  p {
+    color: #585858;
     font-family: 'Playfair Display Variable', serif;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    letter-spacing: -1.05px;
+    letter-spacing: -0.81px;
   }
 </style>
