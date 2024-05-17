@@ -2,7 +2,6 @@
 import yash from "../imgs/yash.svg";
 import { Image } from "astro:assets";
 import Footer from "../components/Footer.astro";
-import "@fontsource-variable/comfortaa"
 import "@fontsource-variable/playfair-display"
 import "@fontsource/ibm-plex-sans-hebrew"
 ---
@@ -23,24 +22,15 @@ import "@fontsource/ibm-plex-sans-hebrew"
           <h1 class="text-[35px] mb-5 md:text-[50px] md:mb-10">404 Not Found</h1>
           <p class="text-[20px] md:text-[30px]">
             Sorry, this page does not exists :( <br />
-            meanwhile visit the <a class="text-[#0b7da5]" href="/">home</a> page.
+            meanwhile visit the <a class="text-[#0b7da5] hover:underline" href="/">home</a> page.
           </p>
         </main>
       </div>
     </main>
-    <Footer/>
   </body>
 </html>
 
 <style>
-  div {
-    color: #585858;
-    font-family: "Playfair Display";
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: -0.81px;
-  }
   div main h1{
     color: black;
     font-family: 'IBM Plex Sans Hebrew', sans-serif;

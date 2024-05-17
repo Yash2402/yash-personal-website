@@ -3,6 +3,7 @@ import { footerLinks} from "../data/footerLinks.ts";
 import { Image } from "astro:assets";
 import yash from "../imgs/yash.svg";
 import "@fontsource/ibm-plex-sans-hebrew";
+import "@fontsource/ibm-plex-sans";
 ---
 
 <footer class="mb-5 md:my-5">
@@ -13,18 +14,17 @@ import "@fontsource/ibm-plex-sans-hebrew";
           <p class="text-[20px]">designed and developed by <span class="text-[20px]">Yash Sharma</span></p>
         </div>
         <div class="flex flex-row items-center justify-between space-x-3 md:flex md:flex-row md:items-center md:justify-between md:space-x-10">
-          <div class="flex flex-row items-center justify-between space-x-4 md:flex md:flex-row md:items-center md:justify-between md:space-x-5"> { footerLinks.map( (footerLink) => ( <li class="list-none"> <a class="text-[#000000] text-[18px] md:text-[20px]" href={footerLink.href}> {footerLink.title} </a> </li> ) ) } </div>
+          <div class="flex flex-row items-center justify-between space-x-4 md:flex md:flex-row md:items-center md:justify-between md:space-x-5"> { footerLinks.map( (footerLink) => ( <li class="list-none"> <a class="text-[#000000] hover:text-[#585858] text-[18px] md:text-[20px]" href={footerLink.href}> {footerLink.title} </a> </li> ) ) } </div>
         </div>
     </nav>
     <nav class="md:hidden mx-[34px] my-[24px]">
-        <div class="flex flex-row items-center justify-between md:flex md:flex-row md:items-center md:justify-between md:space-x-5"> { footerLinks.map( (footerLink) => ( <li class="list-none"> <a class="text-[#000000] text-[18px] md:text-[20px]" href={footerLink.href}> {footerLink.title} </a> </li> ) ) } </div>
+        <div class="flex flex-row items-center justify-between md:flex md:flex-row md:items-center md:justify-between md:space-x-5"> { footerLinks.map( (footerLink) => ( <li class="list-none"> <a class="text-[#000000] hover:underline text-[18px] md:text-[20px]" href={footerLink.href}> {footerLink.title} </a> </li> ) ) } </div>
     </nav>
 </footer>
 <style>
 
   li a {
-    color: #000000;
-    font-family: "IBM Plex Sans Hebrew";
+    font-family: "IBM Plex Sans";
     font-style: normal;
     font-weight: 100;
     line-height: normal;
