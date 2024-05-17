@@ -6,8 +6,7 @@ import "@fontsource-variable/comfortaa"
 import "@fontsource-variable/playfair-display"
 import "@fontsource/ibm-plex-sans-hebrew"
 import { Image } from "astro:assets";
-import display_img from "../imgs/example.png";
-import display_img_mobile from "../imgs/display_img_mobile.svg";
+import display_img from "../imgs/display_img_mobile.svg";
 import leftSlider from "../imgs/left_slider.svg";
 import rightSlider from "../imgs/right_slider.svg";
 ---
@@ -45,7 +44,7 @@ import rightSlider from "../imgs/right_slider.svg";
         /></button
       >
       <Image class="md:hidden"
-        src={display_img_mobile}
+        src={display_img}
         height={350}
         width={350}
         alt="Display Item Mobile"
@@ -53,7 +52,7 @@ import rightSlider from "../imgs/right_slider.svg";
       <div class="hidden-mobile md:mx-10 md:w-full md:flex md:justify-center md:bg-[#D9D9D942] md:rounded-[16px] md:px-[10px] md:py-[10px] md:shadow-xl">
         <div class="md:w-full md:flex md:justify-center md:bg-[#000000] md:rounded-[8px]">
         <Image
-        src={display_img_mobile}
+        src={display_img}
         height={350}
         width={350}
         alt="Display Item"
