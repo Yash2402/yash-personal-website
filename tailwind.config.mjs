@@ -25,7 +25,7 @@ export default {
 			"DM-Nav-Selected": "#85CDE6",
 			"DM-Nav-Hover": "#0086B7",
 			"DM-Title": "#FFFFFF",
-			"DM-Para": "#C4C4C4",
+			"DM-Para": "#e4e4e4",
 			"DM-Title-Bar": "#262626",
 
 		},
