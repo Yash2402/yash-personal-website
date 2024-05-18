@@ -14,10 +14,10 @@ import "@fontsource/ibm-plex-sans-hebrew"
     <meta name="generator" content={Astro.generator} />
     <title>404</title>
   </head>
-  <body class="bg-LM-Background dark:bg-DM-Background">
-      <div class="flex flex-col items-center h-[780px] space-y-[40px] mx-[35px] mt-[45px] md:space-y-[200px] md:flex md:flex-col md:items-center md:mt-[45px]">
+  <body class="bg-LM-Background dark:bg-DM-Background max-w-[1650px] flex flex-col m-auto mt-6 md:mt-1">
+      <div class="flex flex-col items-center h-[780px] space-y-[200px] mx-[35px] mt-[45px] md:space-y-[200px] md:flex md:flex-col md:items-center md:mt-[45px]">
         <a href="/"><Image src={yash} alt="Personal Logo" height={60} width={104}/></a>
-        <main class="bg-[#ffffff] dark:bg-DM-Title-Bar rounded-[16px] flex flex-col h-full items-center justify-center px-20 md:px-20 md:py-20 md:flex md:flex-col md:items-center">
+        <main class="bg-[#ffffff] dark:bg-DM-Title-Bar rounded-[16px] flex flex-col h-[300px] items-center justify-center px-20 md:px-20 md:py-20 md:flex md:flex-col md:items-center">
           <h1 class="text-[30px] text-LM-Title dark:text-DM-Title mb-5 md:text-[45px] md:mb-10">404 Not Found</h1>
           <p class="text-[20px] text-LM-Para dark:text-DM-Para md:text-[25px]">
             Sorry, this page does not exists :( <br />
@@ -41,8 +41,9 @@ import "@fontsource/ibm-plex-sans-hebrew"
           document.documentElement.classList.toggle("dark", theme === "dark");
           localStorage.setItem("theme", theme);
         </script>
-        <Footer/>
+        
       </div>
+      <Footer/>
   </body>
 </html>
 
