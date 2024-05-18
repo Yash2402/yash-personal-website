@@ -5,8 +5,10 @@ import { navLinks } from "../data/navLinks";
 import yash from "../imgs/yash.svg";
 import LMtoDM from "../imgs/LMtoDM.svg";
 import menu from "../imgs/Menu.svg"
+import ThemeIcon from "./ThemeToggle.astro";
 
 import "@fontsource/ibm-plex-sans-hebrew";
+
 import type { navItems } from "../utils/types";
 
 interface NavProps{
@@ -15,37 +17,22 @@ interface NavProps{
 }
 const {current, navitems} = Astro.props as NavProps
 ---
-<a href="/"><Image src={yash} alt="Personal Logo" height={51} width={79} /></a>
+<a href="/"><Image src={yash} alt="Personal Logo" height={65} width={90} /></a>
   <div class="hidden md:flex md:flex-row md:items-center md:space-x-7 xl:flex xl:flex-row xl:items-center xl:space-x-11">
     {
       navLinks.map((navLink) => (
         <li class="list-none">
-          <a class="text-LM-Nav-Unselected hover:text-LM-Nav-Selected" href={navLink.href}>
+          <a class="text-LM-Nav-Unselected dark:text-DM-Nav-Unselected hover:text-LM-Nav-Selected dark:hover:text-DM-Nav-Selected" href={navLink.href}>
             {navLink.title}
           </a>
         </li>
       ))
     }
-    <button class="mt-[7px]">
-      <Image
-        src={LMtoDM}
-        height={30}
-        width={30}
-        alt="Light mode to Dark Mode switcher"
-      />
-    </button>
+   <ThemeIcon isMobile={true} key={0}/> 
   </div> 
-  <div class=" flex flex-row items-center space-x-[24px] md:hidden">
-    <button class="mt-[7px]"
-        ><Image
-          src={LMtoDM}
-          height={30}
-          width={30}
-          alt="Light mode to Dark Mode switcher"
-        /></button
-      >
-      <button
-      ><Image
+  <div class=" flex flex-row items-center space-x-6 md:hidden">
+    <ThemeIcon isMobile={false} key={1}/> 
+      <Image
         src={menu}
         height={17}
         width={27}

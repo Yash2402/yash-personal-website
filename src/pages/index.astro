@@ -12,11 +12,11 @@ import rightSlider from "../imgs/right_slider.svg";
 
 <BaseLayout title="home">
   <div class="flex flex-col items-between space-y-8 md:w-full xl:space-y-0 xl:flex xl:flex-row xl:w-full xl:justify-between xl:items-center">
-    <p class="text-[30px] md:text-[35px] xl:text-[45px] left">
+    <p class="text-[30px] md:text-[35px] text-LM-Title dark:text-DM-Title xl:text-[45px] left">
           Hey, I am <br />
           Yash Sharma
     </p>
-    <p class="text-[25px] md:text-[27px] xl:text-[35px] right"> I am currently in university as a <span1 class="italic text-[25px] md:text-[27px] xl:text-[35px]">sophomore</span1> studying <br /><span class="text-[#000000] text-[25px] md:text-[27px] xl:text-[35px]"> Mechanical Engineering </span>
+    <p class="text-[25px] text-LM-Para dark:text-DM-Para md:text-[27px] xl:text-[35px] right"> I am currently in university as a <span1 class="italic text-[25px] md:text-[27px] xl:text-[35px]">sophomore</span1> studying <br /><span class="text-LM-Title dark:text-DM-Title text-[25px] md:text-[27px] xl:text-[35px]"> Mechanical Engineering </span>
     </p>
   </div>
   <div class="md:flex md:flex-row md:w-full md:my-10">
@@ -38,7 +38,7 @@ import rightSlider from "../imgs/right_slider.svg";
       alt="Display Item Mobile"
     />
     <!-- desktop display img -->
-    <div class="hidden-mobile md:mx-10 md:w-full md:flex md:justify-center md:bg-[#D9D9D942] md:rounded-[16px] md:px-[10px] md:py-[10px] md:shadow-xl">
+    <div class="hidden-mobile md:mx-10 md:w-full md:flex md:justify-center md:bg-LM-Title-Bar dark:bg-DM-Title-Bar md:rounded-[16px] md:px-[10px] md:py-[10px] md:shadow-xl">
       <div class="md:w-full md:flex md:justify-center md:bg-[#000000] md:rounded-[8px]">
         <Image src={home_img} height={358} width={358} alt="Display Item" />
       </div>
@@ -57,7 +57,6 @@ import rightSlider from "../imgs/right_slider.svg";
 
 <style>
   .left {
-    color: var(--Light-Mode-LM---Title, #000);
     font-family: "Playfair Display Variable", serif;
     font-style: normal;
     font-weight: 500;
@@ -65,7 +64,6 @@ import rightSlider from "../imgs/right_slider.svg";
     letter-spacing: -0.81px;
   }
   .right {
-    color: var(--Light-Mode-LM---Para, #585858);
     font-family: "Playfair Display Variable", serif;
     font-weight: 100;
     line-height: normal;

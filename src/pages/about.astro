@@ -7,10 +7,10 @@ import "@fontsource-variable/comfortaa";
 import "@fontsource-variable/playfair-display";
 ---
 <BaseLayout title="about">
-  <h class="mb-[15px] text-[16px] md:text-[20px] md:mb-[30px]">ABOUT</h>
+  <h class="mb-[15px] text-[16px] text-LM-Title dark:text-DM-Title md:text-[20px] md:mb-[30px]">ABOUT</h>
   <div class="flex flex-col items-center justify-between space-y-5 mb-5 xl:flex xl:flex-row xl:items-center xl:w-full xl:justify-between">
-    <div class="space-y-2 md:space-y-4 xl:space-y-4 xl:w-[700px]">
-      <p class="text-[16px] md:text-[18px]">
+    <div class="space-y-2 text-[16px] text-LM-Para dark:text-DM-Para md:text-[18px] md:space-y-4 xl:space-y-4 xl:w-[700px]">
+      <p class="text-[16px] text-LM-Para dark:text-DM-Para md:text-[18px]">
         Hello, I am <span class="italic">Yash Sharma</span>. Welcome to my website. I am
         currently a sophomore at university studying Mechanical Engineering.
         I have always been interested in Engineering, that's why I picked
@@ -23,14 +23,14 @@ import "@fontsource-variable/playfair-display";
         GTA Vice City and Road Rash. That is where my fascination with
         computers began.
       </p>
-      <p class="text-[16px] md:text-[18px]">
+      <p class="text-[16px] text-LM-Para dark:text-DM-Para md:text-[18px]">
         Those curiosities in my mind brought me so far in the world of 
         technology. I am also interested in 3D designing, my interest in 3D
         developed when I was in 11th grade, my father brought me a new laptop 
         Macbook Air M1. At that time I stumbled upon a video in which a guy animated a 
         ring falling on ground using 
       </p>
-      <p class="text-[16px] md:text-[18px]">
+      <p class="text-[16px] text-LM-Para dark:text-DM-Para md:text-[18px]">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, nihil
         nemo consequatur consectetur, ad veritatis laudantium, sapiente
         temporibus nam eum quas? Reiciendis sint dicta ipsum enim nam,
@@ -46,7 +46,7 @@ import "@fontsource-variable/playfair-display";
         fuga distinctio quo, sint nostrum rerum quae illum saepe quibusdam
       </p>
     </div>
-    <div class="md:mx-10 md:flex md:justify-center md:bg-[#D9D9D942] md:rounded-[16px] md:shadow-xl">
+    <div class="md:mx-10 md:flex md:justify-center md:bg-[#D9D9D942] md:p-2 md:rounded-[16px] md:shadow-xl">
       <Image
         class="rounded-[8px] drop-shadow-xl"
         src={yashsharma}
@@ -58,7 +58,6 @@ import "@fontsource-variable/playfair-display";
 
 <style>
   h {
-    color: var(--Light-Mode-LM---Title, #000);
     text-align: center;
     font-family: "Comfortaa Variable", system-ui;
     font-style: normal;

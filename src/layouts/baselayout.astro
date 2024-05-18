@@ -14,22 +14,40 @@ import "@fontsource-variable/comfortaa";
 import "@fontsource-variable/playfair-display";
 import "@fontsource/ibm-plex-sans-hebrew";
 ---
+
 <!doctype html>
 <html lang="en" class="antialiased scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="y.svg"/>
+    <link rel="icon" type="image/svg+xml" href="y.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-LM-Background flex flex-col mt-6 md:mt-11">
-    <header class="flex flex-row itmes-center justify-between bg-LM-Title-Bar px-4 py-4 mx-5 rounded-[15px] md:flex md:flex-row md:items-center md:justify-between md:bg-LM-Title-Bar md:px-5 md:py-5 md:rounded-[20px] md:mx-20">
-        <Nav {current} {navitems} />
+  <body class="bg-LM-Background dark:bg-DM-Background flex flex-col mt-6 md:mt-11">
+    <header class="flex flex-row itmes-center justify-between bg-LM-Title-Bar dark:bg-DM-Title-Bar px-4 py-4 mx-5 rounded-[15px] md:flex md:flex-row md:items-center md:justify-between md:px-5 md:py-5 md:rounded-[20px] md:mx-20">
+      <Nav {current} {navitems} />
     </header>
     <main class="flex flex-col items-start mx-[35px] mt-[25px] md:mx-[100px] md:mt-[30px]">
-        <slot/>
+      <slot />
     </main>
-    <Footer/>
+    <script is:inline>
+      const theme = (() => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("theme")
+        ) {
+          return localStorage.theme;
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        } else {
+          return "light";
+        }
+      })();
+
+      document.documentElement.classList.toggle("dark", theme === "dark");
+      localStorage.setItem("theme", theme);
+    </script>
+    <Footer />
   </body>
 </html>
