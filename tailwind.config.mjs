@@ -5,6 +5,7 @@ export default {
 		colors: {
 			// Common
 			"Logo": "#0B7DA5",
+			
 
 			// Light Mode
 			"LM-Theme-Toggler": "#000000",
@@ -15,8 +16,7 @@ export default {
 			"LM-Title": "#000000",
 			"LM-Para": "#585858",
 			"LM-Title-Bar": "#D9D9D950",
-
-
+			"LM-Link": "#0B7DA5",
 
 			// Dark Mode
 			"DM-Theme-Toggler": "#ffffff",
@@ -27,6 +27,7 @@ export default {
 			"DM-Title": "#FFFFFF",
 			"DM-Para": "#e4e4e4",
 			"DM-Title-Bar": "#262626",
+			"DM-Link": "#85CDE6",
 
 		},
 		extend: {
