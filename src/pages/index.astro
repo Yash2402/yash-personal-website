@@ -1,6 +1,5 @@
 ---
-import Nav from "../components/Nav.astro";
-import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/baselayout.astro";
 // Supports weights 400-900
 import "@fontsource-variable/comfortaa";
 import "@fontsource-variable/playfair-display";
@@ -11,63 +10,50 @@ import leftSlider from "../imgs/left_slider.svg";
 import rightSlider from "../imgs/right_slider.svg";
 ---
 
-<html lang="en" class="bg-[#EEEEEE] scroll-smooth antialiased">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="y.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>yash</title>
-  </head>
-  <body>
-    <Nav />
-    <main class="flex flex-col items-center justify-start mx-8 my-11 md:flex md:flex-col md:items-center md:justify-start md:mx-[120px] md:my-[75px]">
-      <div class="flex flex-col items-between space-y-8 md:space-y-0 md:flex md:flex-row md:w-full md:justify-between md:items-center">
-        <p class="text-[30px] md:text-[45px] left">
+<BaseLayout>
+  <div class="flex flex-col items-between space-y-8 md:w-full xl:space-y-0 xl:flex xl:flex-row xl:w-full xl:justify-between xl:items-center">
+    <p class="text-[30px] md:text-[35px] xl:text-[45px] left">
           Hey, I am <br />
           Yash Sharma
-        </p>
-        <p class="text-[25px] md:text-[35px] right"> I am currently in university as a <span1 class="italic text-[25px] md:text-[35px]">sophomore</span1> studying <br /><span class="text-[#000000] text-[25px] md:text-[35px]"> Mechanical Engineering </span>
-        </p>
-      </div>
-    </main>
-    <main class="flex flex-row items-center justify-between mx-9 md:flex md:flex-row md:items-center md:mx-[100px] md:mt-35 md:mb-10">
-      <button>
-        <Image
-          class="hidden-mobile"
-          src={leftSlider}
-          height={50}
-          width={50}
-          alt="Display img slider"
-        />
-      </button>
-      <!-- mobile display img -->
+    </p>
+    <p class="text-[25px] md:text-[27px] xl:text-[35px] right"> I am currently in university as a <span1 class="italic text-[25px] md:text-[27px] xl:text-[35px]">sophomore</span1> studying <br /><span class="text-[#000000] text-[25px] md:text-[27px] xl:text-[35px]"> Mechanical Engineering </span>
+    </p>
+  </div>
+  <div class="md:flex md:flex-row md:w-full md:my-10">
+    <button>
       <Image
-        class="md:hidden"
-        src={home_img}
-        height={580}
-        width={580}
-        alt="Display Item Mobile"
+        class="hidden-mobile"
+        src={leftSlider}
+        height={50}
+        width={50}
+        alt="Display img slider"
       />
-      <!-- desktop display img -->
-      <div class="hidden-mobile md:mx-10 md:w-full md:flex md:justify-center md:bg-[#D9D9D942] md:rounded-[16px] md:px-[10px] md:py-[10px] md:shadow-xl">
-        <div class="md:w-full md:flex md:justify-center md:bg-[#000000] md:rounded-[8px]">
-          <Image src={home_img} height={358} width={358} alt="Display Item" />
-        </div>
+    </button>
+        <!-- mobile display img -->
+    <Image
+      class="md:hidden"
+      src={home_img}
+      height={800}
+      width={800}
+      alt="Display Item Mobile"
+    />
+    <!-- desktop display img -->
+    <div class="hidden-mobile md:mx-10 md:w-full md:flex md:justify-center md:bg-[#D9D9D942] md:rounded-[16px] md:px-[10px] md:py-[10px] md:shadow-xl">
+      <div class="md:w-full md:flex md:justify-center md:bg-[#000000] md:rounded-[8px]">
+        <Image src={home_img} height={358} width={358} alt="Display Item" />
       </div>
-      <button>
-        <Image
-          class="hidden-mobile"
-          src={rightSlider}
-          height={50}
-          width={50}
-          alt="Display img slider"
-        />
-      </button>
-    </main>
-    <Footer />
-  </body>
-</html>
+    </div>
+    <button>
+      <Image
+        class="hidden-mobile"
+        src={rightSlider}
+        height={50}
+        width={50}
+        alt="Display img slider"
+      />
+    </button>
+  </div>
+</BaseLayout>
 
 <style>
   .left {

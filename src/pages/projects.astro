@@ -1,114 +1,108 @@
 ---
-import Nav from "../components/Nav.astro";
-import Footer from "../components/Footer.astro";
 import "@fontsource-variable/comfortaa";
 import "@fontsource-variable/playfair-display";
 import "@fontsource/ibm-plex-sans-hebrew";
-import '@fontsource/ibm-plex-sans';
+import "@fontsource/ibm-plex-sans";
+import BaseLayout from "../layouts/baselayout.astro";
 ---
 
-<html lang="en" class="bg-[#EEEEEE] scroll-smooth antialiased">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="y.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title class="fixed">projects</title>
-  </head>
-  <body>
-    <Nav/>
-    <main class="flex flex-col items-start mx-[35px] mt-[25px] md:mx-[100px] md:mt-[30px]">
+<BaseLayout>
+  <h class="mb-[15px] text-[16px] md:text-[20px] md:mb-[30px]"> PROJECTS </h>
+  <main class="mb-5 space-y-2">
+    <h1 class=" text-[20px] mr-4 md:text-[30px]">
+      Handwritten Digit Recognition AI <span class="text-[15px] md:text-[18px]">
+        • JAN 2024
+      </span>
+    </h1>
 
-      <h class="mb-[15px] text-[16px] md:text-[20px] md:mb-[30px]">
-        PROJECTS
-      </h>
+    <p class="text-[16px] md:text-[18px]">
+      This project represents my initial step into the world of artificial
+      intelligence and machine learning. It showcases my foundational
+      understanding of neural networks, gradient descent, and essential
+      mathematical concepts like linear algebra, differentials, etc. Drawing
+      inspiration from educational resources like 3Blue1Brown and Samson Zhang's
+      YouTube channels, I embarked on this journey to delve deeper into AI.
+    </p>
 
-      <h1 class="my-[10px] text-[20px] space-x-2 md:text-[30px] md:my-[20px]">
-        Handwritten Digit Recognition AI <span class="text-[15px] md:text-[18px]"> • JAN 2024 </span>
-      </h1>
+    <h1 class="text-[20px] mr-4 md:text-[30px]">
+      Spring Simulation <span class="text-[15px] md:text-[18px]">
+        • AUG 2023
+      </span>
+    </h1>
 
-      <p class="text-[16px] md:text-[18px]">
-        This project represents my initial step into the world of artificial intelligence 
-        and machine learning. It showcases my foundational 
-        understanding of neural networks, gradient descent, and essential mathematical 
-        concepts like linear algebra, differentials, etc. Drawing inspiration from educational 
-        resources like 3Blue1Brown and Samson Zhang's YouTube channels, I embarked on 
-        this journey to delve deeper into AI.
-      </p>
+    <p class="text-[16px] md:text-[18px]">
+      As a passionate enthusiast of physics and simulations, I undertook a
+      project during my 12th-grade to delve into the intricacies of
+      physics-based simulations. The objective was to develop a realistic cloth
+      simulation using fundamental physics principles, particularly focusing on
+      the behaviour of springs. I was not that focused on the code quality; I
+      will fix this in the future and optimize it. I will make this project in
+      C++ using the SDL or Raylib libraries too.
+    </p>
 
-      <h1 class="my-[10px] text-[20px] mr-4 md:text-[30px] md:my-[20px]">
-        Spring Simulation <span class="text-[15px] md:text-[18px]"> • AUG 2023 </span>
-      </h1>
+    <h1 class="text-[20px] mr-4 md:text-[30px]">
+      Ray Casting <span class="text-[15px] md:text-[18px]"> • SEP 2023 </span>
+    </h1>
 
-      <p class="text-[16px] md:text-[18px]">
-        As a passionate enthusiast of physics and simulations, I undertook a project during 
-        my 12th-grade to delve into the intricacies of physics-based 
-        simulations. The objective was to develop a realistic cloth simulation using 
-        fundamental physics principles, particularly focusing on the behaviour of springs. 
-        I was not that focused on the code quality; I will fix this in the future and optimize 
-        it. I will make this project in C++ using the SDL or Raylib libraries too.
-      </p>
+    <p class="text-[16px] md:text-[18px]">
+      This project was also fun. I developed it in 12th grade using Python's
+      Pygame library. It involves casting rays to generate a 3D scene from a 2D
+      map, inspired by a video on ray casting by The Coding Train YouTube
+      channel. This project not only enhanced my understanding of computer
+      graphics and ray casting algorithms but also allowed me to apply
+      mathematical concepts in a creative way. It provided a solid foundation
+      and sparked my interest in exploring ray tracing.
+    </p>
 
-      <h1 class="my-[10px] text-[20px] mr-4 md:text-[30px] md:my-[20px]">
-        Ray Casting  <span class="text-[15px] md:text-[18px]"> • SEP 2023 </span>
-      </h1>
+    <h1 class="text-[20px] mr-4 md:text-[30px]">
+      Conway's Game of Life <span class="text-[15px] md:text-[18px]">
+        • DEC 2022</span
+      >
+    </h1>
 
-      <p class="text-[16px] md:text-[18px]">
-        This project was also fun. I developed it in 12th grade using Python's Pygame library. 
-        It involves casting rays to generate a 3D scene from a 2D map, inspired by a video on 
-        ray casting by The Coding Train YouTube channel. This project not only enhanced my 
-        understanding of computer graphics and ray casting algorithms but also allowed me to 
-        apply mathematical concepts in a creative way. It provided a solid foundation and sparked 
-        my interest in exploring ray tracing.
-      </p>
-
-      <h1 class="my-[10px] text-[20px] mr-4 md:text-[30px] md:my-[20px]">
-        Conway's Game of Life <span class="text-[15px] md:text-[18px]"> • DEC 2022</span>
-      </h1>
-
-      <p class="text-[16px] md:text-[18px]">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis excepturi unde voluptatem 
-        architecto id maxime vitae praesentium optio sint deserunt! Maiores debitis reprehenderit 
-        esse magni id atque ab veritatis quidem sapiente temporibus corporis fugiat consequuntur 
-        quisquam facere iste totam, quaerat dolorem, quis iure! Placeat unde ipsam atque maxime 
-        deleniti, quas officiis nesciunt illum quibusdam, quod aut asperiores laborum aliquam molestiae 
-        fugit modi.
-    </main>
-    <Footer />
-  </body>
-</html>
-<style>
-  main h {
-    color: var(--Light-Mode-LM---Title, #000);
-    text-align: center;
-    font-family: "Comfortaa Variable";
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -1.00px;
-  }
-  main h1 {
-    color: var(--Light-Mode-LM---Title, #000);
-    font-family: "IBM Plex Sans Hebrew", sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    letter-spacing: -0.81px;
-  }
-  span{
-    width: auto;
-    color: var(--Light-Mode-LM---Para, #585858d0);
-    font-family: "Comfortaa Variable";
-    font-style: normal;
-    font-weight: 100;
-    letter-spacing: -1px;
-  }
-  main p {
-    width: auto;
-    color: var(--Light-Mode-LM---Para, #585858);
-    font-family: "Playfair Display Variable", monospace;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 135.292%; /* 33.823px */
-  }
-</style>
+    <p class="text-[16px] md:text-[18px]">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis excepturi
+      unde voluptatem architecto id maxime vitae praesentium optio sint
+      deserunt! Maiores debitis reprehenderit esse magni id atque ab veritatis
+      quidem sapiente temporibus corporis fugiat consequuntur quisquam facere
+      iste totam, quaerat dolorem, quis iure! Placeat unde ipsam atque maxime
+      deleniti, quas officiis nesciunt illum quibusdam, quod aut asperiores
+      laborum aliquam molestiae fugit modi.
+    </p>
+  </main>
+  <style>
+    h {
+      color: var(--Light-Mode-LM---Title, #000);
+      text-align: center;
+      font-family: "Comfortaa Variable";
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: -1px;
+    }
+    h1 {
+      color: var(--Light-Mode-LM---Title, #000);
+      font-family: "IBM Plex Sans Hebrew", sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: -0.81px;
+    }
+    span {
+      width: auto;
+      color: var(--Light-Mode-LM---Para, #585858d0);
+      font-family: "Comfortaa Variable";
+      font-style: normal;
+      font-weight: 100;
+      letter-spacing: -1px;
+    }
+    p {
+      width: auto;
+      color: var(--Light-Mode-LM---Para, #585858);
+      font-family: "Playfair Display Variable", monospace;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 135.292%; /* 33.823px */
+    }
+  </style>
+</BaseLayout>

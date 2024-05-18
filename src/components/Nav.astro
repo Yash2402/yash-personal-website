@@ -7,34 +7,30 @@ import LM_to_DM from "../imgs/lm_to_dm.svg";
 import menu from "../imgs/Menu.svg"
 
 import "@fontsource/ibm-plex-sans-hebrew";
----
 
-<header class="mx-[20px] mt-[23px] md:mt-[45px] md:mx-[75px]">
-  <nav
-    class="bg-[#e0e0e0] flex flex-row items-center justify-between rounded-[15px] px-[15px] py-3 md:rounded-[25px] md:px-[25px] md:py-4 md:flex md:flex-row md:items-center md:justify-between"
-  >
-    <a href="/"><Image class="md:w-[95px]" src={yash} alt="Personal Logo" height={51} width={79} /></a>
-    <div class="hidden md:flex md:flex-row md:items-center md:space-x-[45px]">
-      {
-        navLinks.map((navLink) => (
-          <li class="list-none">
-            <a class="text-[#67a0b5] hover:text-[#007099]" href={navLink.href}>
-              {navLink.title}
-            </a>
-          </li>
-        ))
-      }
-      <button class="mt-[7px]"
-        ><Image
-          src={LM_to_DM}
-          height={30}
-          width={30}
-          alt="Light mode to Dark Mode switcher"
-        /></button
-      >
-    </div>
-    <div class=" flex flex-row items-center space-x-[24px] md:hidden">
-      <button class="mt-[7px]"
+---
+<a href="/"><Image src={yash} alt="Personal Logo" height={51} width={79} /></a>
+  <div class="hidden md:flex md:flex-row md:items-center md:space-x-7 xl:flex xl:flex-row xl:items-center xl:space-x-11">
+    {
+      navLinks.map((navLink) => (
+        <li class="list-none">
+          <a class=" text-LM-Nav-Unselected hover:text-LM-Nav-Selected" href={navLink.href}>
+            {navLink.title}
+          </a>
+        </li>
+      ))
+    }
+    <button class="mt-[7px]">
+      <Image
+        src={LM_to_DM}
+        height={30}
+        width={30}
+        alt="Light mode to Dark Mode switcher"
+      />
+    </button>
+  </div> 
+  <div class=" flex flex-row items-center space-x-[24px] md:hidden">
+    <button class="mt-[7px]"
         ><Image
           src={LM_to_DM}
           height={30}
@@ -52,7 +48,23 @@ import "@fontsource/ibm-plex-sans-hebrew";
     > 
     </div>
   </nav>
-</header>
+  <!-- Mobile Nav -->
+  <!-- <nav class="md:hidden mob-nav-compact flex flex-col items-center bg-[#e0e0e0] rounded-[15px] py-[40px]">
+    <div class="flex flex-col ">
+    <Image/>
+      <ul class="ul-nav-mob flex flex-col space-y-10 justify-between w-full">
+        {
+          navLinks.map((navLink) => (
+            <li>
+              <a class="text-[#67a0b5] hover:text-[#007099]" href={navLink.href}>
+                {navLink.title}
+              </a>
+            </li>
+          ))
+        }
+    </ul>
+  </nav> -->
+
 
 <style>
   li a {
