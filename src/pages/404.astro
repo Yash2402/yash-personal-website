@@ -1,61 +1,59 @@
 ---
 import yash from "../imgs/yash.svg";
 import { Image } from "astro:assets";
+import BaseLayout from "../layouts/baselayout.astro";
 import Footer from "../components/Footer.astro";
-import "@fontsource-variable/playfair-display"
-import "@fontsource/ibm-plex-sans-hebrew"
+import "@fontsource-variable/playfair-display";
+import "@fontsource/ibm-plex-sans-hebrew";
 ---
 
-<html lang="en" class="scroll-smooth antialiased">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="404.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>404</title>
-  </head>
-  <body class="bg-LM-Background dark:bg-DM-Background max-w-[1650px] flex flex-col m-auto mt-6 md:mt-1">
-      <div class="flex flex-col items-center h-[780px] space-y-[200px] mx-[35px] mt-[45px] md:space-y-[200px] md:flex md:flex-col md:items-center md:mt-[45px]">
-        <a href="/"><Image src={yash} alt="Personal Logo" height={60} width={104}/></a>
-        <main class="bg-[#ffffff] dark:bg-DM-Title-Bar rounded-[16px] flex flex-col h-[300px] items-center justify-center px-20 md:px-20 md:py-20 md:flex md:flex-col md:items-center">
-          <h1 class="text-[30px] text-LM-Title dark:text-DM-Title mb-5 md:text-[45px] md:mb-10">404 Not Found</h1>
-          <p class="text-[20px] text-LM-Para dark:text-DM-Para md:text-[25px]">
-            Sorry, this page does not exists :( <br />
-            meanwhile visit the <a class="text-LM-Nav-Unselected dark:text-DM-Nav-Unselected hover:underline" href="/">home</a> page.
-          </p>
-        </main>
-        <script is:inline>
-          const theme = (() => {
-            if (
-              typeof localStorage !== "undefined" &&
-              localStorage.getItem("theme")
-            ) {
-              return localStorage.theme;
-            } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-              return "dark";
-            } else {
-              return "light";
-            }
-          })();
-    
-          document.documentElement.classList.toggle("dark", theme === "dark");
-          localStorage.setItem("theme", theme);
-        </script>
-        
-      </div>
-      <Footer/>
-  </body>
-</html>
+<BaseLayout title="404">
+  <div
+    class="bg-LM-Title-Bar m-auto shadow-xl dark:bg-DM-Title-Bar rounded-[16px] my-[180px] flex flex-col h-[300px] items-center justify-center px-20 md:px-20 md:py-20 md:flex md:flex-col md:items-center"
+  >
+    <h1
+      class="text-[33px] text-LM-Title dark:text-DM-Title mb-5 md:text-[45px] md:mb-10"
+    >
+      404 Not Found
+    </h1>
+    <p class="text-[22px] text-LM-Para dark:text-DM-Para md:text-[25px]">
+      This place does not exist<br />
+      perhaps visit the <a
+        class="text-LM-Nav-Unselected dark:text-DM-Nav-Unselected hover:underline"
+        href="/">home</a
+      > page.
+    </p>
+  </div>
+  <script is:inline>
+    const theme = (() => {
+      if (
+        typeof localStorage !== "undefined" &&
+        localStorage.getItem("theme")
+      ) {
+        return localStorage.theme;
+      } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        return "dark";
+      } else {
+        return "light";
+      }
+    })();
+
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    localStorage.setItem("theme", theme);
+  </script>
+</BaseLayout>
 
 <style>
-  div main h1{
-    font-family: 'IBM Plex Sans Hebrew', sans-serif;
+  div main h1 {
+    font-family: "IBM Plex Sans Hebrew", sans-serif;
     font-weight: 700;
+    text-align: center;
     letter-spacing: -0.81px;
   }
   p {
-    font-family: 'Playfair Display Variable', serif;
+    font-family: "IBM Plex Sans Hebrew", sans-serif;
     font-style: normal;
+    text-align: center;
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.81px;
