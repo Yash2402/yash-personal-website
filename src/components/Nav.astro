@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import { navLinks } from "../data/navLinks";
 
 import yash from "../imgs/yash.svg";
-import LM from "../imgs/LM.svg";
+import LMtoDM from "../imgs/LMtoDM.svg";
 import menu from "../imgs/Menu.svg"
 
 import "@fontsource/ibm-plex-sans-hebrew";
@@ -13,14 +13,14 @@ interface NavProps{
   current: string;
   navitems: navItems[];
 }
-
+const {current, navitems} = Astro.props as NavProps
 ---
 <a href="/"><Image src={yash} alt="Personal Logo" height={51} width={79} /></a>
   <div class="hidden md:flex md:flex-row md:items-center md:space-x-7 xl:flex xl:flex-row xl:items-center xl:space-x-11">
     {
       navLinks.map((navLink) => (
         <li class="list-none">
-          <a class=" text-LM-Nav-Unselected hover:text-LM-Nav-Selected" href={navLink.href}>
+          <a class="text-LM-Nav-Unselected hover:text-LM-Nav-Selected" href={navLink.href}>
             {navLink.title}
           </a>
         </li>
@@ -28,7 +28,7 @@ interface NavProps{
     }
     <button class="mt-[7px]">
       <Image
-        src={LM}
+        src={LMtoDM}
         height={30}
         width={30}
         alt="Light mode to Dark Mode switcher"
@@ -38,7 +38,7 @@ interface NavProps{
   <div class=" flex flex-row items-center space-x-[24px] md:hidden">
     <button class="mt-[7px]"
         ><Image
-          src={LM}
+          src={LMtoDM}
           height={30}
           width={30}
           alt="Light mode to Dark Mode switcher"
