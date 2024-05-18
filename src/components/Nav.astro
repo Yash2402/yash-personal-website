@@ -7,6 +7,12 @@ import LM_to_DM from "../imgs/lm_to_dm.svg";
 import menu from "../imgs/Menu.svg"
 
 import "@fontsource/ibm-plex-sans-hebrew";
+import type { navItems } from "../utils/types";
+
+interface NavProps{
+  current: string;
+  navitems: navItems[];
+}
 
 ---
 <a href="/"><Image src={yash} alt="Personal Logo" height={51} width={79} /></a>
