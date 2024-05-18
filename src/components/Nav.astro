@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import { navLinks } from "../data/navLinks";
 
 import yash from "../imgs/yash.svg";
-import LM_to_DM from "../imgs/lm_to_dm.svg";
+import LM from "../imgs/LM.svg";
 import menu from "../imgs/Menu.svg"
 
 import "@fontsource/ibm-plex-sans-hebrew";
@@ -28,7 +28,7 @@ interface NavProps{
     }
     <button class="mt-[7px]">
       <Image
-        src={LM_to_DM}
+        src={LM}
         height={30}
         width={30}
         alt="Light mode to Dark Mode switcher"
@@ -38,7 +38,7 @@ interface NavProps{
   <div class=" flex flex-row items-center space-x-[24px] md:hidden">
     <button class="mt-[7px]"
         ><Image
-          src={LM_to_DM}
+          src={LM}
           height={30}
           width={30}
           alt="Light mode to Dark Mode switcher"
