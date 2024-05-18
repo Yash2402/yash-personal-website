@@ -17,6 +17,7 @@ interface NavProps{
 }
 const {current, navitems} = Astro.props as NavProps
 ---
+<header class="flex flex-row itmes-center justify-between bg-LM-Title-Bar dark:bg-DM-Title-Bar px-6 py-4 mx-5 rounded-[15px] md:flex md:flex-row md:items-center md:justify-between md:px-7 md:py-5 md:rounded-[20px] md:mx-20">
 <a href="/"><Image src={yash} alt="Personal Logo" height={65} width={90} /></a>
   <div class="hidden md:flex md:flex-row md:items-center md:space-x-7 xl:flex xl:flex-row xl:items-center xl:space-x-11">
     {
@@ -40,7 +41,7 @@ const {current, navitems} = Astro.props as NavProps
       /></button
     > 
     </div>
-  </nav>
+</header>
   <!-- Mobile Nav -->
   <!-- <nav class="md:hidden mob-nav-compact flex flex-col items-center bg-[#e0e0e0] rounded-[15px] py-[40px]">
     <div class="flex flex-col ">
