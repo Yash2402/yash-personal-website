@@ -25,7 +25,6 @@ import "@fontsource/ibm-plex-sans-hebrew";
     <title>{title}</title>
   </head>
   <body class="bg-LM-Background dark:bg-DM-Background max-w-[1650px] flex flex-col m-auto mt-6 md:mt-11">
-    <main class="min-h-[640px] md:min-h-[780px]">
       <Nav {current} {navitems} />
       <main class="flex flex-col items-start mx-8 mt-6 md:mx-[120px] md:my-8">
         <slot />
@@ -47,7 +46,6 @@ import "@fontsource/ibm-plex-sans-hebrew";
         document.documentElement.classList.toggle("dark", theme === "dark");
         localStorage.setItem("theme", theme);
       </script>
-    </main>
     <Footer />
   </body>
 </html>
