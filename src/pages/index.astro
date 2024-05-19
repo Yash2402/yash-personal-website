@@ -1,13 +1,16 @@
 ---
 import BaseLayout from "../layouts/baselayout.astro";
+// import {Carousel} from 'astro-carousel';
 // Supports weights 400-900
 import "@fontsource-variable/comfortaa";
 import "@fontsource-variable/playfair-display";
 import "@fontsource/ibm-plex-sans-hebrew";
+
 import { Image } from "astro:assets";
 import home_img from "../imgs/home_image.png";
 import leftSlider from "../imgs/left_slider.svg";
 import rightSlider from "../imgs/right_slider.svg";
+
 ---
 
 <BaseLayout title="yash sharma's homepage">
@@ -52,8 +55,26 @@ import rightSlider from "../imgs/right_slider.svg";
         alt="Display img slider"
       />
     </button>
+    <!-- <Carousel images={images} /> -->
   </div>
 </BaseLayout>
+
+<!-- <ul id="carouselTargetList">
+  {
+    images.map((img, index) => {
+      return (
+        <li>
+          <a
+            href={`/?image=${index}`}
+            data-carousel-index={index}
+          >
+            <Image src={home_img} alt=string({index}) />
+          </a>
+        </li>
+      );
+    })
+  }
+</ul> -->
 
 <style>
   .left {
