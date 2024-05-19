@@ -6,10 +6,9 @@ import type { navItems } from "../utils/types";
 interface BaseLayoutProps {
   title?: string;
   current: string;
-  navitems: navItems[];
 }
 
-const { title, current, navitems } = Astro.props as BaseLayoutProps;
+const { title, current } = Astro.props as BaseLayoutProps;
 ---
 
 <!doctype html>
@@ -22,7 +21,7 @@ const { title, current, navitems } = Astro.props as BaseLayoutProps;
     <title>{title}</title>
   </head>
   <body class="bg-LM-Background dark:bg-DM-Background max-w-[1650px] flex flex-col m-auto mt-6 md:mt-11">
-      <Nav {current} {navitems} />
+      <Nav {current} />
       <main class="flex flex-col items-start mx-8 mt-6 md:mx-[120px] md:my-8">
         <slot />
       </main>
