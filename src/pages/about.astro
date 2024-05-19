@@ -2,12 +2,8 @@
 import { Image } from "astro:assets";
 import yashsharma from "../imgs/yashsharma.png";
 import BaseLayout from "../layouts/baselayout.astro";
-// Supports weights 300-700
-
 import "@fontsource-variable/comfortaa";
-// import "@fontsource-variable/playfair-display";
-// import '@fontsource/cardo';
-import '@fontsource/cormorant-garamond';
+import "@fontsource-variable/playfair-display";
 ---
 <BaseLayout title="about">
   <h class="mb-[15px] text-[16px] text-LM-Title dark:text-DM-Title md:text-[20px] md:mb-[30px]">ABOUT</h>
@@ -61,8 +57,8 @@ import '@fontsource/cormorant-garamond';
   p {
     width: auto;
     color: var(--Light-Mode-LM---Para, #585858);
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 400;
+    font-family: "Playfair Display Variable";
+    font-weight: 100;
     line-height: 135.292%; /* 33.823px */
   }
 </style>
