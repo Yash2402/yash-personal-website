@@ -16,7 +16,7 @@ import "@fontsource/ibm-plex-sans-hebrew";
 ---
 
 <!doctype html>
-<html lang="en" class="selection:bg-DM-Nav-Selected selection:text-[#111111] dark:selection:bg-LM-Nav-Selected dark:selection:text-[#E9E9E9] antialiased scroll-smooth">
+<html lang="en" class="selection:bg-DM-Nav-Selected dark:selection:bg-LM-Nav-Selected antialiased scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="y.svg" />
@@ -25,27 +25,29 @@ import "@fontsource/ibm-plex-sans-hebrew";
     <title>{title}</title>
   </head>
   <body class="bg-LM-Background dark:bg-DM-Background max-w-[1650px] flex flex-col m-auto mt-6 md:mt-11">
-    <Nav {current} {navitems} />
-    <main class="flex flex-col items-start mx-8 mt-6 md:mx-[120px] md:my-8">
-      <slot />
-    </main>
-    <script is:inline>
-      const theme = (() => {
-        if (
-          typeof localStorage !== "undefined" &&
-          localStorage.getItem("theme")
-        ) {
-          return localStorage.theme;
-        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          return "dark";
-        } else {
-          return "light";
-        }
-      })();
+    <main class="min-h-[780px]">
+      <Nav {current} {navitems} />
+      <main class="flex flex-col items-start mx-8 mt-6 md:mx-[120px] md:my-8">
+        <slot />
+      </main>
+      <script is:inline>
+        const theme = (() => {
+          if (
+            typeof localStorage !== "undefined" &&
+            localStorage.getItem("theme")
+          ) {
+            return localStorage.theme;
+          } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            return "dark";
+          } else {
+            return "light";
+          }
+        })();
 
-      document.documentElement.classList.toggle("dark", theme === "dark");
-      localStorage.setItem("theme", theme);
-    </script>
+        document.documentElement.classList.toggle("dark", theme === "dark");
+        localStorage.setItem("theme", theme);
+      </script>
+    </main>
     <Footer />
   </body>
 </html>
