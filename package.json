@@ -18,6 +18,8 @@
     "@fontsource-variable/manrope": "^5.0.20",
     "@fontsource-variable/noto-serif-georgian": "^5.0.20",
     "@fontsource-variable/playfair-display": "^5.0.25",
+    "@fontsource/cardo": "^5.0.13",
+    "@fontsource/cormorant-garamond": "^5.0.13",
     "@fontsource/gilda-display": "^5.0.20",
     "@fontsource/ibm-plex-sans": "^5.0.20",
     "@fontsource/ibm-plex-sans-hebrew": "^5.0.13",
