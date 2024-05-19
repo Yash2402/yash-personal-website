@@ -4,71 +4,39 @@ import "@fontsource-variable/playfair-display";
 import "@fontsource/ibm-plex-sans-hebrew";
 import "@fontsource/ibm-plex-sans";
 import BaseLayout from "../layouts/baselayout.astro";
+import Project from "../components/Project.astro";
 ---
 
 <BaseLayout title="projects">
   <h class="mb-[15px] text-[16px] text-LM-Title dark:text-DM-Title md:text-[20px] md:mb-[30px]"> PROJECTS </h>
-  <main class="mb-7 space-y-2">
-    <h1 class="text-LM-Title dark:text-DM-Title text-[20px] mr-4 md:text-[30px]">
-      Handwritten Digit Recognition AI <span class="text-LM-Para dark:text-DM-Para text-[15px] md:text-[18px]">
-        • JAN 2024
-      </span>
-    </h1>
+  <main class="flex flex-col space-y-5">
+    <Project title="Handwritten Digit Recognition AI" date="JAN 2024" desc="This project represents my initial step into the world of artificial\
+    intelligence and machine learning. It showcases my foundational\
+    understanding of neural networks, gradient descent, and essential\
+    mathematical concepts like linear algebra, differentials, etc. Drawing\
+    inspiration from educational resources like 3Blue1Brown and Samson Zhang's\
+    YouTube channels, I embarked on this journey to delve deeper into AI."/>
+    
+    <Project title="Spring Simulation" date="AUG 2023" desc="As a passionate enthusiast of physics and simulations, I undertook a\
+    project during my 12th-grade to delve into the intricacies of\
+    physics-based simulations. The objective was to develop a realistic cloth\
+    simulation using fundamental physics principles, particularly focusing on\
+    the behaviour of springs. I was not that focused on the code quality; I\
+    will fix this in the future and optimize it. I will make this project in\
+    C++ using the SDL or Raylib libraries too."/>
 
-    <p class="text-LM-Para dark:text-DM-Para text-[16px] md:text-[18px]">
-      This project represents my initial step into the world of artificial
-      intelligence and machine learning. It showcases my foundational
-      understanding of neural networks, gradient descent, and essential
-      mathematical concepts like linear algebra, differentials, etc. Drawing
-      inspiration from educational resources like 3Blue1Brown and Samson Zhang's
-      YouTube channels, I embarked on this journey to delve deeper into AI.
-    </p>
+    <Project title="Ray Casting" date="SEP 2023" desc="This project was also fun. I developed it in 12th grade using Python's\
+    Pygame library. It involves casting rays to generate a 3D scene from a 2D\
+    map, inspired by a video on ray casting by The Coding Train YouTube\
+    channel. This project not only enhanced my understanding of computer\
+    graphics and ray casting algorithms but also allowed me to apply\
+    mathematical concepts in a creative way. It provided a solid foundation\
+    and sparked my interest in exploring ray tracing."/>
 
-    <h1 class="text-LM-Title dark:text-DM-Title text-[20px] mr-4 md:text-[30px]">
-      Spring Simulation <span class="text-LM-Para dark:text-DM-Para text-[15px] md:text-[18px]">
-        • AUG 2023
-      </span>
-    </h1>
+    <Project title="The" date="Jan 2022" desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. \
+    Sint quaerat dolorem qui amet nostrum odit maxime debitis laboriosam quae dolorum ipsam ea \
+    voluptates excepturi, aliquid minus ex architecto quia cum!"/>
 
-    <p class="text-LM-Para dark:text-DM-Para text-[16px] md:text-[18px]">
-      As a passionate enthusiast of physics and simulations, I undertook a
-      project during my 12th-grade to delve into the intricacies of
-      physics-based simulations. The objective was to develop a realistic cloth
-      simulation using fundamental physics principles, particularly focusing on
-      the behaviour of springs. I was not that focused on the code quality; I
-      will fix this in the future and optimize it. I will make this project in
-      C++ using the SDL or Raylib libraries too.
-    </p>
-
-    <h1 class="text-LM-Title dark:text-DM-Title text-[20px] mr-4 md:text-[30px]">
-      Ray Casting <span class="text-LM-Para dark:text-DM-Para text-[15px] md:text-[18px]"> • SEP 2023 </span>
-    </h1>
-
-    <p class="text-LM-Para dark:text-DM-Para text-[16px] md:text-[18px]">
-      This project was also fun. I developed it in 12th grade using Python's
-      Pygame library. It involves casting rays to generate a 3D scene from a 2D
-      map, inspired by a video on ray casting by The Coding Train YouTube
-      channel. This project not only enhanced my understanding of computer
-      graphics and ray casting algorithms but also allowed me to apply
-      mathematical concepts in a creative way. It provided a solid foundation
-      and sparked my interest in exploring ray tracing.
-    </p>
-
-    <h1 class="text-LM-Title dark:text-DM-Title text-[20px] mr-4 md:text-[30px]">
-      Conway's Game of Life <span class="text-LM-Para dark:text-DM-Para text-[15px] md:text-[18px]">
-        • DEC 2022</span
-      >
-    </h1>
-
-    <p class="text-LM-Para dark:text-DM-Para text-[16px] md:text-[18px]">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis excepturi
-      unde voluptatem architecto id maxime vitae praesentium optio sint
-      deserunt! Maiores debitis reprehenderit esse magni id atque ab veritatis
-      quidem sapiente temporibus corporis fugiat consequuntur quisquam facere
-      iste totam, quaerat dolorem, quis iure! Placeat unde ipsam atque maxime
-      deleniti, quas officiis nesciunt illum quibusdam, quod aut asperiores
-      laborum aliquam molestiae fugit modi.
-    </p>
   </main>
   <style>
     h {
@@ -79,26 +47,6 @@ import BaseLayout from "../layouts/baselayout.astro";
       line-height: normal;
       letter-spacing: -1px;
     }
-    h1 {
-      font-family: "IBM Plex Sans Hebrew", sans-serif;
-      font-style: normal;
-      font-weight: 600;
-      line-height: normal;
-      letter-spacing: -0.81px;
-    }
-    span {
-      width: auto;
-      font-family: "Comfortaa Variable";
-      font-style: normal;
-      font-weight: 100;
-      letter-spacing: -1px;
-    }
-    p {
-      width: auto;
-      font-family: "Playfair Display Variable", monospace;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 135.292%; /* 33.823px */
-    }
+
   </style>
 </BaseLayout>

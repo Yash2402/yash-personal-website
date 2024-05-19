@@ -1,0 +1,41 @@
+---
+interface ProjecProps {
+  title: string;
+  date: string;
+  desc: string;
+}
+const { title, date, desc } = Astro.props as ProjecProps;
+---
+
+<project class="flex flex-col space-y-2">
+  <h1 class="text-LM-Title dark:text-DM-Title text-[20px] mr-4 md:text-[30px]">
+    {title} <span class="text-LM-Para dark:text-DM-Para text-[15px] md:text-[18px]"> • {date}</span>
+  </h1>
+  <p class="text-LM-Para dark:text-DM-Para text-[16px] md:text-[18px]">
+    {desc}
+  </p>
+</project>
+
+<style>
+    h1 {
+      font-family: "IBM Plex Sans Hebrew", sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: -0.81px;
+    }
+    span {
+      width: auto;
+      font-family: "Comfortaa Variable";
+      font-style: normal;
+      font-weight: 100;
+      letter-spacing: -1px;
+    }
+    p {
+      width: auto;
+      font-family: "Playfair Display Variable", monospace;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 135.292%; /* 33.823px */
+    }
+</style>
