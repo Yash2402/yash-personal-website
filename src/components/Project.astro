@@ -11,35 +11,11 @@ interface ProjecProps {
 const { title, date, desc } = Astro.props as ProjecProps;
 ---
 
-<project class="flex flex-col space-y-2">
-  <h1 class="text-LM-Title dark:text-DM-Title text-[20px] mr-4 md:text-[30px]">
-    {title} <span class="text-LM-Para dark:text-DM-Para text-[15px] md:text-[18px]"> • {date}</span>
+<project class="flex flex-col space-y-2 md:space-y-4 dark:bg-[#33333340] bg-[#DDDDDD23] dark:border-DM-Title-Bar border-LM-Title-Bar border-2 fill-none rounded-xl px-2 py-2 md:dark:bg-[#33333340] md:bg-[#DDDDDD23] md:dark:border-DM-Title-Bar md:border-LM-Title-Bar md:border-4 md:rounded-2xl md:px-4 md:py-4">
+  <h1 class="text-LM-Title dark:text-DM-Title font-title tracking-[-0.88px] text-[20px] mr-4 md:text-[30px]">
+    {title} <span class="text-LM-Para dark:text-DM-Para font-sans text-[14px] md:text-[18px]"> • {date}</span>
   </h1>
-  <p class="text-LM-Para dark:text-DM-Para text-[16px] md:text-[18px]">
+  <p class="text-LM-Para dark:text-DM-Para font-para font-thin text-[15px] md:text-[18px] md:w-9/11">
     {desc}
   </p>
 </project>
-
-<style>
-    h1 {
-      font-family: "IBM Plex Sans Hebrew", sans-serif;
-      font-style: normal;
-      font-weight: 600;
-      line-height: normal;
-      letter-spacing: -0.81px;
-    }
-    span {
-      width: auto;
-      font-family: "Comfortaa Variable";
-      font-style: normal;
-      font-weight: 100;
-      letter-spacing: -1px;
-    }
-    p {
-      width: auto;
-      font-family: "Playfair Display Variable", monospace;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 135.292%; /* 33.823px */
-    }
-</style>

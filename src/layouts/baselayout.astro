@@ -2,19 +2,25 @@
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 
+import "@fontsource-variable/comfortaa";
+import "@fontsource-variable/playfair-display";
+import "@fontsource/ibm-plex-sans-hebrew";
+
 interface BaseLayoutProps {
   title?: string;
   current: string;
+  icon: string;
 }
 
-const { title, current } = Astro.props as BaseLayoutProps;
+const { title, current} = Astro.props as BaseLayoutProps;
+
 ---
 
 <!doctype html>
 <html lang="en" class="selection:bg-DM-Nav-Selected dark:selection:bg-LM-Nav-Selected antialiased scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="y.svg" />
+    <link rel="icon" type="image/svg+xml" href="../imgs/y.svg"/>
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
@@ -22,6 +28,7 @@ const { title, current } = Astro.props as BaseLayoutProps;
   <body class="bg-LM-Background dark:bg-DM-Background max-w-[1650px] flex flex-col m-auto mt-6 md:mt-11">
       <Nav {current} />
       <main class="flex flex-col items-start mx-8 mt-6 md:mx-[120px] md:my-8">
+        <h1 class="mb-[15px] font-crumbs uppercase font-semibold tracking-[-1px] text-[16px] text-LM-Title dark:text-DM-Title md:text-[20px] md:mb-[30px]">{current}</h1>
         <slot />
       </main>
       <script is:inline>

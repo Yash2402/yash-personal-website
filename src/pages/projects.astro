@@ -5,7 +5,19 @@ import Project from "../components/Project.astro";
 ---
 
 <BaseLayout title="projects"  current="projects">
-  <h class="mb-[15px] text-[16px] text-LM-Title dark:text-DM-Title md:text-[20px] md:mb-[30px]"> PROJECTS </h>
+  <div class="flex flex-col space-y-5 mb-5 md:mb-10">
+    <h1 class="text-LM-Title dark:text-DM-Title uppercase text-[22px] font-title md:text-[25px] tracking-[-0.88px]">
+       Welcome to my Projects
+    </h1>
+    <p class=" text-LM-Para dark:text-DM-Para font-para text-[16px] md:text-[18px] font-normal">
+        Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
+        mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
+        fringilla, mattis ligula consectetur, ultrices mauris. Maecenas
+        vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor
+        ornare leo, non suscipit magna interdum eu. Curabitur pellentesque
+        nibh nibh, at maximus ante fermentum sit amet.
+    </p>
+  </div>
   <main class="flex flex-col space-y-5">
     <Project title="Handwritten Digit Recognition AI" date="JAN 2024" desc="This project represents my initial step into the world of artificial\
     intelligence and machine learning. It showcases my foundational\
@@ -35,15 +47,4 @@ import Project from "../components/Project.astro";
     voluptates excepturi, aliquid minus ex architecto quia cum!"/>
 
   </main>
-  <style>
-    h {
-      text-align: center;
-      font-family: "Comfortaa Variable";
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-      letter-spacing: -1px;
-    }
-
-  </style>
 </BaseLayout>

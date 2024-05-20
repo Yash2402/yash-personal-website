@@ -1,46 +1,30 @@
 ---
-import BaseLayout from "../layouts/baselayout.astro"
-import {blogLinks} from "../data/blogsLinks.ts"
+import { getCollection } from "astro:content";
 
-import BlogPostCard from "../components/BlogPostCard.astro";
+import BaseLayout from "../layouts/baselayout.astro";
+import BlogPostCard from "../components/blog/BlogPostCard.astro";
 
-import "@fontsource-variable/comfortaa";
-import "@fontsource-variable/playfair-display";
+const title = "blogs";
+const current = "blogs";
 
+const blogPosts = await getCollection("blogs");
 ---
-<BaseLayout title="blogs" current="blogs">
-    <h class="mb-[15px] text-[16px] text-LM-Title dark:text-DM-Title md:text-[20px] md:mb-[30px]"> BLOGS </h>
-    <p class="text-[16px] text-LM-Para dark:text-DM-Para md:text-[18px]">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet ab impedit 
-        ipsa, velit distinctio quod voluptatibus hic odit aliquam, expedita ad est laboriosam 
-        perferendis. Tempore eligendi obcaecati repellat facere recusandae doloribus quaerat 
-        ea maiores impedit totam possimus minima aliquam, repellendus modi nesciunt? Harum 
-        quisquam optio atque exercitationem fugiat veniam voluptate?
-    </p>
-    <div>
-      {
-      blogLinks.map((blogLink)=>
-      <ul>
-      <BlogPostCard title={blogLink.title} author={blogLink.author} pubDate={blogLink.pubDate} desc={blogLink.desc} url={blogLink.url} tags={blogLink.tags} />
-      </ul>
-    )
-    }
+
+<BaseLayout {title} {current}>
+    <div class="flex flex-col space-y-5 mb-5">
+        <h1 class="text-LM-Title dark:text-DM-Title uppercase text-[20px] font-title md:text-[25px] tracking-[-0.88px]">
+           Welcome to my Blogs
+        </h1>
+        <p class="md:w-10/12 text-LM-Para dark:text-DM-Para font-para text-[18px] font-normal">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
+            mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
+            fringilla, mattis ligula consectetur, ultrices mauris. Maecenas
+            vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor
+            ornare leo, non suscipit magna interdum eu. Curabitur pellentesque
+            nibh nibh, at maximus ante fermentum sit amet.
+        </p>
+    </div>
+    <div class="flex flex-col space-y-10 items-start mt-10">
+        {blogPosts.map((blogPost) => <BlogPostCard {blogPost} />)}
     </div>
 </BaseLayout>
-
-<style>
-    h {
-    text-align: center;
-    font-family: "Comfortaa Variable", system-ui;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -1px;
-  }
-  p {
-    width: auto;
-    font-family: "Playfair Display Variable";
-    font-weight: 100;
-    line-height: 135.292%; /* 33.823px */
-  }
-</style>

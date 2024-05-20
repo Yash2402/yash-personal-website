@@ -16,6 +16,7 @@
     "@fontsource-variable/advent-pro": "^5.0.23",
     "@fontsource-variable/comfortaa": "^5.0.20",
     "@fontsource-variable/noto-serif-georgian": "^5.0.20",
+    "@fontsource-variable/noto-serif-tibetan": "^5.0.13",
     "@fontsource-variable/playfair-display": "^5.0.25",
     "@fontsource/gilda-display": "^5.0.20",
     "@fontsource/ibm-plex-sans": "^5.0.20",
@@ -26,6 +27,7 @@
     "astro-icon": "^1.1.0",
     "astro-navbar": "^2.3.2",
     "astro-theme": "^0.0.7",
+    "frontmatter": "^0.0.3",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5"
   },
