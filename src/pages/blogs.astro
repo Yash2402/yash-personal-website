@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../layouts/baselayout.astro"
+import {blogLinks} from "../data/blogsLinks.ts"
+
+import BlogPostCard from "../components/BlogPostCard.astro";
+
+import "@fontsource-variable/comfortaa";
+import "@fontsource-variable/playfair-display";
+
+---
+<BaseLayout title="blogs" current="blogs">
+    <h class="mb-[15px] text-[16px] text-LM-Title dark:text-DM-Title md:text-[20px] md:mb-[30px]"> BLOGS </h>
+    <p class="text-[16px] text-LM-Para dark:text-DM-Para md:text-[18px]">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet ab impedit 
+        ipsa, velit distinctio quod voluptatibus hic odit aliquam, expedita ad est laboriosam 
+        perferendis. Tempore eligendi obcaecati repellat facere recusandae doloribus quaerat 
+        ea maiores impedit totam possimus minima aliquam, repellendus modi nesciunt? Harum 
+        quisquam optio atque exercitationem fugiat veniam voluptate?
+    </p>
+    <div>
+      {
+      blogLinks.map((blogLink)=>
+      <ul>
+      <BlogPostCard title={blogLink.title} author={blogLink.author} pubDate={blogLink.pubDate} desc={blogLink.desc} url={blogLink.url} tags={blogLink.tags} />
+      </ul>
+    )
+    }
+    </div>
+</BaseLayout>
+
+<style>
+    h {
+    text-align: center;
+    font-family: "Comfortaa Variable", system-ui;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1px;
+  }
+  p {
+    width: auto;
+    font-family: "Playfair Display Variable";
+    font-weight: 100;
+    line-height: 135.292%; /* 33.823px */
+  }
+</style>
