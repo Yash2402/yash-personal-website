@@ -30,7 +30,7 @@ export default {
     },
     fontFamily: {
 	    title:["IBM Plex Sans Hebrew", /*"ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"*/] ,
-		crumbs:"Comfortaa" ,
+		crumbs:["Comfortaa",],
 		para:["Playfair Display Variable", /*"ui-serif", "Georgia", "Cambria", "Times New Roman", "Times", "serif"*/]
 	},
 
