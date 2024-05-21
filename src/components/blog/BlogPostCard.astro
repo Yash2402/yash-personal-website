@@ -19,19 +19,19 @@ const month = pubDate.toLocaleString("default", { month: "short" });
 const year = pubDate.getFullYear();
 ---
 
-<div class="flex flex-col items-start dark:bg-[#33333340] bg-[#DDDDDD23] dark:border-DM-Title-Bar border-LM-Title-Bar border-4 fill-none rounded-2xl px-4 py-4">
-    <div class="flex flex-col space-y-2 sm:space-y-0 sm:flex-row sm:space-x-8 mb-1 items-start sm:items-center">
-        <h3 class="font-title text-xl font-medium text-LM-Title dark:text-DM-Title uppercase tracking-[-.02rem]">
+<div class="flex flex-col space-y-2 md:space-y-4 dark:bg-[#33333340] bg-[#DDDDDD23] dark:border-DM-Title-Bar border-LM-Title-Bar border-2 fill-none rounded-xl px-2 py-2 md:dark:bg-[#33333340] md:bg-[#DDDDDD23] md:dark:border-DM-Title-Bar md:border-LM-Title-Bar md:border-4 md:rounded-2xl md:px-4 md:py-2">
+    <div class="flex flex-col space-y-2 sm:space-y-0 md:flex-row md:space-x-8 mb-1 items-start md:items-center">
+        <h3 class="font-title text-[20px] md:text-[25px] font-medium text-LM-Title dark:text-DM-Title uppercase tracking-[-.05rem]">
             <a href={url} >{title}</a>
         </h3>
-        <ul class="flex flex-row space-x-0.5 font-sans text-sm tracking[-0.0175rem] pb-1 text-LM-Para dark:text-DM-Para">
+        <ul class="flex flex-col ml-2 sm:ml-0 sm:flex sm:flex-row sm:space-x-0.5 font-sans text-sm text-LM-Para dark:text-DM-Para">
             {tags.map((tag, idx) => (
                     <> <li> <a class="hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Selected" href="#" > {tag} </a> </li>
-                        {idx < tags.length - 1 && ( <Icon name="dot" size={20} class="text-LM-Nav-Unselected dark:text-DM-Nav-Selected"/> )}
+                        {idx < tags.length - 1 && ( <Icon name="dot" size={20} class="hidden-mobile text-LM-Nav-Unselected dark:text-DM-Nav-Selected"/> )}
                     </>  )) }
         </ul>
     </div>
-    <p class="mt-1 mb-2 font-para text-base text-LM-Para w-full lg:w-9/12 dark:text-DM-Para"> {description.toString()} </p>
+    <p class="font-para text-base text-LM-Para w-full lg:w-9/12 dark:text-DM-Para"> {description.toString()} </p>
     <div class="mt-2 flex flex-row items-center">
         <a class="font-title text-[14px] tracking-[-0.3px] font-normal text-LM-Nav-Unselected dark:text-DM-Nav-Selected hover:text-LM-Nav-Selected dark:hover:text-DM-Nav-Unselected" href="#"> {author} </a>
         <Icon name="dot" size={20} class="text-LM-Nav-Unselected dark:text-DM-Nav-Selected"/>
@@ -41,3 +41,11 @@ const year = pubDate.getFullYear();
         >
     </div>
 </div>
+
+<style>
+    @media (max-width: 640px) {
+    .hidden-mobile {
+      display: none;
+    }
+  }
+</style>

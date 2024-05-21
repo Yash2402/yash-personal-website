@@ -29,10 +29,10 @@ export default {
       "DM-Link": "#85CDE6",
     },
     fontFamily: {
-	    title:["IBM Plex Sans Hebrew", /*"ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"*/] ,
-		crumbs:["Comfortaa",],
-		para:["Playfair Display Variable", /*"ui-serif", "Georgia", "Cambria", "Times New Roman", "Times", "serif"*/]
-	},
+	    title:"IBM Plex Sans Hebrew", /*"ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"*/
+      crumbs:"Comfortaa",
+      para:"Playfair Display Variable", /*"ui-serif", "Georgia", "Cambria", "Times New Roman", "Times", "serif"*/
+    },
 
     //   sans: [
     //     "IBM Plex Sans Hebrew",

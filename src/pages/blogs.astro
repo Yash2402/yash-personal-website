@@ -15,7 +15,7 @@ const blogPosts = await getCollection("blogs");
         <h1 class="text-LM-Title dark:text-DM-Title uppercase text-[20px] font-title md:text-[25px] tracking-[-0.88px]">
            Welcome to my Blogs
         </h1>
-        <p class="md:w-10/12 text-LM-Para dark:text-DM-Para font-para text-[18px] font-normal">
+        <p class="md:w-10/12 text-LM-Para dark:text-DM-Para font-para text-[16px] md:text-[18px] font-normal">
             Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
             mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
             fringilla, mattis ligula consectetur, ultrices mauris. Maecenas
@@ -24,7 +24,7 @@ const blogPosts = await getCollection("blogs");
             nibh nibh, at maximus ante fermentum sit amet.
         </p>
     </div>
-    <div class="flex flex-col space-y-10 items-start mt-10">
+    <div class="flex flex-col space-y-8 items-start mt-5">
         {blogPosts.map((blogPost) => <BlogPostCard {blogPost} />)}
     </div>
 </BaseLayout>
