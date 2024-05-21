@@ -15,15 +15,14 @@ interface NavProps {
 const { current } = Astro.props as NavProps;
 ---
 
-<header class="flex flex-row itmes-center justify-between bg-LM-Title-Bar dark:bg-DM-Title-Bar px-6 py-4 mx-5 rounded-[15px] md:flex md:flex-row md:items-center md:justify-between md:px-7 md:py-5 md:rounded-[20px] md:mx-20">
-  <a href="/"><Image src={yash} alt="Personal Logo" height={65} width={100} /></a>
+<header class="flex flex-row itmes-center justify-between bg-LM-Title-Bar dark:bg-DM-Title-Bar px-6 py-4 mx-5 rounded-[15px] md:flex md:flex-row md:items-center md:justify-between md:px-5 md:py-3 md:rounded-[20px] md:mx-20">
+  <a class="w-[90px] md:w-[95px] xl:w-[100px]" href="/"><Image src={yash} alt="Personal Logo"/></a>
   <div class="hidden md:flex md:flex-row md:items-center md:space-x-7 xl:flex xl:flex-row xl:items-center xl:space-x-11">
     { navLinks.map((navLink) => ( <li class="list-none"> <a class:list={[
-      navLink.title === current
-          ? "text-LM-Nav-Selected dark:text-DM-Nav-Selected"
-          : "text-LM-Nav-Unselected dark:text-DM-Nav-Unselected",
+      navLink.title === current ? "text-LM-Nav-Selected dark:text-DM-Nav-Selected" : "text-LM-Nav-Unselected dark:text-DM-Nav-Unselected",
       "hover:text-LM-Nav-Selected dark:hover:text-DM-Nav-Selected",
-  ]} href={navLink.href}> {navLink.title} </a> </li> )) }
+      "font-title text-[18px]"
+    ]} href={navLink.href}> {navLink.title} </a> </li> )) }
     <ThemeIcon isMobile={true} key={0} />
   </div>
   <div class="flex flex-row items-center space-x-6 md:hidden">
@@ -35,8 +34,6 @@ const { current } = Astro.props as NavProps;
 
 <style>
   li a {
-    font-family: "IBM Plex Sans Hebrew";
-    font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;

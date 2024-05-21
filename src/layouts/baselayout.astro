@@ -25,7 +25,7 @@ const { title, current} = Astro.props as BaseLayoutProps;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-LM-Background dark:bg-DM-Background max-w-[1650px] flex flex-col m-auto mt-6 md:mt-11">
+  <body class="bg-LM-Background dark:bg-DM-Background max-w-[1500px] flex flex-col m-auto mt-6 md:mt-11">
       <Nav {current} />
       <main class="flex flex-col items-start mx-8 mt-6 md:mx-[120px] md:my-8">
         <h1 class="mb-[15px] font-crumbs uppercase font-semibold tracking-[-1px] text-[16px] text-LM-Title dark:text-DM-Title md:text-[20px] md:mb-[30px]">{current}</h1>
