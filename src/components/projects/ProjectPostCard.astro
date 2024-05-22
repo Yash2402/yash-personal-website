@@ -9,7 +9,7 @@ interface Props {
 
 const { projectPost } = Astro.props as Props;
 
-const { title, inspirations, description, banner, pubDate } = projectPost.data;
+const { title, description, pubDate } = projectPost.data;
 
 const url = `/projects/${projectPost.slug}/`;
 

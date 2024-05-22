@@ -6,7 +6,7 @@ description: This project represents my initial step into the world of artificia
     inspiration from educational resources like 3Blue1Brown and Samson Zhang's
     YouTube channels, I embarked on this journey to delve deeper into AI.
 
-inspirations: [
+resources: [
     {url: https://github.com/Yash2402, name: 3Blue1Brown},
     {url: https://youtube.com/3Blue1Brown, name: google},
 ]

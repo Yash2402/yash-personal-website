@@ -17,7 +17,7 @@ const projectCollection = defineCollection({
         pubDate: z.date(),
         description: z.string(),
         banner: z.object({ url: image(), alt: z.string() }).optional(),
-        inspirations: z.array(z.object({ url: z.string(), name: z.string() })).optional(),
+        resources: z.array(z.object({ url: z.string(), name: z.string() })).optional(),
     })
 })
 
