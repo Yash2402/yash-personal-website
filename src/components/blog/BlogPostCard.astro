@@ -24,10 +24,10 @@ const year = pubDate.getFullYear();
         <h3 class="font-title text-[20px] md:text-[25px] font-medium text-LM-Title dark:text-DM-Title tracking-[-.05rem]">
             <a href={url} >{title}</a>
         </h3>
-        <ul class="grid grid-cols-auto grid-rows-2 grid-flow-col sm:ml-0 sm:flex sm:flex-row sm:space-x-0.5 font-sans text-sm text-LM-Para dark:text-DM-Para">
+        <ul class="md:ml-0 md:flex md:flex-row md:space-x-0.5 font-sans text-sm text-LM-Para dark:text-DM-Para">
             {tags.map((tag, idx) => (
                     <> <li> <a class="hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Selected mr-4" href="#" > {tag} </a> </li>
-                        {idx < tags.length - 1 && ( <Icon name="dot" size={20} class="hidden-mobile text-LM-Nav-Unselected dark:text-DM-Nav-Selected"/> )}
+                        {idx < tags.length - 1 && ( <Icon name="dot" size={20} class="hidden md:block text-LM-Nav-Unselected dark:text-DM-Nav-Selected"/> )}
                     </>  )) }
         </ul>
     </div>
@@ -41,11 +41,3 @@ const year = pubDate.getFullYear();
         >
     </div>
 </div>
-
-<style>
-    @media (max-width: 640px) {
-    .hidden-mobile {
-      display: none;
-    }
-  }
-</style>

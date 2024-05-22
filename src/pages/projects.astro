@@ -3,11 +3,13 @@ import { getCollection } from "astro:content";
 
 import BaseLayout from "../layouts/baselayout.astro";
 import ProjectPostCard from "../components/projects/ProjectPostCard.astro";
+import type { Crumb } from "../utils/types";
 
+const breadcrumbs: Array<Crumb> = [{ title: "PROJECTS", href: "/projects/" }];
 const projectPosts = await getCollection("projects");
 ---
 
-<BaseLayout title="projects"  current="projects">
+<BaseLayout title="projects"  current="projects" {breadcrumbs}>
   <div class="flex flex-col space-y-5 mb-5">
     <h1 class="text-LM-Title dark:text-DM-Title uppercase text-[20px] font-title md:text-[25px] tracking-[-0.88px]">
        Welcome to my Projects

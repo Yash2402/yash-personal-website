@@ -4,13 +4,16 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/baselayout.astro";
 import BlogPostCard from "../components/blog/BlogPostCard.astro";
 
+import type { Crumb } from "../utils/types";
+
 const title = "blogs";
 const current = "blogs";
+const breadcrumbs: Array<Crumb> = [{ title: "BLOGS", href: "/blogs/" }];
 
 const blogPosts = await getCollection("blogs");
 ---
 
-<BaseLayout {title} {current}>
+<BaseLayout {title} {current} breadcrumbs={breadcrumbs}>
     <div class="flex flex-col space-y-5 mb-5">
         <h1 class="text-LM-Title dark:text-DM-Title uppercase text-[20px] font-title md:text-[25px] tracking-[-0.88px]">
            Welcome to my Blogs

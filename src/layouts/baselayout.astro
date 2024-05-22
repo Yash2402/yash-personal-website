@@ -1,20 +1,23 @@
 ---
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import ThemeManager from "../components/ThemeManager.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import type { Crumb } from "../utils/types";
 
 import "@fontsource-variable/comfortaa";
 import "@fontsource-variable/playfair-display";
 import "@fontsource/ibm-plex-sans-hebrew";
+
 import { ViewTransitions } from "astro:transitions";
-import ThemeManager from "../components/ThemeManager.astro";
 
 interface BaseLayoutProps {
   title?: string;
   current: string;
-  icon: string;
+  breadcrumbs: Crumb[];
 }
 
-const { title, current} = Astro.props as BaseLayoutProps;
+const { title, current, breadcrumbs } = Astro.props as BaseLayoutProps;
 
 ---
 
@@ -32,28 +35,10 @@ const { title, current} = Astro.props as BaseLayoutProps;
   <body class="bg-LM-Background dark:bg-DM-Background max-w-[1500px] flex flex-col m-auto mt-6 md:mt-11">
       <Nav {current} />
       <main class="flex flex-col items-start mx-8 mt-6 md:mx-[120px] md:my-8">
-        <h1 class="mb-[15px] font-crumbs uppercase font-semibold tracking-[-1px] text-[16px] text-LM-Title dark:text-DM-Title md:text-[20px] md:mb-[30px]">{current}</h1>
+        <!-- <h1 class="mb-[15px] font-crumbs uppercase font-semibold tracking-[-1px] text-[16px] text-LM-Title dark:text-DM-Title md:text-[20px] md:mb-[30px]">{current}</h1> -->
+        <Breadcrumbs {breadcrumbs} />
         <slot />
       </main>
-      <!-- <script is:inline>
-        const theme = (() => {
-          if (
-            typeof localStorage !== "undefined" &&
-            localStorage.getItem("theme")
-          ) {
-            return localStorage.theme;
-          } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            return "dark";
-          } else {
-            return "light";
-          }
-        })();
-        document.addEventListener("astro:after-swap", () =>{
-          // if (theme === "dark"){document.documentElement.classList.toggle("dark", theme === "dark");}
-          // else {document.documentElement.classList.toggle("light", theme === "light");}
-        localStorage.setItem("theme", theme);
-        });
-      </script> -->
     <Footer />
   </body>
 </html>

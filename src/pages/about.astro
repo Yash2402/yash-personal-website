@@ -1,11 +1,14 @@
 ---
 import { Image } from "astro:assets";
+
 import yashsharma from "../imgs/yashsharma.png";
 import BaseLayout from "../layouts/baselayout.astro";
-import "@fontsource-variable/comfortaa";
-import "@fontsource-variable/playfair-display";
+
+import type { Crumb } from "../utils/types";
+
+const breadcrumbs: Array<Crumb> = [{ title: "ABOUT", href: "/about/" }];
 ---
-<BaseLayout title="about" current="about">
+<BaseLayout title="about" current="about" breadcrumbs={breadcrumbs}>
   <div class="flex flex-col items-center justify-between space-y-5 mb-7 xl:flex xl:flex-row xl:items-center xl:w-full xl:justify-between">
     <div class="space-y-2 md:space-y-4 text-[14px] md:text-[16px] text-LM-Para font-para dark:text-DM-Para xl:w-[800px]">
       <p>

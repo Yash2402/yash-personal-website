@@ -3,11 +3,11 @@ import BaseLayout from "../baselayout.astro";
 import Prose from "../../components/Prose.astro"
 
 import { Icon } from "astro-icon/components";
-import { Image } from "astro:assets";
 
 import "@fontsource-variable/jetbrains-mono";
 
 import type { CollectionEntry } from "astro:content";
+import type { Crumb } from "../../utils/types";
 
 interface Props {
   frontmatter: CollectionEntry<"blogs">;
@@ -25,49 +25,12 @@ const fullYear = pubDate.getFullYear();
 
 const pageTitle = `blogs / ${title}`;
 const current = "blogs";
+const breadcrumbs: Array<Crumb> = [
+    { title: "BLOGS", href: "/blogs/" },
+    { title: title, href: `/blogs/${slug}/` },
+]
 ---
-
-<!-- https://docs.astro.build/en/guides/markdown-content/ -->
-<!-- <BaseLayout title={pageTitle} {current}>
-  <div class="flex flex-row space-x-8 full md:px-32">
-    <div class="flex flex-col">
-      <div class="flex flex-col items-start space-y-6 mb-24">
-        {
-          banner && (
-            <Image
-              class="w-full mb-10"
-              src={banner.url}
-              alt={banner.alt}
-            />
-        )
-        }
-        <h1 class="font-title text-[36px] text-LM-Title dark:text-DM-Title font-[400] tracking-[-0.8px]"> {title} </h1>
-        <div class="flex flex-col space-y-5 items-start">
-
-          <p class="font-sans text-[18px] font-normal tracking-[-0.8px] text-LM-Para dark:text-DM-Para">
-            {`${weekDay}, ${date} ${month} ${fullYear}`}
-          </p>
-          <p class="font-title text-[16px] font-normal tracking-[-0.2px] text-LM-Para dark:text-DM-Para" > {description} </p>
-
-          <ul class="flex flex-row space-x-0.25 font-sans text-[14px] pb-1 tracking[-0.4px] text-LM-Para dark:text-DM-Para">
-            { tags.map((tag, idx) => (
-                <>
-                  <li>
-                    <a class="hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Selected" href="#"> {tag} </a>
-                  </li>
-                  {idx < tags.length - 1 && ( <Icon name="dot" size={20} class="text-LM-Nav-Unselected dark:text-DM-Nav-Unselected"/> )}
-                </>
-              )) }
-          </ul>
-        </div>
-      </div>
-      <Prose>
-        <slot />
-      </Prose>
-    </div>
-  </div>
-</BaseLayout> -->
-<BaseLayout title={pageTitle} {current}>
+<BaseLayout title={pageTitle} {current} {breadcrumbs}>
   <div class="flex flex-col md:space-y-20 space-y-12 w-full xl:px-24">
     <div class="flex flex-col items-start">   
       <h1 class="font-title md:text-[36px] text-[27px] text-LM-Title dark:text-DM-Title font-[400] tracking-[-0.8px]"> {title} </h1>

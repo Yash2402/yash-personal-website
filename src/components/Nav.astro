@@ -1,22 +1,25 @@
 ---
 import { Image } from "astro:assets";
 import { navLinks } from "../data/navLinks";
+import type { Crumb } from "../utils/types";
 
 import yash from "../imgs/yash.svg";
 import LM_Menu from "../imgs/LM_menu.svg";
 import DM_Menu from "../imgs/DM_menu.svg";
 import ThemeIcon from "./ThemeToggle.astro";
 
+
 import "@fontsource/ibm-plex-sans-hebrew";
 
 interface NavProps {
   current: string;
+  breadcrumbs: Crumb[];
 }
-const { current } = Astro.props as NavProps;
+const { current, breadcrumbs } = Astro.props as NavProps;
 ---
 
 <header class="flex flex-row itmes-center justify-between bg-LM-Title-Bar dark:bg-DM-Title-Bar px-4 py-3 mx-5 rounded-[15px] md:flex md:flex-row md:items-center md:justify-between md:px-5 md:py-3 md:rounded-[20px] md:mx-20">
-  <a class="w-[75px] md:w-[95px] xl:w-[100px]" href="/"><Image src={yash} alt="Personal Logo"/></a>
+  <a class="w-[75px] md:w-[95px]" href="/"><Image src={yash} alt="Personal Logo"/></a>
   <div class="hidden md:flex md:flex-row md:items-center md:space-x-7 xl:flex xl:flex-row xl:items-center xl:space-x-11">
     { navLinks.map((navLink) => ( <li class="list-none"> <a class:list={[
       navLink.title === current ? "text-LM-Nav-Selected dark:text-DM-Nav-Selected" : "text-LM-Nav-Unselected dark:text-DM-Nav-Unselected",
