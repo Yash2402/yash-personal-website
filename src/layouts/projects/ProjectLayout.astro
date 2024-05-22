@@ -2,62 +2,57 @@
 import BaseLayout from "../baselayout.astro";
 import Prose from "../../components/Prose.astro"
 
-import { Icon } from "astro-icon/components";
-import { Image } from "astro:assets";
-
 import "@fontsource-variable/jetbrains-mono";
 
 import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 
 interface Props {
-  frontmatter: CollectionEntry<"blogs">;
+  frontmatter: CollectionEntry<"projects">;
   slug: string;
 }
 
 const { frontmatter, slug } = Astro.props as Props;
 
-const { title, tags, description, author, banner, pubDate } = frontmatter.data;
+const { title, pubDate, description, banner, inspirations } = frontmatter.data;
 
 const weekDay = pubDate.toLocaleDateString("default", { weekday: "short" });
 const date = `${pubDate.getDate() < 10 ? "0" : ""}${pubDate.getDate().toString().slice(-2)}`;
 const month = pubDate.toLocaleString("default", { month: "short" });
 const fullYear = pubDate.getFullYear();
 
-const pageTitle = `blogs / ${title}`;
-const current = "blogs";
+const pageTitle = `projects / ${title}`;
+const current = "projects";
 ---
 
 <!-- https://docs.astro.build/en/guides/markdown-content/ -->
 <BaseLayout title={pageTitle} {current}>
   <div class="flex flex-row space-x-8 full md:px-32">
     <div class="flex flex-col">
-      <div class="flex flex-col items-start space-y-6 mb-24">
+      <div class="flex flex-col items-start space-y-6 mb-24">   
         {
-          banner && (
-            <Image
-              class="w-full mb-10"
-              src={banner.url}
-              alt={banner.alt}
-            />
-        )
-        }
+            banner && (
+                <Image src={banner.url} alt={banner.alt} />
+            )
+        }     
         <h1 class="font-title text-[36px] text-LM-Title dark:text-DM-Title font-[400] tracking-[-0.8px]"> {title} </h1>
         <div class="flex flex-col space-y-5 items-start">
 
           <p class="font-sans text-[18px] font-normal tracking-[-0.8px] text-LM-Para dark:text-DM-Para">
-            {`${weekDay}, ${date} ${month} ${pubDate.getFullYear()}`}
+            {`${weekDay}, ${date} ${month} ${fullYear}`}
           </p>
           <p class="font-title text-[16px] font-normal tracking-[-0.2px] text-LM-Para dark:text-DM-Para" > {description} </p>
 
-          <ul class="flex flex-row space-x-0.25 font-sans text-[14px] pb-1 tracking[-0.4px] text-LM-Para dark:text-DM-Para">
-            { tags.map((tag, idx) => (
-                <>
+          <ul class="flex flex-row space-x-3 items-center font-sans text-[14px] tracking[-0.4px] text-LM-Para dark:text-DM-Para">
+            { inspirations && (inspirations.map((inspiration, idx) => (
+                <> 
                   <li>
-                    <a class="hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Selected" href="#"> {tag} </a>
+                    <a class="hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Selected" href={inspiration.url}> {inspiration.name} </a>
                   </li>
-                  {idx < tags.length - 1 && ( <Icon name="dot" size={20} class="text-LM-Nav-Unselected dark:text-DM-Nav-Unselected"/> )}
+                  {idx < inspirations.length - 1 && ( <Icon name="dot" size={20} class="text-LM-Nav-Unselected dark:text-DM-Nav-Selected"/> )}
                 </>
-              )) }
+              ))) }
           </ul>
         </div>
       </div>

@@ -11,7 +11,7 @@ interface ProjecProps {
 const { title, date, desc } = Astro.props as ProjecProps;
 ---
 
-<project class="flex flex-col space-y-2 md:space-y-4 dark:bg-[#33333340] bg-[#DDDDDD23] dark:border-DM-Title-Bar border-LM-Title-Bar border-2 fill-none rounded-xl px-2 py-1 md:dark:bg-[#33333340] md:bg-[#DDDDDD23] md:dark:border-DM-Title-Bar md:border-LM-Title-Bar md:border-4 md:rounded-2xl md:px-4 md:py-2">
+<project class="flex flex-col space-y-2 md:space-y-4 dark:bg-[#33333340] bg-[#DDDDDD23] dark:border-DM-Title-Bar border-LM-Title-Bar border-2 rounded-xl px-2 py-1 md:dark:bg-[#33333340] md:bg-[#DDDDDD23] md:dark:border-DM-Title-Bar md:border-LM-Title-Bar md:border-4 md:rounded-2xl md:px-4 md:py-2">
   <h1 class="font-title text-[20px] md:text-[25px] font-medium text-LM-Title dark:text-DM-Title tracking-[-.05rem]">
     {title} <span class="text-LM-Para dark:text-DM-Para align-middle font-sans text-[14px] md:text-[18px]"> • {date}</span>
   </h1>

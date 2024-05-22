@@ -24,7 +24,7 @@ export default {
       "DM-Nav-Selected": "#89E1FF",
       "DM-Nav-Hover": "#0086B7",
       "DM-Title": "#FFFFFF",
-      "DM-Para": "#E4E4E4",
+      "DM-Para": "#c4c4c4",
       "DM-Title-Bar": "#262626",
       "DM-Link": "#85CDE6",
     },
@@ -71,5 +71,9 @@ export default {
       },
     },
   },
-  darkMode: "class",
+  plugins: [
+    require('@tailwindcss/typography'),
+     // ...
+   ],
+   darkMode: ['selector', '[data-theme="dark"]'],
 };

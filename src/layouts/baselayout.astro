@@ -5,6 +5,8 @@ import Footer from "../components/Footer.astro";
 import "@fontsource-variable/comfortaa";
 import "@fontsource-variable/playfair-display";
 import "@fontsource/ibm-plex-sans-hebrew";
+import { ViewTransitions } from "astro:transitions";
+import ThemeManager from "../components/ThemeManager.astro";
 
 interface BaseLayoutProps {
   title?: string;
@@ -24,6 +26,8 @@ const { title, current} = Astro.props as BaseLayoutProps;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ThemeManager/>
+    <ViewTransitions/>
   </head>
   <body class="bg-LM-Background dark:bg-DM-Background max-w-[1500px] flex flex-col m-auto mt-6 md:mt-11">
       <Nav {current} />
@@ -31,7 +35,7 @@ const { title, current} = Astro.props as BaseLayoutProps;
         <h1 class="mb-[15px] font-crumbs uppercase font-semibold tracking-[-1px] text-[16px] text-LM-Title dark:text-DM-Title md:text-[20px] md:mb-[30px]">{current}</h1>
         <slot />
       </main>
-      <script is:inline>
+      <!-- <script is:inline>
         const theme = (() => {
           if (
             typeof localStorage !== "undefined" &&
@@ -44,10 +48,12 @@ const { title, current} = Astro.props as BaseLayoutProps;
             return "light";
           }
         })();
-
-        document.documentElement.classList.toggle("dark", theme === "dark");
+        document.addEventListener("astro:after-swap", () =>{
+          // if (theme === "dark"){document.documentElement.classList.toggle("dark", theme === "dark");}
+          // else {document.documentElement.classList.toggle("light", theme === "light");}
         localStorage.setItem("theme", theme);
-      </script>
+        });
+      </script> -->
     <Footer />
   </body>
 </html>

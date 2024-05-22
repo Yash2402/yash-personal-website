@@ -23,12 +23,12 @@ const { current } = Astro.props as NavProps;
       "hover:text-LM-Nav-Selected dark:hover:text-DM-Nav-Selected",
       "font-title text-[18px]"
     ]} href={navLink.href}> {navLink.title} </a> </li> )) }
-    <ThemeIcon isMobile={true} key={0} />
+    <ThemeIcon/>
   </div>
   <div class="flex flex-row items-center space-x-6 md:hidden">
-    <ThemeIcon isMobile={false} key={1} />
+    <ThemeIcon/>
     <Image class="dark:hidden h-[17px]" src={LM_Menu} alt="Menu"/> 
-    <Image class="dark:h-[17px] hidden" src={DM_Menu} alt="Menu"/>
+    <Image class="dark:block dark:h-[17px] hidden" src={DM_Menu} alt="Menu"/>
   </div>
 </header>
 
