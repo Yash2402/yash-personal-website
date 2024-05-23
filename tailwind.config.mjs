@@ -9,6 +9,7 @@ export default {
       // Light Mode
       "LM-Theme-Toggler": "#000000",
       "LM-Background": "#EEEEEE",
+      "LM-Secondary": "#dadada",
       "LM-Nav-Unselected": "#67A0B5",
       "LM-Nav-Selected": "#416572",
       "LM-Nav-Hover": "#007099",
@@ -20,6 +21,7 @@ export default {
       // Dark Mode
       "DM-Theme-Toggler": "#ffffff",
       "DM-Background": "#1B1B1B",
+      "DM-Secondary": "#303030",
       "DM-Nav-Unselected": "#6DAAC0",
       "DM-Nav-Selected": "#89E1FF",
       "DM-Nav-Hover": "#0086B7",
@@ -29,9 +31,10 @@ export default {
       "DM-Link": "#85CDE6",
     },
     fontFamily: {
-	    title:'IBM Plex Sans Hebrew', /*"ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"*/
-      crumbs:'Comfortaa Variable',
-      para:'Playfair Display Variable', /*"ui-serif", "Georgia", "Cambria", "Times New Roman", "Times", "serif"*/
+	    "title":'IBM Plex Sans Hebrew', /*"ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"*/
+      "crumbs":'Comfortaa Variable',
+      "para":"Newsreader Variable",
+      "home":'Playfair Display Variable', /*"ui-serif", "Georgia", "Cambria", "Times New Roman", "Times", "serif"*/
     },
 
     //   sans: [

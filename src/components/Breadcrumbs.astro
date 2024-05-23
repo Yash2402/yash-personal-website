@@ -10,7 +10,7 @@ const { breadcrumbs } = Astro.props as Props;
 ---
 
 <div
-  class="breadcrumbs breadcrumbs-container mb-[15px] font-crumbs uppercase font-semibold tracking-[-0.8px] text-[13px] text-LM-Title dark:text-DM-Title md:text-[20px] md:mb-[30px]"
+  class="breadcrumbs breadcrumbs-container mb-[15px] font-crumbs uppercase font-semibold tracking-[-0.8px] text-[13px] text-LM-Title dark:text-DM-Title md:text-[16px] md:mb-[30px]"
 >
   <ol class="flex flex-row space-x-1 items-center font-sans">
     {
@@ -34,7 +34,7 @@ const { breadcrumbs } = Astro.props as Props;
               </a>
             </li>
             {idx < breadcrumbs.length - 1 && (
-              <p class="font-mono text-LM-Title dark:text-DM-Title h-full pb-0.5">></p>
+              <p class="font-mono text-LM-Nav-Unselected dark:text-DM-Nav-Selected h-full">></p>
             )}
           </>
         ))

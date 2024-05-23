@@ -14,7 +14,7 @@ const projectPosts = await getCollection("projects");
     <h1 class="text-LM-Title dark:text-DM-Title uppercase text-[20px] font-title md:text-[25px] tracking-[-0.88px]">
        Welcome to my Projects
     </h1>
-    <p class=" text-LM-Para dark:text-DM-Para font-para lg:w-10/12 text-[16px] md:text-[18px] font-normal">
+    <p class=" text-LM-Para dark:text-DM-Para font-para lg:w-10/12 text-[16px] md:text-[19px] font-normal">
         Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
         mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
         fringilla, mattis ligula consectetur, ultrices mauris. Maecenas
@@ -27,33 +27,4 @@ const projectPosts = await getCollection("projects");
   <div class="flex flex-col space-y-8 items-start mt-5">
         {projectPosts.map((projectPost) => <ProjectPostCard {projectPost} />)}
   </div>
-  <!-- <main class="flex flex-col space-y-4 md:space-y-8 mt-5">
-    <Project title="Handwritten Digit Recognition AI" date="JAN 2024" desc="This project represents my initial step into the world of artificial\
-    intelligence and machine learning. It showcases my foundational\
-    understanding of neural networks, gradient descent, and essential\
-    mathematical concepts like linear algebra, differentials, etc. Drawing\
-    inspiration from educational resources like 3Blue1Brown and Samson Zhang's\
-    YouTube channels, I embarked on this journey to delve deeper into AI."/>
-    
-    <Project title="Spring Simulation" date="AUG 2023" desc="As a passionate enthusiast of physics and simulations, I undertook a\
-    project during my 12th-grade to delve into the intricacies of\
-    physics-based simulations. The objective was to develop a realistic cloth\
-    simulation using fundamental physics principles, particularly focusing on\
-    the behaviour of springs. I was not that focused on the code quality; I\
-    will fix this in the future and optimize it. I will make this project in\
-    C++ using the SDL or Raylib libraries too."/>
-
-    <Project title="Ray Casting" date="SEP 2023" desc="This project was also fun. I developed it in 12th grade using Python's\
-    Pygame library. It involves casting rays to generate a 3D scene from a 2D\
-    map, inspired by a video on ray casting by The Coding Train YouTube\
-    channel. This project not only enhanced my understanding of computer\
-    graphics and ray casting algorithms but also allowed me to apply\
-    mathematical concepts in a creative way. It provided a solid foundation\
-    and sparked my interest in exploring ray tracing."/>
-
-    <Project title="Title" date="JAN 2022" desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. \
-    Sint quaerat dolorem qui amet nostrum odit maxime debitis laboriosam quae dolorum ipsam ea \
-    voluptates excepturi, aliquid minus ex architecto quia cum!"/>
-
-  </main> -->
 </BaseLayout>

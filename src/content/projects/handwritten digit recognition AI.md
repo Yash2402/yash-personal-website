@@ -8,16 +8,12 @@ description: This project represents my initial step into the world of artificia
 
 resources: [
     {url: https://youtube.com/3Blue1Brown, name: 3Blue1Brown},
-    {url: /404/ , name: Samson Zhang}
+    {url: https://www.youtube.com/@SamsonZhangTheSalmon, name: Samson Zhang}
 ]
 ---
-# Basic Neural Network on MNIST Dataset
-
-This repository contains a basic implementation of a neural network trained on the MNIST dataset using Python and Numpy (without TensorFlow).
-
 ## Overview
-
-The MNIST dataset is a classic benchmark dataset in the field of machine learning and computer vision. It consists of 28x28 grayscale images of handwritten digits (0-9). The task is to classify these images into their respective digit classes.
+This project is a basic implementation of a neural network trained on the MNIST dataset using Python and Numpy (without TensorFlow).
+The MNIST dataset is a classic benchmark dataset in the field of machine learning and computer vision. It consists of 28x28 grayscale images of handwritten digits (0-9). The task is to classify these images into their respective digit classes. 
 In this implementation, a simple feedforward neural network is used to classify the images. The architecture of the neural network is as follows:
 
 - Input layer: 784 neurons (28x28 pixels flattened)
@@ -37,7 +33,6 @@ pip3 install -r requirements.txt
 ## Usage
 
 1. Clone this repository:
-
 ```bash
 git clone https://github.com/Yash2402/neural-network.git
 ```

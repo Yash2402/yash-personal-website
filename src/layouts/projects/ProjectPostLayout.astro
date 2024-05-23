@@ -31,27 +31,27 @@ const breadcrumbs: Array<Crumb> = [
 
 <!-- https://docs.astro.build/en/guides/markdown-content/ -->
 <BaseLayout title={pageTitle} {current} {breadcrumbs}>
-    <div class="flex flex-col md:space-y-24 space-y-12 w-full xl:px-28">
+    <div class="flex flex-col md:space-y-10 space-y-6 w-full xl:px-12">
       <div class="flex flex-col items-start">   
-        <h1 class="font-title md:text-[36px] text-[27px] text-LM-Title dark:text-DM-Title font-[400] tracking-[-0.8px]"> {title} </h1>
+        <h1 class="font-title md:text-[36px] text-[27px] text-LM-Title dark:text-DM-Title font-[400] tracking-[-0.8px ]"> {title} </h1>
         <div class="flex flex-col space-y-5 items-start">
-          <p class="font-sans md:text-[16px] text-[14px] mt-3 font-normal tracking-[-0.8px] text-LM-Para dark:text-DM-Para">
+          <p class="font-sans md:text-[16px] text-[14px] mt-3 font-normal tracking-[-0.2px] text-LM-Para dark:text-DM-Para">
             {`${weekDay}, ${date} ${month} ${fullYear}`}
           </p>
-          <p class="font-para md:text-[18px] text-[16px] flex w-full md:w-auto font-normal tracking-[-0.2px] text-LM-Para dark:text-DM-Para" > {description} </p>
-          <ul class="flex flex-col space-y-1 items-start md:space-y-0 md:flex md:flex-row md:space-x-1 md:items-center font-sans md:text-[14px] text-[14px] tracking[-0.4px] text-LM-Para dark:text-DM-Para">
+          <p class="font-para md:text-[19px] text-[16px] flex w-full md:w-auto font-normal tracking-[-0.2px] text-LM-Para dark:text-DM-Para" > {description} </p>
+          <ul class="flex flex-col space-y-1 items-start md:space-y-0 md:flex md:flex-row md:space-x-1 md:items-center font-title text-[14px] tracking[-0.4px] text-LM-Para dark:text-DM-Para">
             { resources && (resources.map((resource, idx) => (
                 <> 
                   <li>
                     <a class="hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Selected" href={resource.url}> {resource.name} </a>
                   </li>
                   {idx < resources.length -1 && (<p class="hidden md:block"> | </p>)}
-                  {/* {idx < resources.length - 1 && ( <Icon name="dot" size={20} class="hidden md:block md:text-LM-Nav-Unselected md:dark:text-DM-Nav-Selected"/> )}  */}
                 </>
               ))) }
           </ul>
         </div>
       </div>
+      <hr class="border-LM-Secondary dark:border-DM-Secondary border-[1px]" />
       <Prose>
         <slot />
       </Prose>
