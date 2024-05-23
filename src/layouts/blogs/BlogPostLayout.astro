@@ -7,7 +7,7 @@ import { Icon } from "astro-icon/components";
 import "@fontsource-variable/jetbrains-mono";
 
 import type { CollectionEntry } from "astro:content";
-import type { Crumb } from "../../utils/types";
+import type { Crumb } from "../../utils/types.ts";
 
 interface Props {
   frontmatter: CollectionEntry<"blogs">;
@@ -31,14 +31,14 @@ const breadcrumbs: Array<Crumb> = [
 ]
 ---
 <BaseLayout title={pageTitle} {current} {breadcrumbs}>
-  <div class="flex flex-col md:space-y-20 space-y-12 w-full xl:px-24">
+  <div class="flex flex-col md:space-y-20 space-y-12 w-full xl:px-20">
     <div class="flex flex-col items-start">   
       <h1 class="font-title md:text-[36px] text-[27px] text-LM-Title dark:text-DM-Title font-[400] tracking-[-0.8px]"> {title} </h1>
       <div class="flex flex-col space-y-5 items-start">
         <p class="font-sans md:text-[16px] text-[14px] mt-3 font-normal tracking-[-0.8px] text-LM-Para dark:text-DM-Para">
           {`${weekDay}, ${date} ${month} ${fullYear}`}
         </p>
-        <p class="font-sans md:text-[18px] text-[16px] flex w-full md:w-auto font-normal tracking-[-0.2px] text-LM-Para dark:text-DM-Para" > {description} </p>
+        <p class="font-para md:text-[18px] text-[16px] flex w-full md:w-auto font-normal tracking-[-0.2px] text-LM-Para dark:text-DM-Para" > {description} </p>
         <ul class="flex flex-row space-x-0 items-start md:space-y-0 md:flex md:flex-row md:space-x-1 md:items-center font-sans md:text-[14px] text-[14px] tracking[-0.4px] text-LM-Para dark:text-DM-Para">
           { tags.map((tag, idx) => (
             <>

@@ -5,8 +5,7 @@ import Prose from "../../components/Prose.astro"
 import "@fontsource-variable/jetbrains-mono";
 
 import type { CollectionEntry } from "astro:content";
-import { Icon } from "astro-icon/components";
-import type { Crumb } from "../../utils/types";
+import type { Crumb } from "../../utils/types.ts";
 
 interface Props {
   frontmatter: CollectionEntry<"projects">;
@@ -32,7 +31,7 @@ const breadcrumbs: Array<Crumb> = [
 
 <!-- https://docs.astro.build/en/guides/markdown-content/ -->
 <BaseLayout title={pageTitle} {current} {breadcrumbs}>
-    <div class="flex flex-col md:space-y-24 space-y-12 w-full xl:px-24">
+    <div class="flex flex-col md:space-y-24 space-y-12 w-full xl:px-28">
       <div class="flex flex-col items-start">   
         <h1 class="font-title md:text-[36px] text-[27px] text-LM-Title dark:text-DM-Title font-[400] tracking-[-0.8px]"> {title} </h1>
         <div class="flex flex-col space-y-5 items-start">
