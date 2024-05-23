@@ -1,7 +1,7 @@
 export const breadcrumbsTitles = {
-    "blog": "BLOG",
-    "garden": "GARDEN",
-    "lit": "LITERATURE",
+    "blogs": "BLOGS",
     "projects": "PROJECTS",
+    "about": "ABOUT",
+    "renders": "RENDERS",
     // TBD
 }
