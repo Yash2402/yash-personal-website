@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../../../layouts/baselayout.astro";
+import { getCollection } from "astro:content";
+import BlogPostCard from "../../../components/blog/BlogPostCard.astro";
+import type { Crumb } from "../../../utils/types";
+
+export async function getStaticPaths() {
+    const allPosts = await getCollection("blogs");
+
+    const uniqueTags = [...new Set(allPosts.map((post) => post.data.tags).flat()),];
+
+    return uniqueTags.map((tag) => {
+        const filteredPosts = allPosts.filter((post) =>
+            post.data.tags.includes(tag),
+        );
+        return {
+            params: { tag },
+            props: { posts: filteredPosts },
+        };
+    });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+
+const title = "yash / blogs / tags";
+const current = "blogs";
+const breadcrumbs: Array<Crumb> = [
+    { title: "BLOGS", href: "/blogs/" },
+    { title: `TAG`, href: `/blogs/tags/` },
+]
+---
+<BaseLayout {title} {current} {breadcrumbs}>
+    <div class="flex flex-col space-y-12">
+        <h1 class="text-LM-Title dark:text-DM-Title font-title text-[25px] uppercase tracking-[-0.015rem] font-medium">
+            Posts tagged with <em class="text-LM-Para dark:text-DM-Para">{tag}</em>
+        </h1>
+        {
+            posts.sort((a, b) => b.data.postNo - a.data.postNo).map((post) => <BlogPostCard blogPost={post} />)
+        }
+    </div>
+</BaseLayout>
