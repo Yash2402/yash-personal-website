@@ -28,10 +28,44 @@ const { current } = Astro.props as NavProps;
   </div>
   <div class="flex flex-row items-center space-x-6 md:hidden">
     <ThemeIcon/>
-    <Image class="dark:hidden h-[14px]" src={LM_Menu} alt="Menu"/> 
-    <Image class="dark:block dark:h-[14px] hidden" src={DM_Menu} alt="Menu"/>
+    <div class="relative inline-block">
+      <div>
+        <button type="button" class="w-full justify-center" id="menu-button" aria-expanded="true" aria-haspopup="true">
+          <Image class="dark:hidden h-[14px]" src={LM_Menu} alt="Menu"/> 
+          <Image class="dark:block dark:h-[14px] hidden" src={DM_Menu} alt="Menu"/>
+        </button>
+      </div>
+      <div class="dropdown-menu absolute right-[-12px] z-10 mt-5 w-52 rounded-md bg-LM-Title-Bar dark:bg-DM-Title-Bar shadow-2xl border border-LM-Secondary dark:border-DM-Secondary focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+        <div class="flex flex-col justify-center items-center my-10 space-y-10" role="none">
+            { navLinks.map((navLink) => ( <li class="list-none"> <a class:list={[
+              navLink.title === current ? "text-LM-Nav-Selected dark:text-DM-Nav-Selected" : "text-LM-Nav-Unselected dark:text-DM-Nav-Unselected",
+              "hover:text-LM-Nav-Selected dark:hover:text-DM-Nav-Selected",
+              "font-title text-[18px]"
+            ]} href={navLink.href}> {navLink.title} </a> </li> )) }
+        </div>
+      </div>
+    </div>
   </div>
 </header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const menuButton = document.getElementById("menu-button");
+    const dropdownMenu = document.querySelector(".dropdown-menu");
+
+    // Toggle dropdown menu visibility when the button is clicked
+    menuButton && menuButton.addEventListener("click", function() {
+      (dropdownMenu && dropdownMenu.classList.toggle("hidden"));
+    });
+
+    // Close dropdown menu when clicking outside of it
+    document.addEventListener("click", function(event) {
+      if (!(menuButton && menuButton.contains(event)) && !(dropdownMenu && dropdownMenu.contains(event))) {
+        (dropdownMenu && dropdownMenu.classList.add("hidden"));
+      }
+    });
+  });
+</script>
 
 <style>
   li a {

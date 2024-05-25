@@ -15,7 +15,7 @@ export default {
       "LM-Nav-Hover": "#007099",
       "LM-Title": "#000000",
       "LM-Para": "#585858",
-      "LM-Title-Bar": "#D9D9D950",
+      "LM-Title-Bar": "#E7E7E7",
       "LM-Link": "#0B7DA5",
 
       // Dark Mode
