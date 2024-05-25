@@ -76,7 +76,7 @@ export default {
   },
   plugins: [
     require('@tailwindcss/typography'),
-     // ...
+    require('flowbite/plugin'),
    ],
    darkMode: ['selector', '[data-theme="dark"]'],
 };

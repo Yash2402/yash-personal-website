@@ -3,14 +3,16 @@ import BaseLayout from "../layouts/baselayout.astro";
 import "@fontsource-variable/playfair-display";
 
 import { Image } from "astro:assets";
-import home_img from "../imgs/home_image.png";
-import leftSlider from "../imgs/left_slider.svg";
-import rightSlider from "../imgs/right_slider.svg";
+import home_img0 from "../imgs/home/home_image.png";
+import home_img1 from "../imgs/home/home_image2.png";
+import home_img2 from "../imgs/home/home_image3.png";
+
+import { Icon } from "astro-icon/components";
 
 ---
 
 <BaseLayout title="yash sharma's homepage">
-  <div class="flex flex-col font-home items-between space-y-8 md:w-full xl:space-y-0 xl:flex xl:flex-row xl:w-full xl:justify-between xl:items-center">
+  <div class="flex flex-col font-home items-between space-y-8 sm:flex sm:flex-col md:w-full xl:space-y-0 xl:flex xl:flex-row xl:w-full xl:justify-between xl:items-center">
     <p class="text-[33px] font-[400] tracking-[-0.8px] text-LM-Title dark:text-DM-Title xl:text-[38px] left">
           Hey, I am <br />
           Yash Sharma
@@ -19,40 +21,78 @@ import rightSlider from "../imgs/right_slider.svg";
     </p>
   </div>
   <div class="md:flex md:flex-row md:my-[55px] md:w-full">
-    <button>
-      <Image
-        class="hidden-mobile"
-        src={leftSlider}
-        height={50}
-        width={50}
-        alt="Display img slider"
+  <div id="default-carousel" class="relative w-full" data-carousel="slide">
+    <!-- Carousel wrapper -->
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+         <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <Image src={home_img0} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <Image src={home_img1} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 3 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <Image src={home_img2} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+    </div>
+    <!-- Slider indicators -->
+    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+    </div>
+    <!-- Slider controls -->
+    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+            <Icon
+              name="left"
+              size={50}
+              class="hidden-mobile bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-full motion-safe:hover:scale-110 transform-gpu transition ease-in-out"
+            />
+            <span class="sr-only">Previous</span>
+        </span>
+    </button>
+    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+            <Icon
+              name="right"
+              size={50}
+              class="hidden-mobile bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-full motion-safe:hover:scale-110 transform-gpu transition ease-in-out"
+            />
+            <span class="sr-only">Next</span>
+        </span>
+    </button>
+</div>
+
+    <!-- Carousel -->
+    <!-- <button>
+      <Icon
+        name="left"
+        size={50}
+        class="hidden-mobile bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-full motion-safe:hover:scale-110 transform-gpu transition ease-in-out"
       />
     </button>
-        <!-- mobile display img -->
-    <Image
-      class="md:hidden"
-      src={home_img}
-      height={800}
-      width={800}
-      alt="Display Item Mobile"
-    />
-    <!-- desktop display img -->
     <div class="hidden-mobile md:mx-5 md:w-full md:flex md:justify-center md:bg-LM-Title-Bar dark:bg-DM-Title-Bar md:rounded-[16px] md:px-[10px] md:py-[10px] md:shadow-xl">
       <div class="md:w-full md:flex md:justify-center md:bg-[#000000] md:rounded-[8px]">
-        <Image src={home_img} height={330} width={300} alt="Display Item" />
+        <Image src={home_img} height={400} width={350} alt="Display Item" />
       </div>
     </div>
     <button>
-      <Image
-        class="hidden-mobile"
-        src={rightSlider}
-        height={50}
-        width={50}
-        alt="Display img slider"
+      <Icon
+        name="right"
+        size={50}
+        class="hidden-mobile bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-full motion-safe:hover:scale-110 transform-gpu transition ease-in-out"
       />
-    </button>
-    <!-- <Carousel images={images} /> -->
-  </div>
+    </button> -->
+    <!-- mobile display img -->
+    <!-- <Image
+      class="md:hidden"
+      src={home_img}
+      height={1050}
+      width={1050}
+      alt="Display Item Mobile"
+    />
+  </div> -->
 </BaseLayout>
 
 <style>

@@ -43,7 +43,7 @@ const breadcrumbs: Array<Crumb> = [
           { tags.map((tag, idx) => (
             <>
               <li>
-                <a class="hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Selected" href={`/blog/tags/${tag}/`}> {tag} </a>
+                <a class="hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Selected" href={`/blogs/tags/${tag}/`}> {tag} </a>
               </li>
               {idx < tags.length - 1 && ( <Icon name="dot" size={20} class="text-LM-Nav-Unselected dark:text-DM-Nav-Selected"/> )}
             </>
