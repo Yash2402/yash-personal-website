@@ -35,7 +35,7 @@ const { current } = Astro.props as NavProps;
           <Image class="dark:block dark:h-[14px] hidden" src={DM_Menu} alt="Menu"/>
         </button>
       </div>
-      <div class="dropdown-menu absolute right-[-12px] z-10 mt-5 w-52 rounded-md bg-LM-Title-Bar dark:bg-DM-Title-Bar shadow-2xl border border-LM-Secondary dark:border-DM-Secondary focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+      <div id="dropdown-menu" class="hidden absolute right-[-12px] z-10 mt-5 w-52 rounded-md bg-LM-Title-Bar dark:bg-DM-Title-Bar shadow-2xl border border-LM-Secondary dark:border-DM-Secondary focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
         <div class="flex flex-col justify-center items-center my-10 space-y-10" role="none">
             { navLinks.map((navLink) => ( <li class="list-none"> <a class:list={[
               navLink.title === current ? "text-LM-Nav-Selected dark:text-DM-Nav-Selected" : "text-LM-Nav-Unselected dark:text-DM-Nav-Unselected",
@@ -49,22 +49,65 @@ const { current } = Astro.props as NavProps;
 </header>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const menuButton = document.getElementById("menu-button");
-    const dropdownMenu = document.querySelector(".dropdown-menu");
+  document.addEventListener("DOMContentLoaded", initialize);
 
-    // Toggle dropdown menu visibility when the button is clicked
-    menuButton && menuButton.addEventListener("click", function() {
-      (dropdownMenu && dropdownMenu.classList.toggle("hidden"));
-    });
+  function initialize() {
+      setupMenuButton();
 
-    // Close dropdown menu when clicking outside of it
-    // document.addEventListener("click", function(event) {
-    //   if (!(menuButton && menuButton.contains(event)) && !(dropdownMenu && dropdownMenu.contains(event))) {
-    //     (dropdownMenu && dropdownMenu.classList.add("hidden"));
-    //   }
-    // });
-  });
+      // Use MutationObserver to detect changes in the DOM
+      const observer = new MutationObserver((mutations) => {
+          for (const mutation of mutations) {
+              if (mutation.type === 'childList') {
+                  // Re-setup the buttons whenever DOM changes
+                  setupMenuButton();
+              }
+          }
+      });
+
+      // Start observing the document body for changes
+      observer.observe(document.body, { childList: true, subtree: true });
+
+      // Clean-up on window unload
+      window.addEventListener("beforeunload", () => {
+          observer.disconnect();
+      });
+
+      // Reinitialize on page show (fires on navigation to new pages)
+      window.addEventListener("pageshow", setupMenuButton);
+
+      // Reinitialize on history navigation (back/forward)
+      window.addEventListener("popstate", setupMenuButton);
+  }
+
+  function setupMenuButton() {
+      const menuButton = document.getElementById("menu-button");
+      const dropdownMenu = document.getElementById("dropdown-menu");
+
+      if (!menuButton || !dropdownMenu) {
+          return;
+      }
+
+      // Clean up previous event listeners if they exist
+      menuButton.removeEventListener("click", handleMenuButtonClick);
+      document.removeEventListener("click", handleDocumentClick);
+
+      // Add new event listeners
+      menuButton.addEventListener("click", handleMenuButtonClick);
+      document.addEventListener("click", handleDocumentClick);
+
+      function handleMenuButtonClick() {
+          dropdownMenu?.classList.toggle("hidden");
+      }
+
+      function handleDocumentClick(event: MouseEvent) {
+          const target = event.target as Node;
+          if (!menuButton?.contains(target) && !dropdownMenu?.contains(target)) {
+              dropdownMenu?.classList.add("hidden");
+          }
+      }
+  }
+
+
 </script>
 
 <style>
