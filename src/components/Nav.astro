@@ -49,65 +49,46 @@ const { current } = Astro.props as NavProps;
 </header>
 
 <script>
-  document.addEventListener("DOMContentLoaded", initialize);
+document.addEventListener("DOMContentLoaded", function() {
+    let menuButton = document.getElementById("menu-button");
+    let dropdownMenu = document.getElementById("dropdown-menu");
 
-  function initialize() {
-      setupMenuButton();
+    // Function to handle menu button click
+    function handleMenuButtonClick() {
+        dropdownMenu?.classList.toggle("hidden");
+    }
 
-      // Use MutationObserver to detect changes in the DOM
-      const observer = new MutationObserver((mutations) => {
-          for (const mutation of mutations) {
-              if (mutation.type === 'childList') {
-                  // Re-setup the buttons whenever DOM changes
-                  setupMenuButton();
-              }
-          }
-      });
+    // Function to handle document click
+    function handleDocumentClick(event: MouseEvent) {
+        const target = event.target as Node;
+        if (!menuButton?.contains(target) && !dropdownMenu?.contains(target)) {
+            dropdownMenu?.classList.add("hidden");
+        }
+    }
 
-      // Start observing the document body for changes
-      observer.observe(document.body, { childList: true, subtree: true });
+    // Add event listeners
+    menuButton?.addEventListener("click", handleMenuButtonClick);
+    document.addEventListener("click", handleDocumentClick);
 
-      // Clean-up on window unload
-      window.addEventListener("beforeunload", () => {
-          observer.disconnect();
-      });
+    // Function to reinitialize elements and event listeners if DOM changes
+    function reinitialize() {
+        // Remove old event listeners
+        menuButton?.removeEventListener("click", handleMenuButtonClick);
+        document.removeEventListener("click", handleDocumentClick);
 
-      // Reinitialize on page show (fires on navigation to new pages)
-      window.addEventListener("pageshow", setupMenuButton);
+        // Reassign elements
+        menuButton = document.getElementById("menu-button");
+        dropdownMenu = document.getElementById("dropdown-menu");
 
-      // Reinitialize on history navigation (back/forward)
-      window.addEventListener("popstate", setupMenuButton);
-  }
+        // Add event listeners again
+        menuButton?.addEventListener("click", handleMenuButtonClick);
+        document.addEventListener("click", handleDocumentClick);
+    }
 
-  function setupMenuButton() {
-      const menuButton = document.getElementById("menu-button");
-      const dropdownMenu = document.getElementById("dropdown-menu");
-
-      if (!menuButton || !dropdownMenu) {
-          return;
-      }
-
-      // Clean up previous event listeners if they exist
-      menuButton.removeEventListener("click", handleMenuButtonClick);
-      document.removeEventListener("click", handleDocumentClick);
-
-      // Add new event listeners
-      menuButton.addEventListener("click", handleMenuButtonClick);
-      document.addEventListener("click", handleDocumentClick);
-
-      function handleMenuButtonClick() {
-          dropdownMenu?.classList.toggle("hidden");
-      }
-
-      function handleDocumentClick(event: MouseEvent) {
-          const target = event.target as Node;
-          if (!menuButton?.contains(target) && !dropdownMenu?.contains(target)) {
-              dropdownMenu?.classList.add("hidden");
-          }
-      }
-  }
-
-
+    // Example of reinitializing after a hypothetical navigation change
+    // This can be replaced with your actual navigation or page change handler
+    window.addEventListener("popstate", reinitialize); // Example for history navigation
+});
 </script>
 
 <style>
