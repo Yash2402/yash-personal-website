@@ -84,8 +84,8 @@ const { current } = Astro.props as NavProps;
 
       // Clean up previous event listeners if they exist
       if (menuButton) {
-          menuButton.removeEventListener("click", handleMenuButtonClick);
-          menuButton.addEventListener("click", handleMenuButtonClick);
+          menuButton.removeEventListener("touchend", handleMenuButtonClick);
+          menuButton.addEventListener("touchend", handleMenuButtonClick);
       }
 
       if (document) {
