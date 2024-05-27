@@ -1,0 +1,81 @@
+---
+const siteData = {
+    siteUrl: "https://yashs.vercel.app/", // Always put "/" at the end of the URL
+    author: "yashsharma",
+    desc: "A personal website which serves as a place for my interaction with the with. I write blogs about tech, life, astronomy and mathematics.",
+    title: "yash sharma's website",
+    ogImage: "favicon.ico",
+    keywords:
+        "Personal website, landing page, developer, home, astronomy, blogs, technology, mathematics",
+    // postPerPage: 3
+};
+
+interface HeadProps {
+    title?: string;
+    description?: string;
+    author?: string;
+    keywords?: string;
+    url?: string;
+    twitterhandle?: string;
+    image?: string;
+}
+
+const {
+    title,
+    description,
+    author = siteData.author,
+    keywords,
+    url,
+    twitterhandle,
+    image,
+} = Astro.props as HeadProps;
+
+const siteTitle = title ?? siteData.title;
+const metaDescription = description ? description : siteData.desc;
+const metaKeywords = keywords ? keywords : siteData.keywords;
+const siteURL = url ?? siteData.siteUrl;
+const twitterHandle = twitterhandle ?? "yashxsharma24";
+const imagePreview = image ?? `${siteURL}${siteData.ogImage}`;
+// const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Canonical URL -->
+<!-- <link rel="canonical" href={canonicalURL} />
+<meta name="twitte:card" content="summary_large_image" />
+<meta name="twitter:creator" content={twitterHandle} />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={imagePreview} /> -->
+
+<!-- Open Graph / Facebook -->
+<meta property="og:url" content={siteURL} />
+<meta property="og:image" content={imagePreview} />
+<meta property="og:site_name" content={siteURL} />
+<meta property="og:title" content={siteTitle} />
+<meta property="og:description" content={metaDescription} />
+
+<!-- Primary Meta Tags -->
+<title>{siteTitle}</title>
+<meta name="title" content={siteTitle} />
+<meta name="description" content={description} />
+<meta name="generator" content={Astro.generator} />
+<meta name="keywords" content={metaKeywords} />
+<meta name="author" content={author} />
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<!-- Umami site analytics --> 
+<script is:inline defer src="https://cloud.umami.is/script.js" data-website-id="750725f9-02ae-4ca2-a93d-698d3303ffcd"></script>
+
+
+<!-- Theme Meta Tags -->
+<meta name="robots" content="index" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
