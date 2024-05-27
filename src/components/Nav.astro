@@ -8,6 +8,8 @@ import DM_Menu from "../imgs/DM_menu.svg";
 import ThemeIcon from "./ThemeToggle.astro";
 
 import "@fontsource/ibm-plex-sans-hebrew";
+import MobileNavLinks from "./MobileNavLinks.astro";
+import { Icon } from "astro-icon/components";
 
 interface NavProps {
   current: string;
@@ -15,96 +17,45 @@ interface NavProps {
 
 const { current } = Astro.props as NavProps;
 ---
-
-<header class="flex flex-row itmes-center justify-between bg-LM-Title-Bar dark:bg-DM-Title-Bar px-4 py-3 mx-5 rounded-[15px] md:flex md:flex-row md:items-center md:justify-between md:px-5 md:py-3 md:rounded-[20px] md:mx-20">
-  <a class="w-[75px] md:w-[95px]" href="/"><Image src={yash} alt="Personal Logo"/></a>
-  <div class="hidden md:flex md:flex-row md:items-center md:space-x-7 xl:flex xl:flex-row xl:items-center xl:space-x-11">
-    { navLinks.map((navLink) => ( <li class="list-none"> <a class:list={[
-      navLink.title === current ? "text-LM-Nav-Selected dark:text-DM-Nav-Selected" : "text-LM-Nav-Unselected dark:text-DM-Nav-Unselected",
-      "hover:text-LM-Nav-Selected dark:hover:text-DM-Nav-Selected",
-      "font-title text-[18px]"
-    ]} href={navLink.href}> {navLink.title} </a> </li> )) }
-    <ThemeIcon/>
-  </div>
-  <div class="flex flex-row items-center space-x-6 md:hidden">
-    <ThemeIcon/>
-    <div class="relative inline-block">
-      <div>
-        <button type="button" class="w-full mt-1.5 justify-center" id="menu-button" aria-expanded="true" aria-haspopup="true">
-          <Image class="dark:hidden h-[14px]" src={LM_Menu} alt="Menu"/> 
-          <Image class="dark:block dark:h-[14px] hidden" src={DM_Menu} alt="Menu"/>
-        </button>
-      </div>
-      <div id="dropdown-menu" class="hidden absolute right-[-12px] z-10 mt-5 w-52 rounded-md bg-LM-Title-Bar dark:bg-DM-Title-Bar shadow-2xl border border-LM-Secondary dark:border-DM-Secondary focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-        <div class="flex flex-col justify-center items-center my-10 space-y-10" role="none">
-            { navLinks.map((navLink) => ( <li class="list-none"> <a class:list={[
-              navLink.title === current ? "text-LM-Nav-Selected dark:text-DM-Nav-Selected" : "text-LM-Nav-Unselected dark:text-DM-Nav-Unselected",
-              "hover:text-LM-Nav-Selected dark:hover:text-DM-Nav-Selected",
-              "font-title text-[18px]"
-            ]} href={navLink.href}> {navLink.title} </a> </li> )) }
-        </div>
-      </div>
+<header>
+  
+  <nav class="hidden bg-LM-Title-Bar dark:bg-DM-Title-Bar px-4 py-3 mx-5 rounded-xl md:flex md:flex-row md:items-center md:justify-between md:px-5 md:py-3 md:rounded-[20px] md:mx-20">
+    <a class="w-[75px] md:w-[95px]" href="/"><Image src={yash} alt="Personal Logo"/></a>
+    <div class="hidden md:flex md:flex-row md:items-center md:space-x-7 xl:flex xl:flex-row xl:items-center xl:space-x-11">
+      { navLinks.map((navLink) => ( <li class="list-none"> <a class:list={[
+        navLink.title === current ? "text-LM-Nav-Selected dark:text-DM-Nav-Selected" : "text-LM-Nav-Unselected dark:text-DM-Nav-Unselected",
+        "hover:text-LM-Nav-Selected dark:hover:text-DM-Nav-Selected",
+        "font-title text-[18px]"
+      ]} href={navLink.href}> {navLink.title} </a> </li> )) }
+      <ThemeIcon/>
     </div>
-  </div>
+  </nav>
+  <nav class="md:hidden nav-bar flex flex-row itmes-center justify-between bg-LM-Title-Bar dark:bg-DM-Title-Bar px-[19px] py-3 mx-5 rounded-xl">
+    <a class="w-[75px] md:w-[95px]" href="/"><Image src={yash} alt="Personal Logo"/></a>
+    <div class="flex flex-row justify-between items-center space-x-[20px]">
+      <ThemeIcon/>
+      <!-- vanilla JS tuto https://www.freecodecamp.org/news/how-to-build-a-responsive-navbar-with-a-toggle-menu-using-flexbox-3438e1d08783/ -->
+      <button
+        class="flex flex-row justify-between items-center text-LM-Nav-Unselected hover:text-LM-Nav-Selected"
+        id="mob-nav-expand"><Icon name="menuIcon" size={25} class="text-LM-Secondary dark:text-DM-Secondary"/>
+      </button>
+      
+    </div>
+  </nav>
+  <nav class="mob-nav-expanded hidden sm:hidden">
+    <MobileNavLinks current={current} />
+  </nav>
 </header>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-      // Initial setup of the buttons
-      setupMenuButton();
-      
-      // Use MutationObserver to detect changes in the DOM
-      const observer = new MutationObserver((mutations) => {
-          mutations.forEach((mutation) => {
-              if (mutation.type === 'childList') {
-                  // Re-setup the buttons whenever DOM changes
-                  setupMenuButton();
-              }
-          });
-      });
-
-      // Start observing the document body for changes
-      observer.observe(document.body, { childList: true, subtree: true });
-
-      // Clean-up on window unload
-      window.addEventListener("beforeunload", () => {
-          observer.disconnect();
-      });
-
-      // Reinitialize on page show (fires on navigation to new pages)
-      window.addEventListener("pageshow", setupMenuButton);
-
-      // Reinitialize on history navigation (back/forward)
-      window.addEventListener("popstate", setupMenuButton);
+  // hide everything except for the new nav compoenent on clicking more
+  document.getElementById("mob-nav-expand")?.addEventListener("click", () => {
+  document.querySelector("main")?.classList.toggle("hidden");
+  document.querySelector(".mob-footer")?.classList.toggle("hidden");
+  document.querySelector(".nav-bar")?.classList.toggle("hidden");
+  document.querySelector(".mob-nav-compact")?.classList.toggle("hidden");
+  document.querySelector(".mob-nav-expanded")?.classList.toggle("hidden");
   });
-
-  function setupMenuButton() {
-      const menuButton = document.getElementById("menu-button");
-      const dropdownMenu = document.getElementById("dropdown-menu");
-
-      // Clean up previous event listeners if they exist
-      if (menuButton) {
-          menuButton.removeEventListener("touchend", handleMenuButtonClick);
-          menuButton.addEventListener("touchend", handleMenuButtonClick);
-      }
-
-      if (document) {
-          document.removeEventListener("click", handleDocumentClick);
-          document.addEventListener("click", handleDocumentClick);
-      }
-
-      function handleMenuButtonClick() {
-          dropdownMenu?.classList.toggle("hidden");
-      }
-
-      function handleDocumentClick(event: MouseEvent) {
-          const target = event.target as Node;
-          if (menuButton && dropdownMenu && !menuButton.contains(target) && !dropdownMenu.contains(target)) {
-              dropdownMenu.classList.add("hidden");
-          }
-      }
-}
-
 </script>
 
 <style>

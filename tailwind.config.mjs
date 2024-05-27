@@ -4,9 +4,10 @@ export default {
   theme: {
     colors: {
       // Common
-      Logo: "#0B7DA5",
+      
 
       // Light Mode
+      "LM-Logo": "#0B7DA5",
       "LM-Theme-Toggler": "#000000",
       "LM-Background": "#EEEEEE",
       "LM-Secondary": "#dadada",
@@ -19,6 +20,7 @@ export default {
       "LM-Link": "#0B7DA5",
 
       // Dark Mode
+      "DM-Logo": "#6DAAC0",
       "DM-Theme-Toggler": "#ffffff",
       "DM-Background": "#1B1B1B",
       "DM-Secondary": "#303030",

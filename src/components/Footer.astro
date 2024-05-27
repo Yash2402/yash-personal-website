@@ -5,13 +5,13 @@ import yash from "../imgs/yash.svg";
 import { footerLinks } from "../data/footerLinks.ts";
 ---
 
-<footer class="w-full">
+<footer id="mob-footer" class="w-full">
   <!-- <hr class="invisible md:visible md:bg-[#e0e0e0] md:mx-[90px] xl:visible xl:bg-[#e0e0e0]"></hr> -->
   <hr class="border-LM-Secondary dark:border-DM-Secondary border-[1px] invisible md:visible md:mx-[90px]" />
     <nav class="hidden md:mx-[100px] md:flex md:flex-row md:items-center md:justify-between md:my-5 xl:mx-[100px] xl:my-5 xl:flex xl:flex-row xl:items-center xl:justify-between">
         <div class="hidden md:flex md:flex-col md:items-start md:justify-between md:space-y-2 xl:flex xl:flex-row xl:items-center xl:justify-between xl:space-x-2 xl:space-y-0">
           <a href="/"> <Image src={yash} alt="Personal Logo" height={50} width={50} /> </a>
-          <p class="font-title tracking-[-1px] font-[100] md:text-[16px] xl:text-[18px] text-LM-Title dark:text-DM-Title">designed and developed by <span class="md:text-[16px] xl:text-[18px] text-LM-Nav-Unselected dark:text-DM-Nav-Unselected">Yash Sharma</span></p>
+          <p class="font-para xl:pt-1 tracking-[-0.4px] font-[300] md:text-[16px] xl:text-[18px] text-LM-Title dark:text-DM-Title">Designed and developed by <span class="text-LM-Logo dark:text-DM-Logo">Yash Sharma</span></p>
         </div>
           <div class="flex flex-row items-center justify-between space-x-4 xl:flex xl:flex-row xl:items-center xl:justify-between xl:space-x-5"> { footerLinks.map( (footerLink) => ( <li class="list-none"> <a class="text-LM-Title hover:text-LM-Para dark:text-DM-Title dark:hover:text-DM-Para text-[16px] md:text-[18px] xl:text-[18px]" href={footerLink.href}> {footerLink.title} </a> </li> ) ) } </div>
     </nav>

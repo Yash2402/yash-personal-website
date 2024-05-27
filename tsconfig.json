@@ -1,3 +1,8 @@
 {
+    "compilerOptions": {
+      "target": "es6",
+      "lib": ["dom", "es6"],
+      "strict": true
+    },
   "extends": "astro/tsconfigs/strict"
 }

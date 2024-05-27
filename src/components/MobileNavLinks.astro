@@ -1,0 +1,59 @@
+---
+import { Icon } from "astro-icon/components";
+import { navLinks } from "../data/navLinks";
+
+interface Props {
+    current: string;
+}
+const { current } = Astro.props as Props;
+---
+
+<div class="mx-5 bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-xl py-4 h-[700px]">
+    <div class="flex flex-col items-center space-y-3 h-full pt-[2px]">
+        <button id="mob-nav-collapse" class="items-">
+            <Icon name="x" class="text-LM-Secondary dark:text-DM-Secondary" size={30}>
+        </button>
+        <ul class="text-LM-Nav-Unselected dark:text-DM-Nav-Unselected flex flex-col items-center justify-center space-y-10 h-full w-full">
+            { navLinks.map((navLink) => (
+                <li>
+                    <a
+                        class:list={[
+                            navLink.title === current
+                                ? "text-LM-Nav-Selected dark:text-DM-Nav-Selected"
+                                : "",
+                            "hover:text-LM-Nav-Selected dark:hover:text-DM-Nav-Selected",
+                            "font-title text-[25px]"
+                        ]}
+                        href={navLink.href}>
+                        {navLink.title}
+                    </a>
+                </li>
+            )) }
+        </ul>
+    </div>
+</div>
+<script>
+    // show everything on clicking x
+    document
+        .getElementById("mob-nav-collapse")
+        ?.addEventListener("click", () => {
+            document.querySelector("main")?.classList.toggle("hidden");
+            document.querySelector(".mob-footer")?.classList.toggle("hidden");
+            document.querySelector(".nav-bar")?.classList.toggle("hidden");
+            document.querySelector(".mob-nav-compact")?.classList.toggle("hidden");
+            document.querySelector(".mob-nav-expanded")?.classList.toggle("hidden");
+        });
+</script>
+<style>  
+    hr {
+        display: block;
+        border-style: inset;
+        opacity: 0.36;
+    }
+    li a {
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: -0.02rem;
+    }
+</style>
