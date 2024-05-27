@@ -3,6 +3,7 @@ import BaseLayout from "../baselayout.astro";
 import Prose from "../../components/Prose.astro"
 
 import { Icon } from "astro-icon/components";
+import Image from "astro/components/Image.astro";
 
 import "@fontsource-variable/jetbrains-mono";
 
@@ -33,6 +34,16 @@ const breadcrumbs: Array<Crumb> = [
 <BaseLayout title={pageTitle} {current} {breadcrumbs}>
   <div class="flex flex-col md:space-y-10 space-y-6 w-full xl:px-12">
     <div class="flex flex-col items-start">   
+      {
+        banner && (
+          <div class="mb-10 bg-[#000000] rounded-2xl shadow-xl w-full flex justify-center">
+            <Image
+                class="rounded-2xl"
+                src={banner.url}
+                alt={banner.alt}
+            /></div>
+        )
+    }
       <h1 class="font-title md:text-[36px] text-[27px] text-LM-Title dark:text-DM-Title font-[400] tracking-[-0.8px]"> {title} </h1>
       <div class="flex flex-col space-y-5 items-start">
         <p class="font-sans md:text-[16px] text-[14px] mt-3 font-normal tracking-[-0.2px] text-LM-Para dark:text-DM-Para">
@@ -51,9 +62,17 @@ const breadcrumbs: Array<Crumb> = [
         </ul>
       </div>
     </div>
-    <hr class="border-LM-Secondary dark:border-DM-Secondary border-[1px]" />
+    <hr class="border-LM-Secondary dark:border-DM-Secondary" />
     <Prose>
       <slot />
     </Prose>
   </div>
 </BaseLayout>
+<style>
+    hr {
+    display: block;
+    border-width: 1px;
+    opacity: 0.36;
+    border-radius: 2px;
+  }
+</style>

@@ -21,11 +21,11 @@ const breadcrumbs: Array<Crumb> = [
         >
             All Tags
         </h1>
-        <ul class="font-title text-lg text-Logo dark:text-DM-Text font-medium">
+        <ul class="font-title text-lg text-LM-Title dark:text-DM-Title font-medium">
             {
                 tags.map((tag) => (
-                    <li class="my-1">
-                        <a class="text-LM-Nav-Unselected dark:text-DM-Nav-Selected hover:text-Logo hover:underline" href={`/blogs/tags/${tag}/`}> {tag} </a>
+                    <li>
+                        <a class="text-LM-Nav-Unselected dark:text-DM-Nav-Selected hover:text-LM-Logo dark:text-DM-Logo hover:underline" href={`/blogs/tags/${tag}/`}> {tag} </a>
                     </li>
                 ))
             }

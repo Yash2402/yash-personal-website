@@ -51,9 +51,17 @@ const breadcrumbs: Array<Crumb> = [
           </ul>
         </div>
       </div>
-      <hr class="border-LM-Secondary dark:border-DM-Secondary border-[1px]" />
+      <hr class="border-LM-Secondary dark:border-DM-Secondary" />
       <Prose>
         <slot />
       </Prose>
     </div>
 </BaseLayout>
+<style>
+  hr {
+  display: block;
+  border-width: 1px;
+  opacity: 0.36;
+  border-radius: 2px;
+}
+</style>

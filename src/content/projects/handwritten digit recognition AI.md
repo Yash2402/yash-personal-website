@@ -1,11 +1,7 @@
 ---
-title: Handwritten Digit Recognition AI
+title: "Handwritten Digit Recognition AI"
 pubDate: 2024-01-24
-description: This project represents my initial step into the world of artificial intelligence and machine learning. It showcases my foundational understanding of neural networks, gradient descent, and essential
-    mathematical concepts like linear algebra, differentials, etc. Drawing
-    inspiration from educational resources like 3Blue1Brown and Samson Zhang's
-    YouTube channels, I embarked on this journey to delve deeper into AI.
-
+description: "This is a basic project on a neural network trained on the MNIST dataset using Python, Numpy and Matplotlib. This neural network can predict digits with 95% accuracy (when trained with 3000 max iterations and 0.5 learning rate)."
 resources: [
     {url: https://youtube.com/3Blue1Brown, name: 3Blue1Brown},
     {url: https://www.youtube.com/@SamsonZhangTheSalmon, name: Samson Zhang}

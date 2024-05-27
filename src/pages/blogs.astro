@@ -27,7 +27,7 @@ const blogPosts = await getCollection("blogs");
             nibh nibh, at maximus ante fermentum sit amet.
         </p>
     </div>
-    <div class="flex flex-col space-y-8 items-start mt-5">
+    <div class="flex flex-col space-y-8 items-start mt-5 w-full">
         {
             blogPosts.sort((a, b) => b.data.postNo - a.data.postNo).map((blogPost) => <BlogPostCard {blogPost} />)
         }

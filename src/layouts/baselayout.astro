@@ -27,16 +27,17 @@ const { title, current, breadcrumbs } = Astro.props as BaseLayoutProps;
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href={current === "404" ? "/404.svg" : "/y.svg"}/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    
     <title>{title}</title>
+    <ViewTransitions/>
     <ThemeManager/>
-    <!-- <ViewTransitions/> -->
   </head>
   <body class="bg-LM-Background dark:bg-DM-Background max-w-[1500px] flex flex-col m-auto mt-6 md:mt-11">
       <Nav {current} />
       <main class="flex flex-col items-start mx-8 mt-6 md:mx-[120px] md:my-8">
-        <!-- <h1 class="mb-[15px] font-crumbs uppercase font-semibold tracking-[-1px] text-[16px] text-LM-Title dark:text-DM-Title md:text-[20px] md:mb-[30px]">{current}</h1> -->
         <Breadcrumbs {breadcrumbs} />
         <slot />
       </main>
