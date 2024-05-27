@@ -7,7 +7,6 @@ const siteData = {
     ogImage: "favicon.ico",
     keywords:
         "Personal website, landing page, developer, home, astronomy, blogs, technology, mathematics",
-    // postPerPage: 3
 };
 
 interface HeadProps {
@@ -34,9 +33,9 @@ const siteTitle = title ?? siteData.title;
 const metaDescription = description ? description : siteData.desc;
 const metaKeywords = keywords ? keywords : siteData.keywords;
 const siteURL = url ?? siteData.siteUrl;
-const twitterHandle = twitterhandle ?? "yashxsharma24";
+// const twitterHandle = twitterhandle ?? "yashxsharma24";
 const imagePreview = image ?? `${siteURL}${siteData.ogImage}`;
-// const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+// const canonicalURL = url ?? new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!-- Global Metadata -->
