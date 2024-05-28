@@ -21,23 +21,23 @@ import { Icon } from "astro-icon/components";
     <p class="text-[25px] font-[100] text-LM-Para dark:text-DM-Para xl:text-[35px] right"> I am currently in university as a <span1 class="italic">sophomore</span1> studying <br /><span class="text-LM-Title dark:text-DM-Title font-[100]"> Mechanical Engineering </span>
     </p>
   </div>
-  <div class="md:flex md:flex-row md:mt-[55px] md:mb-[25px] md:w-full">
+  <div class="md:flex md:flex-row md:mt-20 md:mb-2 xl:mt-12 xl:mb-6 md:w-full">
     <!-- Carousel -->
     <button>
       <Icon
         name="left"
-        size={50}
-        class="hidden-mobile bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-full motion-safe:hover:scale-110 transform-gpu transition ease-in-out"
+        size={40}
+        class="hidden-mobile hover:border-[2px] border-LM-Secondary dark:border-DM-Secondary bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-full motion-safe:hover:scale-110 transform-gpu transition ease-in-out"
       />
     </button>
-      <div class="hidden md:w-full md:flex md:justify-center md:bg-LM-Title-Bar md:dark:bg-DM-Title-Bar md:p-[10px] md:rounded-3xl md:mx-10">
-        <div class="bg-[#000000] rounded-xl w-full flex justify-center"><Image class="rounded-xl bg-[#000000] w-[700px]" src={moon} alt="Display Item" /></div>
+      <div class="hidden md:w-full md:flex md:justify-center md:mx-3 xl:mx-5">
+        <div class="bg-[#000000] rounded-xl w-full flex justify-center"><Image class="rounded-xl w-[1000px] xl:w-[800px]" src={moon} alt="Display Item" /></div>
       </div>
     <button>
       <Icon
         name="right"
-        size={50}
-        class="hidden-mobile bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-full motion-safe:hover:scale-110 transform-gpu transition ease-in-out"
+        size={40}
+        class="hidden-mobile hover:border-[2px] border-LM-Secondary dark:border-DM-Secondary bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-full motion-safe:hover:scale-110 transform-gpu transition ease-in-out"
       />
     </button>
     <!-- mobile display img -->
