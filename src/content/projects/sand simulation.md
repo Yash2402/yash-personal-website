@@ -1,9 +1,9 @@
 ---
-title: Spring Simulation
+title: Sand Simulation
 pubDate: 2023-08-12
-description: As a passionate enthusiast of physics and simulations, I undertook a project during my 12th-grade to delve into the intricacies of physics-based simulations. The objective was to develop a realistic cloth simulation using fundamental physics principles, particularly focusing on the behaviour of springs. I was not that focused on the code quality; I  will fix this in the future and optimize it. I will make this project in C++ using the SDL or Raylib libraries too.
+description: In my first semester at university, I built a simulation using cellular automaton principles to mimic sand, water, and smoke behavior. I developed it in Python with Pygame for graphics.
 banner:
-    url: "../../imgs/blogs/wallpaperdark.png"
+    url: "../../imgs/blogs/moon.png"
     alt: blocks
 resources: [
     {url: https://www.youtube.com/@TheCodingTrain, name: The Coding Train}, 
