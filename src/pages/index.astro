@@ -18,28 +18,30 @@ import { Icon } from "astro-icon/components";
           Hey, I am <br />
           Yash Sharma
     </p>
-    <p class="text-[25px] font-[100] text-LM-Para dark:text-DM-Para xl:text-[35px] right"> I am currently in university as a <span1 class="italic">sophomore</span1> studying <br /><span class="text-LM-Title dark:text-DM-Title font-[100]"> Mechanical Engineering </span>
+    <p class="text-6 font-extralight text-LM-Para dark:text-DM-Para xl:text-[35px] right"> I am currently in university as a <span1 class="italic">sophomore</span1> studying <br /><span class="text-LM-Title dark:text-DM-Title font-[100]"> Mechanical Engineering </span>
     </p>
-  </div>
+  </div> 
+
+  <!-- Carousel -->
   <div class="md:flex md:flex-row md:mt-20 md:mb-2 xl:mt-12 xl:mb-6 md:w-full">
-    <!-- Carousel -->
     <button>
       <Icon
         name="left"
         size={40}
-        class="hidden-mobile hover:border-[2px] border-LM-Secondary dark:border-DM-Secondary bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-full motion-safe:hover:scale-110 transform-gpu transition ease-in-out"
+        class="hidden-mobile hover:shadow-lg hover:border-[2px] border-LM-Secondary dark:border-DM-Secondary bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-full motion-safe:hover:scale-110 transform-gpu transition ease-in-out"
       />
     </button>
-      <div class="hidden md:w-full md:flex md:justify-center md:mx-3 xl:mx-5">
-        <div class="bg-[#000000] rounded-xl w-full flex justify-center"><Image class="rounded-xl w-[1000px] xl:w-[800px]" src={moon} alt="Display Item" /></div>
-      </div>
+    <div class="hidden md:w-full md:flex md:justify-center md:mx-3 xl:mx-5">
+      <div class="bg-[#000000] shadow-2xl rounded-xl w-full flex justify-center"><Image class="rounded-xl w-[1000px] xl:w-[800px]" src={moon} alt="Display Item" /></div>
+    </div>
     <button>
       <Icon
         name="right"
         size={40}
-        class="hidden-mobile hover:border-[2px] border-LM-Secondary dark:border-DM-Secondary bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-full motion-safe:hover:scale-110 transform-gpu transition ease-in-out"
+        class="hidden-mobile hover:shadow-lg hover:border-[2px] border-LM-Secondary dark:border-DM-Secondary bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-full motion-safe:hover:scale-110 transform-gpu transition ease-in-out"
       />
     </button>
+
     <!-- mobile display img -->
     <Image
       class="md:hidden"
@@ -51,10 +53,20 @@ import { Icon } from "astro-icon/components";
   </div>
 </BaseLayout>
 
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> -->
+
 <style>
   @media (max-width: 768px) {
     .hidden-mobile {
       display: none;
     }
   }
+  /* Make the image fully responsive */
+  /* .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  } */
 </style>
