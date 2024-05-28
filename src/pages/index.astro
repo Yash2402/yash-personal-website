@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/baselayout.astro";
 import "@fontsource-variable/playfair-display";
 
 import { Image } from "astro:assets";
-import moon from "../imgs/blogs/jupiter.png";
+import moon from "../imgs/blogs/moon.png";
 import home_img from "../imgs/home/home_image.png";
 // import leftSlider from "../imgs/left_slider.svg";
 // import rightSlider from "../imgs/right_slider.svg";
@@ -31,7 +31,7 @@ import { Icon } from "astro-icon/components";
       />
     </button>
       <div class="hidden md:w-full md:flex md:justify-center md:bg-LM-Title-Bar md:dark:bg-DM-Title-Bar md:p-[10px] md:rounded-3xl md:mx-10">
-        <Image class="rounded-xl bg-[#000000]" src={moon} height={1000} width={1800} alt="Display Item" />
+        <div class="bg-[#000000] rounded-xl w-full flex justify-center"><Image class="rounded-xl bg-[#000000] w-[700px]" src={moon} alt="Display Item" /></div>
       </div>
     <button>
       <Icon

@@ -19,24 +19,24 @@ const month = pubDate.toLocaleString("default", { month: "short" });
 const year = pubDate.getFullYear();
 ---
 
-<div style={`view-transition-name: card-${blogPost.slug}`} class="w-full flex flex-col justify-start space-y-2 md:space-y-4 dark:bg-DM-Card bg-LM-Card dark:border-DM-Title-Bar border-LM-Title-Bar border-2 rounded-xl px-2 py-1 md:border-4 md:rounded-2xl md:px-4 md:py-2">
+<div style={`view-transition-name: card-${blogPost.slug}`} class="w-full flex flex-col justify-start space-y-2 md:space-y-4 dark:bg-DM-Card bg-LM-Card dark:border-DM-Title-Bar border-LM-Title-Bar border-2 rounded-xl px-3 py-2 md:border-4 md:rounded-2xl md:px-4 md:py-2">
     <div class="flex flex-col space-y-2 sm:space-y-0 md:flex-row md:space-x-8 mb-1 items-start md:items-center">
         <h3 class="font-title text-[20px] md:text-[25px] font-medium text-LM-Title dark:text-DM-Title tracking-[-.05rem]">
-            <a href={url} >{title}</a>
+            <a class="hover:underline underline-offset-2 hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Selected" href={url} >{title}</a>
         </h3>
-        <ul class="flex flex-row space-x-0.5 font-sans text-sm text-LM-Para dark:text-DM-Para">
+        <ul class="flex flex-row md:space-x-0.5 font-sans text-[12px] md:text-[14px] text-LM-Para dark:text-DM-Para">
             {tags.map((tag, idx) => (
                     <> <li> <a class="hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Selected" href={`/blogs/tags/${tag}/`} > {tag} </a> </li>
                         {idx < tags.length - 1 && ( <Icon name="dot" size={20} class="text-LM-Nav-Unselected dark:text-DM-Nav-Selected"/> )}
                     </>  )) }
         </ul>
     </div>
-    <p class="font-title text-base text-LM-Para w-full lg:w-9/12 dark:text-DM-Para"> {description.toString()} </p>
+    <p class="font-title text-[14px] md:text-[16px] text-LM-Para w-full lg:w-9/12 dark:text-DM-Para"> {description.toString()} </p>
     <div class="mt-1 flex flex-row items-center">
-        <a class="font-title text-[14px] tracking-[-0.3px] font-normal text-LM-Nav-Unselected dark:text-DM-Nav-Selected hover:text-LM-Nav-Selected dark:hover:text-DM-Nav-Unselected" href="#"> {author} </a>
+        <a class="font-title text-[12px] md:text-[14px] tracking-[-0.3px] font-normal text-LM-Nav-Unselected dark:text-DM-Nav-Selected hover:text-LM-Nav-Selected dark:hover:text-DM-Nav-Unselected" href="#"> {author} </a>
         <Icon name="dot" size={20} class="text-LM-Nav-Unselected dark:text-DM-Nav-Selected"/>
         <span
-            class="font-sans uppercase text-[13px] tracking-[-0.02rem] font-medium text-LM-Title dark:text-DM-Title"
+            class="font-sans uppercase text-[11px] md:text-[14px] tracking-[-0.02rem] font-medium text-LM-Title dark:text-DM-Title"
             >{`${dotw}, ${date} ${month} ${year}`}</span
         >
     </div>

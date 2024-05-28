@@ -1,6 +1,6 @@
 ---
 title: Test Post
-author: "yash"
+author: "Yash Sharma"
 description: "Testing functionality of mdx and if my css works"
 banner: {
     url: "../../imgs/blogs/moon.png",

@@ -14,11 +14,12 @@ const blogPosts = await getCollection("blogs");
 ---
 
 <BaseLayout {title} {current} breadcrumbs={breadcrumbs}>
-    <div class="flex flex-col space-y-5 mb-5">
+<div class="flex flex-col md:space-y-8 space-y-5">
+    <div class="flex flex-col space-y-2 md:space-y-4">
         <h1 class="text-LM-Title dark:text-DM-Title uppercase text-[20px] font-title md:text-[25px] tracking-[-0.80px]">
            Welcome to my Blogs
         </h1>
-        <p class="md:w-10/12 text-LM-Para dark:text-DM-Para font-para text-[16px] md:text-[19px] h-full font-normal">
+        <p class="md:w-10/12 text-LM-Para dark:text-DM-Para font-sans text-[14px] md:text-[17px] h-full font-normal">
             Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
             mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
             fringilla, mattis ligula consectetur, ultrices mauris. Maecenas
@@ -27,9 +28,19 @@ const blogPosts = await getCollection("blogs");
             nibh nibh, at maximus ante fermentum sit amet.
         </p>
     </div>
-    <div class="flex flex-col space-y-8 items-start mt-5 w-full">
+    <hr class="border-LM-Secondary dark:border-DM-Secondary" />
+    <div class="flex flex-col space-y-4 md:space-y-8 items-start w-full">
         {
             blogPosts.sort((a, b) => b.data.postNo - a.data.postNo).map((blogPost) => <BlogPostCard {blogPost} />)
         }
     </div>
+</div>
 </BaseLayout>
+<style>
+    hr {
+    display: block;
+    border-width: 1px;
+    opacity: 0.36;
+    border-radius: 2px;
+  }
+</style>
