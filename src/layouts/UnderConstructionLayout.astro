@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/baselayout.astro";
+import type { Crumb } from "../utils/types";
+
+interface Props{
+  title?: string;
+  current: string;
+}
+
+const { title, current } = Astro.props as Props;
+---
+
+<BaseLayout {title} {current}>
+  <div
+    class="bg-[#ffffff] m-auto my-[150px] shadow-xl dark:bg-DM-Title-Bar rounded-xl p-8 md:rounded-2xl flex flex-col items-center justify-center md:mt-[140px] md:mb-[170px] md:p-12 md:flex md:flex-col md:items-center"
+  >
+    <h1
+      class="text-[30px] font-sans font-[300] text-LM-Title dark:text-DM-Title mb-3 md:text-[35px] md:mb-5"
+    >
+        Coming Soon! 
+    </h1>
+    <p class="text-[18px] font-para text-center text-LM-Para dark:text-DM-Para md:text-[20px]">
+        This is page is under construction, come back soon! <br/>
+        If you have some suggestion and feedback, then <a class="text-LM-Link dark:text-DM-Link hover:underline" href="mailto:yashsharma4583@gmail.com">E-mail</a> me or DM me on Instagram!
+  </div>
+</BaseLayout>

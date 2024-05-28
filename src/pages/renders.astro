@@ -11,23 +11,23 @@ const breadcrumbs: Array<Crumb> = [{ title: "renders", href: "/renders/" }];
 ---
 
 <BaseLayout title="renders" current="renders" {breadcrumbs} >
-    <div class="flex flex-col space-y-10 w-full">
-        <div class="flex flex-col space-y-5">
-            <h1 class="font-title text-[30px] uppercase">My Blender Creations</h1>
-            <p class="font-sans text-[18px]">Welcome to my Renders page! Here, you'll find a showcase of the stunning visualizations I've crafted using Blender.</p>
+    <div class="flex flex-col space-y-4 md:space-y-10 md:w-full">
+        <div class="flex flex-col space-y-2 md:space-y-5">
+            <h1 class="font-title text-[25px] md:text-[30px] tracking-[-0.8px] uppercase">My Blender Creations</h1>
+            <p class="font-sans text-[14px] md:text-[18px]">Welcome to my Renders page! Here, you'll find a showcase of the stunning visualizations I've crafted using Blender.</p>
         </div>
-        <div class="bg-LM-Title-Bar dark:bg-DM-Title-Bar p-4 rounded-2xl w-full flex flex-row space-x-8">
-            <Image class="size-52 rounded-lg" src={diamond} alt="diamond"></Image>
-            <div class="flex flex-col items-start justify-center font-sans text-LM-Title dark:text-DM-Title">
-                <h1 class="text-[35px] uppercase">Diamond</h1>
-                <span class="text-[14px] font-title">24 Feb 2024</span>
+        <div class="bg-LM-Title-Bar dark:bg-DM-Title-Bar p-4 rounded-2xl w-full flex flex-col md:items-start md:flex-row md:space-x-8">
+            <Image class="md:size-52 size-full rounded-lg" src={diamond} alt="diamond"></Image>
+            <div class="flex flex-col items-center md:items-start font-sans text-LM-Title dark:text-DM-Title">
+                <h1 class="md:text-[35px] text-[22px] uppercase">Diamond</h1>
+                <span class="md:text-[14px] text-[12px] font-title">24 Feb 2024</span>
             </div>
         </div>
-        <div class="bg-LM-Title-Bar dark:bg-DM-Title-Bar p-4 rounded-2xl w-full flex flex-row space-x-8">
-            <Image class="size-52 rounded-lg" src={arc_reactor} alt="arc_reactor"></Image>
-            <div class="flex flex-col items-start justify-center font-sans text-LM-Title dark:text-DM-Title">
-                <h1 class="text-[35px] uppercase">Arc Reactor</h1>
-                <span class="text-[14px] font-title">04 Jan 2024</span>
+        <div class="bg-LM-Title-Bar dark:bg-DM-Title-Bar p-4 rounded-2xl w-full flex flex-col md:items-start md:flex-row md:space-x-8">
+            <Image class="md:size-52 size-full rounded-lg" src={arc_reactor} alt="Arc Reactor"></Image>
+            <div class="flex flex-col items-center md:items-start font-sans text-LM-Title dark:text-DM-Title">
+                <h1 class="md:text-[35px] text-[22px] uppercase">Arc Reactor</h1>
+                <span class="md:text-[14px] text-[12px] font-title">04 Jan 2024</span>
             </div>
         </div>
         <!-- <RenderPostCard title="Title" date="2024-02-24" desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus iusto iure facere adipisci earum at fugit obcaecati amet. Facilis aspernatur mollitia ipsum dolor iusto id eaque soluta ut aut quasi!"/>
