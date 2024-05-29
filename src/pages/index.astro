@@ -16,73 +16,26 @@ import { Icon } from "astro-icon/components";
 
 <BaseLayout title="yash sharma's homepage">
   <main class="flex flex-col md:space-y-14 space-y-3">
-    <div
-      class="flex flex-col font-home items-between space-y-8 sm:flex sm:flex-col md:w-full xl:space-y-0 xl:flex xl:flex-row xl:w-full xl:justify-between xl:items-center"
-    >
-      <p
-        class="text-[33px] font-[400] tracking-[-0.8px] text-LM-Title dark:text-DM-Title xl:text-[38px] left"
-      >
+    <div class="flex flex-col font-home items-between space-y-8 sm:flex sm:flex-col md:w-full xl:space-y-0 xl:flex xl:flex-row xl:w-full xl:justify-between xl:items-center">
+      <p class="text-[33px] font-[400] tracking-[-0.8px] text-LM-Title dark:text-DM-Title xl:text-[38px] left">
         Hey, I am <br />
         Yash Sharma
       </p>
-      <p
-        class="text-[24px] font-extralight text-LM-Para dark:text-DM-Para xl:text-[35px] right"
-      >
-        I am currently in university as a <span1 class="italic">sophomore</span1
-        > studying <br /><span
-          class="text-LM-Title dark:text-DM-Title font-[100]"
-        >
+      <p class="text-[24px] font-extralight text-LM-Para dark:text-DM-Para xl:text-[35px] right">
+        I am currently in university as a <span1 class="italic">sophomore</span1> studying 
+        <br />
+        <span class="text-LM-Title dark:text-DM-Title font-[100]">
           Mechanical Engineering
         </span>
       </p>
     </div>
     <!-- Carousel -->
-    <div class="carousel w-full">
-      <div
-        id="slide1"
-        class="hidden carousel-item mx-3 items-center space-x-5 md:w-full md:flex md:justify-center"
-      >
-        <a href="#slide2" class="hidden xl:block"
-          ><Icon
-            name="left"
-            size={40}
-            class="hover:shadow-lg hover:border-[2px] border-LM-Secondary dark:border-DM-Secondary bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-full motion-safe:hover:scale-110 transform-gpu transition ease-in-out"
-          /></a
-        >
-        <Image
-          class="rounded-xl md:w-[800px] xl:w-[900px]"
-          src={moon}
-          alt="Display Item"
-        /><a href="#slide2" class="hidden xl:block"
-          ><Icon
-            name="right"
-            size={40}
-            class="hover:shadow-lg hover:border-[2px] border-LM-Secondary dark:border-DM-Secondary bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-full motion-safe:hover:scale-110 transform-gpu transition ease-in-out"
-          /></a
-        >
+    <div class="carousel">
+      <div class="hidden carousel-item mx-3 items-center space-x-5 md:w-full md:flex md:justify-center">
+        <Image class="rounded-xl md:w-[800px] xl:w-[900px]" src={moon} alt="Moon"/>
       </div>
-      <div
-        id="slide2"
-        class="hidden carousel-item mx-3 items-center space-x-5 md:w-full md:flex md:justify-center"
-      >
-        <a href="#slide1" class="hidden xl:block"
-          ><Icon
-            name="left"
-            size={40}
-            class="hover:shadow-lg hover:border-[2px] border-LM-Secondary dark:border-DM-Secondary bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-full motion-safe:hover:scale-110 transform-gpu transition ease-in-out"
-          /></a
-        >
-        <Image
-          class="rounded-xl md:w-[800px] xl:w-[900px]"
-          src={jupiter}
-          alt="Display Item"
-        /><a href="#slide1" class="hidden xl:block"
-          ><Icon
-            name="right"
-            size={40}
-            class="hover:shadow-lg hover:border-[2px] border-LM-Secondary dark:border-DM-Secondary bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-full motion-safe:hover:scale-110 transform-gpu transition ease-in-out"
-          /></a
-        >
+      <div class="hidden carousel-item mx-3 items-center space-x-5 md:w-full md:flex md:justify-center">
+        <Image class="rounded-xl md:w-[800px] xl:w-[900px]" src={jupiter} alt="Moon"/>
       </div>
     </div>
 
