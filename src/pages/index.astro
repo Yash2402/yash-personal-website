@@ -4,69 +4,102 @@ import "@fontsource-variable/playfair-display";
 
 import { Image } from "astro:assets";
 import moon from "../imgs/blogs/moon.png";
-import home_img from "../imgs/home/home_image.png";
-// import leftSlider from "../imgs/left_slider.svg";
-// import rightSlider from "../imgs/right_slider.svg";
+import jupiter from "../imgs/blogs/jupiter.png";
+import diamond from "../imgs/home/diamond.png";
+import moon_sq from "../imgs/home/moon.png";
+import percentage from "../imgs/home/percentage.png";
+import roundedcube from "../imgs/home/roundedcube.png";
+import thevoid from "../imgs/home/thevoid.png";
 
 import { Icon } from "astro-icon/components";
-
 ---
 
 <BaseLayout title="yash sharma's homepage">
-  <div class="flex flex-col font-home items-between space-y-8 sm:flex sm:flex-col md:w-full xl:space-y-0 xl:flex xl:flex-row xl:w-full xl:justify-between xl:items-center">
-    <p class="text-[33px] font-[400] tracking-[-0.8px] text-LM-Title dark:text-DM-Title xl:text-[38px] left">
-          Hey, I am <br />
-          Yash Sharma
-    </p>
-    <p class="text-[24px] font-extralight text-LM-Para dark:text-DM-Para xl:text-[35px] right"> I am currently in university as a <span1 class="italic">sophomore</span1> studying <br /><span class="text-LM-Title dark:text-DM-Title font-[100]"> Mechanical Engineering </span>
-    </p>
-  </div> 
-
-  <!-- Carousel -->
-  <div class="md:flex md:flex-row md:mt-20 md:mb-2 xl:mt-12 xl:mb-6 md:w-full">
-    <button>
-      <Icon
-        name="left"
-        size={40}
-        class="hidden-mobile hover:shadow-lg hover:border-[2px] border-LM-Secondary dark:border-DM-Secondary bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-full motion-safe:hover:scale-110 transform-gpu transition ease-in-out"
-      />
-    </button>
-    <div class="hidden md:w-full md:flex md:justify-center md:mx-3 xl:mx-5">
-      <div class="bg-[#000000] shadow-2xl rounded-xl w-full flex justify-center"><Image class="rounded-xl w-[1000px] xl:w-[800px]" src={moon} alt="Display Item" /></div>
+  <main class="flex flex-col md:space-y-14 space-y-3">
+    <div
+      class="flex flex-col font-home items-between space-y-8 sm:flex sm:flex-col md:w-full xl:space-y-0 xl:flex xl:flex-row xl:w-full xl:justify-between xl:items-center"
+    >
+      <p
+        class="text-[33px] font-[400] tracking-[-0.8px] text-LM-Title dark:text-DM-Title xl:text-[38px] left"
+      >
+        Hey, I am <br />
+        Yash Sharma
+      </p>
+      <p
+        class="text-[24px] font-extralight text-LM-Para dark:text-DM-Para xl:text-[35px] right"
+      >
+        I am currently in university as a <span1 class="italic">sophomore</span1
+        > studying <br /><span
+          class="text-LM-Title dark:text-DM-Title font-[100]"
+        >
+          Mechanical Engineering
+        </span>
+      </p>
     </div>
-    <button>
-      <Icon
-        name="right"
-        size={40}
-        class="hidden-mobile hover:shadow-lg hover:border-[2px] border-LM-Secondary dark:border-DM-Secondary bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-full motion-safe:hover:scale-110 transform-gpu transition ease-in-out"
-      />
-    </button>
+    <!-- Carousel -->
+    <div class="carousel w-full">
+      <div
+        id="slide1"
+        class="hidden carousel-item mx-3 items-center space-x-5 md:w-full md:flex md:justify-center"
+      >
+        <a href="#slide2" class="hidden xl:block"
+          ><Icon
+            name="left"
+            size={40}
+            class="hover:shadow-lg hover:border-[2px] border-LM-Secondary dark:border-DM-Secondary bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-full motion-safe:hover:scale-110 transform-gpu transition ease-in-out"
+          /></a
+        >
+        <Image
+          class="rounded-xl md:w-[800px] xl:w-[900px]"
+          src={moon}
+          alt="Display Item"
+        /><a href="#slide2" class="hidden xl:block"
+          ><Icon
+            name="right"
+            size={40}
+            class="hover:shadow-lg hover:border-[2px] border-LM-Secondary dark:border-DM-Secondary bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-full motion-safe:hover:scale-110 transform-gpu transition ease-in-out"
+          /></a
+        >
+      </div>
+      <div
+        id="slide2"
+        class="hidden carousel-item mx-3 items-center space-x-5 md:w-full md:flex md:justify-center"
+      >
+        <a href="#slide1" class="hidden xl:block"
+          ><Icon
+            name="left"
+            size={40}
+            class="hover:shadow-lg hover:border-[2px] border-LM-Secondary dark:border-DM-Secondary bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-full motion-safe:hover:scale-110 transform-gpu transition ease-in-out"
+          /></a
+        >
+        <Image
+          class="rounded-xl md:w-[800px] xl:w-[900px]"
+          src={jupiter}
+          alt="Display Item"
+        /><a href="#slide1" class="hidden xl:block"
+          ><Icon
+            name="right"
+            size={40}
+            class="hover:shadow-lg hover:border-[2px] border-LM-Secondary dark:border-DM-Secondary bg-LM-Title-Bar dark:bg-DM-Title-Bar rounded-full motion-safe:hover:scale-110 transform-gpu transition ease-in-out"
+          /></a
+        >
+      </div>
+    </div>
 
     <!-- mobile display img -->
-    <Image
-      class="md:hidden"
-      src={home_img}
-      height={1050}
-      width={1050}
-      alt="Display Item Mobile"
-    />
-  </div>
+    <div class="md:hidden carousel space-x-2">
+      <Image class="carousel-item rounded-xl" src={moon_sq} height={1050} width={1050} alt="Display Item Mobile" />
+      <Image class="carousel-item rounded-xl" src={diamond} height={1050} width={1050} alt="Display Item Mobile" />
+      <Image class="carousel-item rounded-xl" src={thevoid} height={1050} width={1050} alt="Display Item Mobile" />
+      <Image class="carousel-item rounded-xl" src={percentage} height={1050} width={1050} alt="Display Item Mobile" />
+      <Image class="carousel-item rounded-xl" src={roundedcube} height={1050} width={1050} alt="Display Item Mobile" />
+    </div>
+  </main>
 </BaseLayout>
 
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> -->
-
 <style>
-  @media (max-width: 768px) {
-    .hidden-mobile {
-      display: none;
-    }
-  }
-  /* Make the image fully responsive */
-  /* .carousel-inner img {
+  Image {
     width: 100%;
     height: 100%;
-  } */
+  }
 </style>
