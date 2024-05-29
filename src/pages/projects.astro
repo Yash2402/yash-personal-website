@@ -10,18 +10,13 @@ const projectPosts = await getCollection("projects");
 ---
 
 <BaseLayout title="projects" current="projects" {breadcrumbs}>
-<div class="flex flex-col md:space-y-8 space-y-5">
+<div class="flex flex-col md:space-y-8 space-y-5 w-full">
   <div class="flex flex-col space-y-2 md:space-y-4">
     <h1 class="text-LM-Title dark:text-DM-Title uppercase text-[20px] font-title md:text-[25px] tracking-[-0.88px]">
        Welcome to my Projects
     </h1>
-    <p class=" text-LM-Para dark:text-DM-Para font-sans lg:w-10/12 text-[14px] md:text-[17px] font-normal">
-        Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
-        mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
-        fringilla, mattis ligula consectetur, ultrices mauris. Maecenas
-        vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor
-        ornare leo, non suscipit magna interdum eu. Curabitur pellentesque
-        nibh nibh, at maximus ante fermentum sit amet.
+    <p class="text-LM-Para dark:text-DM-Para font-para lg:w-10/12 text-[14px] md:text-[17px] font-normal">
+      These are the projects I have done. If you have any project ideas and would like to collaborate, just send me an <a class="text-LM-Link dark:text-DM-Link hover:underline underline-offset-3" href="mailto:yashsharma4583@gmail.com">e-mail</a> we'll talk about it!
     </p>
   </div>
   <hr class="border-LM-Secondary dark:border-DM-Secondary" />

@@ -17,9 +17,9 @@ const { title, url, pubDate } = Astro.props as Props;
 // const year = pubDate.getFullYear();
 ---
 <div class="md:border-l-[4px] border-t-[2px] md:border-t-[0px] border-t-DM-Logo bg-LM-Card dark:bg-DM-Card md:border-l-DM-Logo border-LM-Card space-y-3 p-3 md:p-4 rounded-2xl w-full flex flex-col md:items-start md:flex-row md:space-x-8">
-    <Image class="md:w-[300px] rounded-lg" src={url} alt={title}></Image>
+    <Image class="md:w-[200px] rounded-lg" src={url} alt={title}></Image>
     <div class="flex flex-col items-center md:items-start font-sans text-LM-Title dark:text-DM-Title">
-        <h1 class="md:text-[35px] text-[22px] uppercase">{title}</h1>
+        <h1 class="md:text-[30px] text-[22px] uppercase">{title}</h1>
         <span class="md:text-[14px] text-[12px] font-title">{`${pubDate.getDate()} ${month[pubDate.getMonth()]} ${pubDate.getFullYear()}`}</span>
     </div>
 </div>

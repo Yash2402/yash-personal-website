@@ -16,16 +16,18 @@ const breadcrumbs: Array<Crumb> = [{ title: "renders", href: "/renders/" }];
 ---
 
 <BaseLayout title="renders" current="renders" {breadcrumbs} >
-    <div class="flex flex-col space-y-4 md:space-y-10 md:w-full">
-        <div class="flex flex-col space-y-2 md:space-y-5">
-            <h1 class="font-title text-[25px] md:text-[30px] tracking-[-0.8px] uppercase">My Blender Creations</h1>
-            <p class="font-para text-[14px] md:text-[18px]">Welcome to my Renders page! Here, you'll find a showcase of the stunning visualizations I've crafted using Blender.</p>
+    <div class="flex flex-col space-y-5 md:space-y-8 md:w-full">
+        <div class="flex flex-col space-y-2 md:space-y-4">
+            <h1 class="font-title text-[20px] md:text-[25px] tracking-[-0.8px] uppercase">My Blender Creations</h1>
+            <p class="font-para text-[14px] md:text-[17px]">Welcome to my Renders page! Here, you'll find a showcase of the stunning visualizations I've crafted using Blender.</p>
         </div>
         <hr class="border-LM-Secondary dark:border-DM-Secondary" />
-        <RenderPostCard title="Nature's Gem" url={diamond} pubDate={new Date("2024-02-24")}/>
-        <RenderPostCard title="The Void" url={thevoid} pubDate={new Date("2024-05-08")}/>
-        <RenderPostCard title="Moon" url={moon} pubDate={new Date("2024-05-14")}/>
-        <RenderPostCard title="Swirling Spheres" url={percentage} pubDate={new Date("2022-09-11")}/>
+        <main class="grid grid-cols-2 gap-5">
+            <RenderPostCard title="Nature's Gem" url={diamond} pubDate={new Date("2024-02-24")}/>
+            <RenderPostCard title="The Void" url={thevoid} pubDate={new Date("2024-05-08")}/>
+            <RenderPostCard title="Moon" url={moon} pubDate={new Date("2024-05-14")}/>
+            <RenderPostCard title="Swirling Spheres" url={percentage} pubDate={new Date("2022-09-11")}/>
+        </main>
     </div>
 </BaseLayout>
 <style>
