@@ -22,7 +22,7 @@ const breadcrumbs: Array<Crumb> = [{ title: "renders", href: "/renders/" }];
             <p class="font-para text-[14px] md:text-[17px]">Welcome to my Renders page! Here, you'll find a showcase of the stunning visualizations I've crafted using Blender.</p>
         </div>
         <hr class="border-LM-Secondary dark:border-DM-Secondary" />
-        <main class="grid grid-cols-2 gap-5">
+        <main class="flex flex-col space-y-3 lg:grid lg:grid-cols-2 lg:gap-5">
             <RenderPostCard title="Nature's Gem" url={diamond} pubDate={new Date("2024-02-24")}/>
             <RenderPostCard title="The Void" url={thevoid} pubDate={new Date("2024-05-08")}/>
             <RenderPostCard title="Moon" url={moon} pubDate={new Date("2024-05-14")}/>
