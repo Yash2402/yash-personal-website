@@ -3,8 +3,6 @@ import { Image } from "astro:assets";
 import { navLinks } from "../data/navLinks";
 
 import yash from "../imgs/yash.svg";
-import LM_Menu from "../imgs/LM_menu.svg";
-import DM_Menu from "../imgs/DM_menu.svg";
 import ThemeIcon from "./ThemeToggle.astro";
 
 import "@fontsource/ibm-plex-sans-hebrew";
@@ -34,7 +32,6 @@ const { current } = Astro.props as NavProps;
     <a class="w-[75px] md:w-[95px]" data-astro-reload href="/"><Image src={yash} alt="Personal Logo"/></a>
     <div class="flex flex-row justify-between items-center space-x-[20px]">
       <ThemeIcon/>
-      <!-- vanilla JS tuto https://www.freecodecamp.org/news/how-to-build-a-responsive-navbar-with-a-toggle-menu-using-flexbox-3438e1d08783/ -->
       <button
         class="flex flex-row justify-between items-center text-LM-Nav-Unselected hover:text-LM-Nav-Selected"
         id="mob-nav-expand"><Icon name="menuIcon" size={25} class="text-LM-Secondary dark:text-DM-Secondary"/>

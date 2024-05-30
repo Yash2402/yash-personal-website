@@ -8,13 +8,7 @@ interface Props{
 }
 
 const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-
 const { title, url, pubDate } = Astro.props as Props;
-
-// const dotw = pubDate.toLocaleDateString("default", { weekday: "short" }); // Day of The Week
-// const date = `${pubDate.getDate() < 10 ? "0" : ""}${pubDate.getDate().toString().slice(-2)}`;
-// const month = pubDate.toLocaleString("default", { month: "short" });
-// const year = pubDate.getFullYear();
 ---
 <div class="md:border-l-[4px] border-t-[2px] md:border-t-[0px] border-t-DM-Logo bg-LM-Card dark:bg-DM-Card md:border-l-DM-Logo border-LM-Card space-y-3 p-3 md:p-4 rounded-2xl w-full flex flex-col md:items-start md:flex-row md:space-x-8">
     <Image class="md:w-[200px] rounded-lg" src={url} alt={title}></Image>

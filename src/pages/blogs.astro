@@ -14,8 +14,8 @@ const blogPosts = await getCollection("blogs");
 ---
 
 <BaseLayout {title} {current} breadcrumbs={breadcrumbs}>
-<div class="flex flex-col md:space-y-8 space-y-5 w-full mb-3">
-    <div class="flex flex-col space-y-2 md:space-y-4">
+<div class="flex flex-col space-y-5 mb-3 md:space-y-8">
+    <div class="flex flex-col space-y-2 md:space-y-4 mx-3">
         <h1 class="text-LM-Title dark:text-DM-Title uppercase text-[20px] font-title md:text-[25px] tracking-[-0.80px]">
            Welcome to my Blogs
         </h1>
@@ -25,7 +25,7 @@ const blogPosts = await getCollection("blogs");
               just that. I hope you find the content helpful. Enjoy reading!
         </p>
     </div>
-    <hr class="border-LM-Secondary dark:border-DM-Secondary" />
+    <hr class="border-LM-Secondary dark:border-DM-Secondary border-[1px] opacity-[0.36] rounded-sm" />
     <div class="flex flex-col space-y-4 md:space-y-8 items-start">
         {
             blogPosts.sort((a, b) => a.data.postNo - b.data.postNo).map((blogPost) => <BlogPostCard {blogPost} />)

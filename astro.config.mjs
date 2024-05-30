@@ -15,10 +15,6 @@ export default defineConfig({
     shikiConfig: {
       // themes:{light:'github-light'},
       theme: "ayu-dark",
-      themes: {
-        light: 'github-light',
-        dark: 'github-dark',
-      },
       defaultColor: false
     },
     remarkPlugins: [remarkObsidian],
