@@ -8,7 +8,7 @@ export default {
       "LM-Logo": "#0B7DA5",
       "LM-Theme-Toggler": "#000000",
       "LM-Background": "#EEEEEE",
-      "LM-Secondary": "#dadada",
+      "LM-Secondary": "#aaaaaa",
       "LM-Nav-Unselected": "#67A0B5",
       "LM-Nav-Selected": "#416572",
       "LM-Nav-Hover": "#007099",
@@ -48,16 +48,16 @@ export default {
 					css:
 					{
 						// Colours
-						'--tw-prose-body': theme('colors.LM-Title'),
+						'--tw-prose-body': theme('colors.LM-Para'),
             '--tw-prose-headings': theme('colors.LM-Title'),
             '--tw-prose-lead': theme('colors.LM-Title'),
             '--tw-prose-links': theme('colors.LM-Link'),
             '--tw-prose-bold': theme('colors.LM-Title'),
-            '--tw-prose-counters': theme('colors.LM-Title'),
-            '--tw-prose-bullets': theme('colors.LM-Title'),
-            '--tw-prose-hr': theme('colors.LM-Title'),
+            '--tw-prose-counters': theme('colors.LM-Para'),
+            '--tw-prose-bullets': theme('colors.LM-Para'),
+            '--tw-prose-hr': theme('colors.LM-Para'),
             '--tw-prose-quotes': theme('colors.LM-Title'),
-            '--tw-prose-quote-borders': theme('colors.LM-Title'),
+            '--tw-prose-quote-borders': theme('colors.LM-Secondary'),
             '--tw-prose-captions': theme('colors.LM-Title'),
             '--tw-prose-kbd': theme('colors.LM-Title'),
             '--tw-prose-kbd-shadows': theme('colors.LM-Title'),
@@ -66,14 +66,14 @@ export default {
             '--tw-prose-pre-bg': theme('colors.LM-Title'),
             '--tw-prose-th-borders': theme('colors.LM-Title'),
             '--tw-prose-td-borders': theme('colors.LM-Title'),
-            '--tw-prose-invert-body': theme('colors.DM-Title'),
+            '--tw-prose-invert-body': theme('colors.DM-Para'),
             '--tw-prose-invert-headings': theme('colors.DM-Title'),
             '--tw-prose-invert-lead': theme('colors.DM-Title'),
             '--tw-prose-invert-links': theme('colors.DM-Link'),
             '--tw-prose-invert-bold': theme('colors.DM-Title'),
-            '--tw-prose-invert-counters': theme('colors.DM-Title'),
-            '--tw-prose-invert-bullets': theme('colors.DM-Title'),
-            '--tw-prose-invert-hr': theme('colors.DM-Title'),
+            '--tw-prose-invert-counters': theme('colors.DM-Para'),
+            '--tw-prose-invert-bullets': theme('colors.DM-Para'),
+            '--tw-prose-invert-hr': theme('colors.DM-Para'),
             '--tw-prose-invert-quotes': theme('colors.DM-Title'),
             '--tw-prose-invert-quote-borders': theme('colors.DM-Title'),
             '--tw-prose-invert-captions': theme('colors.DM-Title'),
@@ -94,7 +94,7 @@ export default {
     require('@tailwindcss/typography'),
    ],
    daisyui: {
-    theme: false, // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"] // name of one of the included themes for dark mode
+    themes:[], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"] // name of one of the included themes for dark mode
     base: false, // applies background color and foreground color for root element by default
     styled: true, // include daisyUI colors and design decisions for all components
     utils: false, // adds responsive and modifier utility classes

@@ -47,11 +47,20 @@ Here is a nested list
 ref: [Starlight](https://github.com/HiDeoo/starlight-obsidian)
 
 > [!NOTE] This is an attempt at a callout like in Obsidian
-This is a blockquote
 
 ![pixel art of a tower in the forest night scene](../../imgs/blogs/moon.png)
 
 [[lol]]
+
+## Table
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
 ## Pygame Example
 ```python
@@ -82,16 +91,17 @@ int main() {
 ```
 
 LaTeX?!!
+
 ```math
 a, b, c \gt 0 \newline
-a^n + b^n = c^n \forall n > 2
+a^n + b^n = c^n\ \forall\ n > 2
 ```
 ## Notes
 
-1. LaTeX does not work (inline math is not working and i have to write it in fuckin code blocks)
-2. table not working in mdx
-3. Obsidian Like Callouts don't work
+- LaTeX working but i have to write fuckin code blocks (inline math is not working)
+- Obsidian Like Callouts don't work
     - look weird
-4. internal linking like [[Coutionary Tale]]
+    - render the text below as blockquote
+- internal linking like [[Coutionary Tale]]
     - requires mdx
     - slug is from root so broken

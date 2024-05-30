@@ -19,7 +19,7 @@ const { current } = Astro.props as NavProps;
 ---
 <header>
   <nav class="hidden bg-LM-Title-Bar dark:bg-DM-Title-Bar px-4 py-3 mx-5 rounded-xl md:flex md:flex-row md:items-center md:justify-between md:px-5 md:py-3 md:rounded-2xl md:mx-20">
-    <a class="w-[75px] md:w-[85px] xl:w-[95px]" href="/"><Image src={yash} alt="Personal Logo"/></a>
+    <a class="w-[65px] md:w-[75px] xl:w-[75px]" href="/"><Image src={yash} alt="Personal Logo"/></a>
     <div class="hidden md:flex md:flex-row md:items-center md:space-x-7 xl:flex xl:flex-row xl:items-center xl:space-x-11">
       { navLinks.map((navLink) => ( <li class="list-none"> <a class:list={[
         navLink.title === current ? "text-LM-Nav-Selected dark:text-DM-Nav-Selected" : "text-LM-Nav-Unselected dark:text-DM-Nav-Unselected",
