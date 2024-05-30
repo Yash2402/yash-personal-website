@@ -1,14 +1,16 @@
 ---
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 
+import Prose from "../../components/Prose.astro";
 import BaseLayout from "../baselayout.astro";
-import Prose from "../../components/Prose.astro"
 
 import "@fontsource-variable/jetbrains-mono";
 
 import type { CollectionEntry } from "astro:content";
 import type { Crumb } from "../../utils/types.ts";
+import { Icon } from "astro-icon/components";
 
+import "../../styles/styles.css";
 interface Props {
   frontmatter: CollectionEntry<"projects">;
   slug: string;
@@ -16,7 +18,7 @@ interface Props {
 
 const { frontmatter, slug } = Astro.props as Props;
 
-const { title, pubDate, description, banner, resources } = frontmatter.data;
+const { title, pubDate, description, banner, resources, githubLink } = frontmatter.data;
 
 const weekDay = pubDate.toLocaleDateString("default", { weekday: "short" });
 const date = `${pubDate.getDate() < 10 ? "0" : ""}${pubDate.getDate().toString().slice(-2)}`;
@@ -33,7 +35,7 @@ const breadcrumbs: Array<Crumb> = [
 
 <!-- https://docs.astro.build/en/guides/markdown-content/ -->
 <BaseLayout title={pageTitle} {current} {breadcrumbs}>
-    <div class="flex flex-col md:space-y-10 space-y-6 w-full xl:px-12">
+    <div class="flex flex-col md:space-y-10 space-y-6 w-full xl:px-40">
       <div class="flex flex-col items-start">   
         {
           banner && (
@@ -45,7 +47,10 @@ const breadcrumbs: Array<Crumb> = [
               /></div>
           )
       }
-        <h1 class="font-title md:text-[36px] text-[27px] text-LM-Title dark:text-DM-Title font-[400] tracking-[-0.8px ]"> {title} </h1>
+        <div class="flex flex-row justify-between w-full pr-10 items-center align-middle">
+          <h1 class="font-title md:text-[36px] text-[27px] text-LM-Title dark:text-DM-Title font-[400] tracking-[-0.8px ]"> {title} </h1>
+          <a class="hover:motion-safe:scale-105 transform-gpu ease-in-out transition-transform" href={githubLink}><Icon class="text-LM-Title dark:text-DM-Title" name="github" size={35} /></a>
+        </div>
         <div class="flex flex-col space-y-5 items-start">
           <p class="font-sans md:text-[16px] text-[14px] mt-3 font-normal tracking-[-0.2px] text-LM-Para dark:text-DM-Para">
             {`${weekDay}, ${date} ${month} ${fullYear}`}
@@ -65,7 +70,7 @@ const breadcrumbs: Array<Crumb> = [
       </div>
       <hr class="border-LM-Secondary dark:border-DM-Secondary" />
       <Prose>
-        <slot />
+        <slot/>
       </Prose>
     </div>
 </BaseLayout>

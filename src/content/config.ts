@@ -19,6 +19,7 @@ const projectCollection = defineCollection({
         description: z.string(),
         banner: z.object({ url: image(), alt: z.string() }).optional(),
         resources: z.array(z.object({ url: z.string(), name: z.string() })).optional(),
+        githubLink: z.string()
     })
 })
 

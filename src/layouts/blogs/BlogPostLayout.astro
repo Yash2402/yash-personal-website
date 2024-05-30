@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../baselayout.astro";
-import Prose from "../../components/Prose.astro"
 
 import { Icon } from "astro-icon/components";
 import Image from "astro/components/Image.astro";
@@ -9,6 +8,8 @@ import "@fontsource-variable/jetbrains-mono";
 
 import type { CollectionEntry } from "astro:content";
 import type { Crumb } from "../../utils/types.ts";
+import Prose from "../../components/Prose.astro";
+import "../../styles/styles.css";
 
 interface Props {
   frontmatter: CollectionEntry<"blogs">;
@@ -32,7 +33,7 @@ const breadcrumbs: Array<Crumb> = [
 ]
 ---
 <BaseLayout title={pageTitle} {current} {breadcrumbs}>
-  <div class="flex flex-col md:space-y-10 space-y-6 w-full xl:px-12">
+  <div class="flex flex-col md:space-y-10 space-y-6 w-full xl:px-40">
     <div class="flex flex-col items-start">   
       {
         banner && (
@@ -64,7 +65,7 @@ const breadcrumbs: Array<Crumb> = [
     </div>
     <hr class="border-LM-Secondary dark:border-DM-Secondary" />
     <Prose>
-      <slot />
+      <slot/>
     </Prose>
   </div>
 </BaseLayout>

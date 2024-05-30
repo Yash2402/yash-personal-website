@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
@@ -49,41 +48,41 @@ export default {
 					css:
 					{
 						// Colours
-						'--tw-prose-body': theme('colors.LM-Para'),
-						'--tw-prose-headings': theme('colors.LM-Title'),
-						'--tw-prose-lead': theme('colors.LM-Title'),
-						'--tw-prose-links': theme('colors.LM-Link'),
-						'--tw-prose-bold': theme('colors.LM-Title'),
-						'--tw-prose-counters': theme('colors.LM-Link'),
-						'--tw-prose-bullets': theme('colors.LM-Link'),
-						'--tw-prose-hr': theme('colors.LM-Title'),
-						'--tw-prose-quotes': theme('colors.LM-Title'),
-						'--tw-prose-quote-borders': theme('colors.LM-Title'),
-						'--tw-prose-captions': theme('colors.LM-Title'),
-						'--tw-prose-kbd': theme('colors.LM-Title'),
-						'--tw-prose-kbd-shadows': theme('colors.LM-Title'),
-						'--tw-prose-code': theme('colors.LM-Title'),
-						'--tw-prose-pre-code': theme('colors.LM-Title'),
-						'--tw-prose-pre-bg': theme('colors.LM-Title'),
-						'--tw-prose-th-borders': theme('colors.LM-Title'),
-						'--tw-prose-td-borders': theme('colors.LM-Title'),
-						'--tw-prose-invert-body': theme('colors.DM-Para'),
-						'--tw-prose-invert-headings': theme('colors.DM-Title'),
-						'--tw-prose-invert-lead': theme('colors.DM-Title'),
-						'--tw-prose-invert-links': theme('colors.DM-Link'),
-						'--tw-prose-invert-bold': theme('colors.DM-Title'),
-						'--tw-prose-invert-counters': theme('colors.DM-Link'),
-						'--tw-prose-invert-bullets': theme('colors.DM-Link'),
-						'--tw-prose-invert-hr': theme('colors.DM-Title'),
-						'--tw-prose-invert-quotes': theme('colors.DM-Title'),
-						'--tw-prose-invert-quote-borders': theme('colors.DM-Title'),
-						'--tw-prose-invert-captions': theme('colors.DM-Title'),
-						'--tw-prose-invert-kbd': theme('colors.DM-Title'),
-						'--tw-prose-invert-kbd-shadows': theme('colors.DM-Title'),
-						'--tw-prose-invert-code': theme('colors.DM-Title'),
-						'--tw-prose-invert-pre-code': theme('colors.DM-Title'),
-						'--tw-prose-invert-th-borders': theme('colors.DM-Title'),
-						'--tw-prose-invert-td-borders': theme('colors.DM-Title'),
+						'--tw-prose-body': theme('colors.LM-Title'),
+            '--tw-prose-headings': theme('colors.LM-Title'),
+            '--tw-prose-lead': theme('colors.LM-Title'),
+            '--tw-prose-links': theme('colors.LM-Link'),
+            '--tw-prose-bold': theme('colors.LM-Title'),
+            '--tw-prose-counters': theme('colors.LM-Title'),
+            '--tw-prose-bullets': theme('colors.LM-Title'),
+            '--tw-prose-hr': theme('colors.LM-Title'),
+            '--tw-prose-quotes': theme('colors.LM-Title'),
+            '--tw-prose-quote-borders': theme('colors.LM-Title'),
+            '--tw-prose-captions': theme('colors.LM-Title'),
+            '--tw-prose-kbd': theme('colors.LM-Title'),
+            '--tw-prose-kbd-shadows': theme('colors.LM-Title'),
+            '--tw-prose-code': theme('colors.LM-Title'),
+            '--tw-prose-pre-code': theme('colors.LM-Title'),
+            '--tw-prose-pre-bg': theme('colors.LM-Title'),
+            '--tw-prose-th-borders': theme('colors.LM-Title'),
+            '--tw-prose-td-borders': theme('colors.LM-Title'),
+            '--tw-prose-invert-body': theme('colors.DM-Title'),
+            '--tw-prose-invert-headings': theme('colors.DM-Title'),
+            '--tw-prose-invert-lead': theme('colors.DM-Title'),
+            '--tw-prose-invert-links': theme('colors.DM-Link'),
+            '--tw-prose-invert-bold': theme('colors.DM-Title'),
+            '--tw-prose-invert-counters': theme('colors.DM-Title'),
+            '--tw-prose-invert-bullets': theme('colors.DM-Title'),
+            '--tw-prose-invert-hr': theme('colors.DM-Title'),
+            '--tw-prose-invert-quotes': theme('colors.DM-Title'),
+            '--tw-prose-invert-quote-borders': theme('colors.DM-Title'),
+            '--tw-prose-invert-captions': theme('colors.DM-Title'),
+            '--tw-prose-invert-kbd': theme('colors.DM-Title'),
+            '--tw-prose-invert-kbd-shadows': theme('colors.DM-Title'),
+            '--tw-prose-invert-code': theme('colors.DM-Title'),
+            '--tw-prose-invert-pre-code': theme('colors.DM-Title'),
+            '--tw-prose-invert-th-borders': theme('colors.DM-Title'),
+            '--tw-prose-invert-td-borders': theme('colors.DM-Title'),
 					}
 
 				}
@@ -91,18 +90,17 @@ export default {
 		},
   },
   plugins: [
+    require('daisyui'),
     require('@tailwindcss/typography'),
-	require('daisyui'),
    ],
    daisyui: {
-    themes: false, // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
-    darkTheme: "dark", // name of one of the included themes for dark mode
+    theme: false, // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"] // name of one of the included themes for dark mode
     base: false, // applies background color and foreground color for root element by default
     styled: true, // include daisyUI colors and design decisions for all components
-    utils: true, // adds responsive and modifier utility classes
+    utils: false, // adds responsive and modifier utility classes
     prefix: "", // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
     logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
-    themeRoot: ":root", // The element that receives theme color CSS variables
+    themeRoot: "*", // The element that receives theme color CSS variables
   },
    darkMode: ['selector', '[data-theme="dark"]'],
    

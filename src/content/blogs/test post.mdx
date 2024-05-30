@@ -1,0 +1,97 @@
+---
+title: "Test Post"
+author: "Yash Sharma"
+description: "Testing functionality of mdx and if my css works"
+banner: {
+    url: '../../imgs/blogs/moon.png',
+    alt: 'banner of moon. render by yash',
+}
+pubDate: 2024-05-19
+tags: ["meta", "website", "test"]
+postNo: 0
+---
+
+## This is an H2
+
+### Hello, H3
+
+Here are some lines yapping about something that doesn't even matter in the grand scheme of things like how a guy cut me off in traffic today or how a girl smiled at me today.
+
+Here is another line about how I think the universe will end.
+
+## Heading h2
+
+### Sub-Heading h3
+
+#### Sub-Sub Heading h4
+
+Here is an unordered list
+
+- first item
+- second item
+- third item
+
+Here is a nested list
+
+1. **One**
+    - Item One
+    - Item Two
+2. Two
+    1. Item Zero
+    2. Item One
+
+> This is a blockquote.
+***
+`This is some random text in code fences`
+
+ref: [Starlight](https://github.com/HiDeoo/starlight-obsidian)
+
+> [!NOTE] This is an attempt at a callout like in Obsidian
+This is a blockquote
+
+![pixel art of a tower in the forest night scene](../../imgs/blogs/moon.png)
+
+[[lol]]
+
+## Pygame Example
+```python
+import pygame
+SCREEN = pygame.display.set_mode((512, 512))
+
+run = True
+while run:
+    SCREEN.fill((0, 0, 0))
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
+
+    pygame.draw.circle(SCREEN, (255, 255, 255), (256, 256), 20)
+    pygame.display.update()
+```
+## C code 
+
+```c
+#include <stdio.h>
+
+int main() {
+    char *name = "yash";
+    printf("Hello to %s's site!", name);
+
+    return 0;
+}
+```
+
+LaTeX?!!
+```math
+a, b, c \gt 0 \newline
+a^n + b^n = c^n \forall n > 2
+```
+## Notes
+
+1. LaTeX does not work (inline math is not working and i have to write it in fuckin code blocks)
+2. table not working in mdx
+3. Obsidian Like Callouts don't work
+    - look weird
+4. internal linking like [[Coutionary Tale]]
+    - requires mdx
+    - slug is from root so broken

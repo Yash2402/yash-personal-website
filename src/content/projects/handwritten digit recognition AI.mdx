@@ -6,6 +6,7 @@ resources: [
     {url: https://youtube.com/3Blue1Brown, name: 3Blue1Brown},
     {url: https://www.youtube.com/@SamsonZhangTheSalmon, name: Samson Zhang}
 ]
+githubLink: "https://github.com/Yash2402/neural-network.git"
 ---
 ## Overview
 This project is a basic implementation of a neural network trained on the MNIST dataset using Python and Numpy (without TensorFlow).
@@ -15,45 +16,6 @@ In this implementation, a simple feedforward neural network is used to classify 
 - Input layer: 784 neurons (28x28 pixels flattened)
 - Hidden layer: 10 neurons with ReLU activation
 - Output layer: 10 neurons with softmax activation (corresponding to the 10 digit classes)
-
-## Requirements
-
-- Python 3.x
-- Numpy 1.26.4
-- Pandas 2.2.0
-
-```bash
-pip3 install -r requirements.txt
-```
-
-## Usage
-
-1. Clone this repository:
-```bash
-git clone https://github.com/Yash2402/neural-network.git
-```
-
-2. Navigate to the project directory:
-
-```bash
-cd neural-network
-```
-
-Note: After cloning repository, download MNIST Dataset [Mnist Dataset](https://drive.google.com/drive/folders/1pYPgCPVr3MCSMz_lUHxfwzbWViPNnaON?usp=share_link), unzip it and then store the `data/` folder in `neural-network/` folder.
-
-3. Run the `train.py` script to train the neural network:
-
-```bash
-python3 train.py [max_iterations] [learning_rate] # max_iterations = 3000 and learning_rate = 0.5 works great for me 
-```
-
-4. Test the Neural Network
-
-```bash
-python3 test.py
-```
-
-Note: To see the next prediction close the matplotlib window
 
 ## Acknowledgments
 
