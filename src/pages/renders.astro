@@ -13,7 +13,7 @@ const breadcrumbs: Array<Crumb> = [{ title: "renders", href: "/renders/" }];
 
 <BaseLayout title="renders" current="renders" {breadcrumbs}>
     <div class="flex flex-col space-y-5 md:space-y-8 md:w-full">
-        <div class="flex flex-col space-y-2 md:space-y-4 mx-3">
+        <div class="flex flex-col space-y-2 md:space-y-4">
             <h1 class="font-title uppercase text-[20px] tracking-[-0.8px] md:text-[25px]">
                 My Blender Creations
             </h1>
@@ -23,7 +23,7 @@ const breadcrumbs: Array<Crumb> = [{ title: "renders", href: "/renders/" }];
             </p>
         </div>
         <hr class="border-LM-Secondary dark:border-DM-Secondary border-[1px] opacity-[0.36]"/>
-        <main class="flex flex-col space-y-3 lg:grid lg:grid-cols-2 lg:gap-5">
+        <main class="flex flex-col space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-3">
             <RenderPostCard
                 title="Nature's Gem"
                 url={diamond}
