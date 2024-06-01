@@ -25,7 +25,7 @@ const date = `${pubDate.getDate() < 10 ? "0" : ""}${pubDate.getDate().toString()
 const month = pubDate.toLocaleString("default", { month: "short" });
 const fullYear = pubDate.getFullYear();
 
-const pageTitle = `projects / ${title}`;
+const pageTitle = `projects / ${title.toLowerCase()}`;
 const current = "projects";
 const breadcrumbs: Array<Crumb> = [
     { title: "PROJECTS", href: "/projects/" },

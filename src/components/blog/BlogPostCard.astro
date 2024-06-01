@@ -26,7 +26,7 @@ const year = pubDate.getFullYear();
         </h3>
         <!-- <p class="md:block hidden font-para text-[24px] font-normal mt-2">|</p> -->
         <ul class="flex flex-row md:space-x-0.5 font-sans text-[12px] md:text-[14px] text-LM-Para dark:text-DM-Para">
-            {tags.map((tag, idx) => (
+            {tags.map((tag: string, idx: number) => (
                     <> <li> <a class="hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Selected" href={`/blogs/tags/${tag}/`} > {tag} </a> </li>
                         {idx < tags.length - 1 && ( <Icon name="dot" size={20} class="text-LM-Nav-Unselected dark:text-DM-Nav-Selected"/> )}
                     </>  )) }
