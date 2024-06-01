@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/baselayout.astro";
 import "@fontsource-variable/playfair-display";
 
 import { Image } from "astro:assets";
+
 import moon from "../imgs/blogs/moon.png";
 import jupiter from "../imgs/blogs/jupiter.png";
 import diamond from "../imgs/home/diamond.png";
@@ -11,24 +12,24 @@ import percentage from "../imgs/home/percentage.png";
 import roundedcube from "../imgs/home/roundedcube.png";
 import thevoid from "../imgs/home/thevoid.png";
 
-import { Icon } from "astro-icon/components";
 ---
 
 <BaseLayout title="yash sharma's homepage">
-  <main class="flex flex-col md:space-y-14 space-y-3 mb-8">
+  <main class="flex flex-col space-y-3 mb-8 md:space-y-14">
     <div class="flex flex-col font-home items-between space-y-8 sm:flex sm:flex-col md:w-full xl:space-y-0 xl:flex xl:flex-row xl:w-full xl:justify-between xl:items-center">
-      <p class="text-[33px] font-[400] tracking-[-0.8px] text-LM-Title dark:text-DM-Title xl:text-[38px] left">
-        Hey, I am <br />
-        Yash Sharma
+      <p class="left text-[33px] font-normal tracking-tight text-LM-Title dark:text-DM-Title xl:text-[40px]">
+        Hey, I am <br/>
+        Yash Sharma.
       </p>
-      <p class="text-[24px] font-extralight text-LM-Para dark:text-DM-Para xl:text-[35px] right">
+      <p class="right text-[24px] font-normal text-LM-Para dark:text-DM-Para xl:text-[35px]">
         I am currently in university as a <span1 class="italic">sophomore</span1> studying 
-        <br />
-        <span class="text-LM-Title dark:text-DM-Title font-[100]">
+        <br/>
+        <span class="text-LM-Title dark:text-DM-Title">
           Mechanical Engineering
         </span>
       </p>
     </div>
+
     <!-- Carousel -->
     <div class="carousel mx-[90px]">
       <div class="hidden carousel-item bg-LM-Title rounded-2xl mx-3 items-center space-x-5 md:w-full md:flex md:justify-center">
@@ -41,6 +42,7 @@ import { Icon } from "astro-icon/components";
         <Image class="rounded-xl w-auto md:h-[300px] xl:h-[300px]" src={thevoid} alt="Moon"/>
       </div>
     </div>
+
     <!-- mobile display img -->
     <div class="md:hidden carousel space-x-2">
       <Image class="carousel-item rounded-xl" src={moon_sq} height={1050} width={1050} alt="Display Item Mobile" />
@@ -51,10 +53,3 @@ import { Icon } from "astro-icon/components";
     </div>
   </main>
 </BaseLayout>
-
-<style>
-  Image {
-    width: 100%;
-    height: 100%;
-  }
-</style>

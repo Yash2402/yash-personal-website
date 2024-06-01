@@ -25,7 +25,7 @@ const date = `${pubDate.getDate() < 10 ? "0" : ""}${pubDate.getDate().toString()
 const month = pubDate.toLocaleString("default", { month: "short" });
 const fullYear = pubDate.getFullYear();
 
-const pageTitle = `projects / ${title}`;
+const pageTitle = `projects / ${title.toLowerCase()}`;
 const current = "projects";
 const breadcrumbs: Array<Crumb> = [
     { title: "PROJECTS", href: "/projects/" },
@@ -68,17 +68,9 @@ const breadcrumbs: Array<Crumb> = [
           </ul>
         </div>
       </div>
-      <hr class="border-LM-Secondary dark:border-DM-Secondary -mx-[15px]" />
+      <hr class="border-LM-Secondary dark:border-DM-Secondary border-[1px] opacity-[0.36] rounded-sm -mx-[15px]" />
       <Prose>
         <slot/>
       </Prose>
     </div>
 </BaseLayout>
-<style>
-  hr {
-  display: block;
-  border-width: 1px;
-  opacity: 0.36;
-  border-radius: 2px;
-}
-</style>

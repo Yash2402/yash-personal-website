@@ -19,13 +19,14 @@ const month = pubDate.toLocaleString("default", { month: "short" });
 const year = pubDate.getFullYear();
 ---
 
-<div style={`view-transition-name: card-${blogPost.slug}`} class="flex flex-col w-full space-y-2 md:space-y-3 dark:bg-[#33333340] bg-[#DDDDDD23] dark:border-DM-Title-Bar border-LM-Title-Bar border-2 fill-none rounded-xl px-3 py-2 md:dark:bg-[#33333340] md:bg-[#DDDDDD23] md:dark:border-DM-Title-Bar md:border-LM-Title-Bar md:border-3 md:rounded-2xl md:px-4 md:py-2 md:hover:shadow-md">
-    <div class="flex flex-col space-y-0 sm:space-y-0 md:flex-row md:space-x-8 mb-1 items-start md:items-center">
+<div style={`view-transition-name: card-${blogPost.slug}`} class="flex flex-col w-full space-y-2 dark:bg-[#33333340] bg-[#DDDDDD23] dark:border-DM-Title-Bar border-LM-Title-Bar border-2 rounded-xl px-3 py-2 md:dark:border-DM-Title-Bar md:border-LM-Title-Bar md:space-y-3 md:border-3 md:rounded-2xl md:px-4 md:py-2">
+    <div class="flex flex-col space-y-0 sm:space-y-0 md:flex-row md:space-x-5 items-start md:items-center">
         <h3 class="font-title text-[20px] md:text-[25px] font-medium text-LM-Title dark:text-DM-Title tracking-[-.05rem]">
             <a class="hover:underline underline-offset-2 hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Selected" href={url} >{title}</a>
         </h3>
+        <!-- <p class="md:block hidden font-para text-[24px] font-normal mt-2">|</p> -->
         <ul class="flex flex-row md:space-x-0.5 font-sans text-[12px] md:text-[14px] text-LM-Para dark:text-DM-Para">
-            {tags.map((tag, idx) => (
+            {tags.map((tag: string, idx: number) => (
                     <> <li> <a class="hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Selected" href={`/blogs/tags/${tag}/`} > {tag} </a> </li>
                         {idx < tags.length - 1 && ( <Icon name="dot" size={20} class="text-LM-Nav-Unselected dark:text-DM-Nav-Selected"/> )}
                     </>  )) }
@@ -33,10 +34,10 @@ const year = pubDate.getFullYear();
     </div>
     <p class="font-title text-[14px] md:text-[16px] text-LM-Para w-full dark:text-DM-Para"> {description.toString()} </p>
     <div class="flex flex-row items-center align-middle">
-        <a class="font-title text-[12px] md:text-[14px] tracking-[-0.3px] font-normal text-LM-Nav-Unselected dark:text-DM-Nav-Selected hover:text-LM-Nav-Selected dark:hover:text-DM-Nav-Unselected" href="#"> {author} </a>
+        <a class="font-title uppercase text-[11px] md:text-[14px] tracking-[-0.3px] font-normal text-LM-Title dark:text-DM-Title hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Selected" href="#"> {author} </a>
         <Icon name="dot" size={20} class="text-LM-Nav-Unselected dark:text-DM-Nav-Selected"/>
         <span
-            class="font-sans uppercase text-[11px] md:text-[14px] tracking-[-0.02rem] font-medium text-LM-Title dark:text-DM-Title"
+            class="font-title uppercase text-[11px] md:text-[14px] tracking-[-0.02rem] font-medium text-LM-Title dark:text-DM-Title"
             >{`${dotw}, ${date} ${month} ${year}`}</span
         >
     </div>
