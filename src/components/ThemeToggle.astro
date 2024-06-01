@@ -6,7 +6,7 @@
             "theme-icon",
             class extends HTMLElement {
                 connectedCallback() {
-                    this.innerHTML = `<button><div class="motion-safe:hover:scale-110 transform-gpu transition ease-in-out rounded-[6px] md:rounded-[8px] bg-DM-Background dark:bg-LM-Background drop-shadow-2xl mt-[7px] w-5 h-5 md:h-6 md:w-6"></div></button>`;
+                    this.innerHTML = `<button><div class="motion-safe:hover:scale-110 transform-gpu transition ease-in-out rounded-[6px] md:rounded-[8px] bg-LM-Theme-Toggler dark:bg-DM-Theme-Toggler drop-shadow-2xl mt-[7px] w-5 h-5 md:h-6 md:w-6"></div></button>`;
 
                     const button = this.querySelector("button");
                     button.addEventListener("click", () => {
