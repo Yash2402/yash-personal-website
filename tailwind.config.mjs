@@ -8,10 +8,9 @@ export default {
       "LM-Logo": "#0B7DA5",
       "LM-Theme-Toggler": "#000000",
       "LM-Background": "#EEEEEE",
-      "LM-Secondary": "#aaaaaa",
+      "LM-Secondary": "#cccccc",
       "LM-Nav-Unselected": "#67A0B5",
       "LM-Nav-Selected": "#416572",
-      "LM-Nav-Hover": "#007099",
       "LM-Title": "#000000",
       "LM-Para": "#585858",
       "LM-Title-Bar": "#E5E5E5",
@@ -20,9 +19,9 @@ export default {
 
       // Dark Mode
       "DM-Logo": "#6DAAC0",
-      "DM-Theme-Toggler": "#ffffff",
+      "DM-Theme-Toggler": "#EEEEEE",
       "DM-Background": "#1B1B1B",
-      "DM-Secondary": "#404040",
+      "DM-Secondary": "#444444",
       "DM-Nav-Unselected": "#6DAAC0",
       "DM-Nav-Selected": "#89E1FF",
       "DM-Nav-Hover": "#0086B7",
