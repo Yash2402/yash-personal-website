@@ -5,11 +5,10 @@ import type { Crumb } from "../utils/types.ts";
 interface Props {
   breadcrumbs: Array<Crumb>;
 }
-
 const { breadcrumbs } = Astro.props as Props;
 ---
 
-<div class="mb-[15px] font-crumbs uppercase font-semibold tracking-[-0.8px] text-[13px] text-LM-Title dark:text-DM-Title md:text-[14px] md:mt-[12px] md:mb-[22px]">
+<div class="mb-[15px] font-crumbs uppercase font-semibold tracking-[-0.8px] text-[13px] md:text-[14px] md:mt-[12px] md:mb-[22px]">
   <ol class="flex flex-row space-x-1 items-center align-middle font-sans">
     {
       breadcrumbs &&
@@ -19,9 +18,9 @@ const { breadcrumbs } = Astro.props as Props;
               <a
                 class:list={[
                   idx === breadcrumbs.length - 1
-                    ? "text-LM-Title dark:text-DM-Title"
-                    : "text-LM-Para dark:text-DM-Para",
-                  "hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Selected",
+                    ? "text-LM-Title dark:text-DM-Title transition"
+                    : "text-LM-Para dark:text-DM-Para transition",
+                  "hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Selected transition",
                 ]}
                 {...(idx === breadcrumbs.length - 1
                   ? { "aria-current": "page" }

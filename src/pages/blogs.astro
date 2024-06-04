@@ -16,28 +16,18 @@ const blogPosts = await getCollection("blogs");
 <BaseLayout {title} {current} breadcrumbs={breadcrumbs}>
 <div class="flex flex-col space-y-5 mb-4 md:space-y-7">
     <div class="flex flex-col space-y-2 md:space-y-4">
-        <h1 class="text-LM-Title dark:text-DM-Title uppercase text-[20px] font-title md:text-[25px] tracking-[-0.80px]">
-           Welcome to my Blogs
+        <h1 class="uppercase text-[20px] font-title md:text-[25px] tracking-[-0.80px]">
+           thoughts & tutorials
         </h1>
-        <p class="md:w-10/12 text-LM-Para dark:text-DM-Para font-para text-[14px] md:text-[17px] h-full font-normal">
-            Here, I will share my thoughts on technology, mathematics, physics, and sometimes history. You'll also find
-             tutorials on various topics. I've always wanted to share my ideas online, and now I have a website to do
-              just that. I hope you find the content helpful. Enjoy reading!
+        <p class="md:w-10/12 font-para text-[14px] md:text-[17px] h-full font-normal">
+            Here, I will share my thoughts on technology, mathematics, physics, and occasionally history. I will try to be consistent <em class="text-[12px] tracking-wide">(hehe)</em> and hope you find the content helpful and engaging. Enjoy reading!
         </p>
     </div>
-    <hr class="border-LM-Secondary dark:border-DM-Secondary border-[1px] opacity-[0.36] rounded-sm" />
-    <div class="flex flex-col space-y-4 md:space-y-5 items-start">
+    <hr class="border-LM-Secondary dark:border-DM-Secondary border-[1px] opacity-[0.36] rounded-sm transition"/>
+    <div class="flex flex-col space-y-4 md:space-y-5 items-start transition">
         {
             blogPosts.sort((a, b) => a.data.postNo - b.data.postNo).map((blogPost) => <BlogPostCard {blogPost} />)
         }
     </div>
 </div>
 </BaseLayout>
-<style>
-    hr {
-    display: block;
-    border-width: 1px;
-    opacity: 0.36;
-    border-radius: 2px;
-  }
-</style>

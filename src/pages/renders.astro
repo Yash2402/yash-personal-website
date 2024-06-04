@@ -22,7 +22,7 @@ const breadcrumbs: Array<Crumb> = [{ title: "renders", href: "/renders/" }];
                 stunning visualizations I've crafted using Blender.
             </p>
         </div>
-        <hr class="border-LM-Secondary dark:border-DM-Secondary border-[1px] opacity-[0.36]"/>
+        <hr class="border-LM-Secondary dark:border-DM-Secondary border-[1px] opacity-[0.36] transition"/>
         <main class="flex flex-col space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-3">
             <RenderPostCard
                 title="Nature's Gem"
@@ -40,7 +40,27 @@ const breadcrumbs: Array<Crumb> = [{ title: "renders", href: "/renders/" }];
                 pubDate={new Date("2024-05-14")}
             />
             <RenderPostCard
-                title="Swirling"
+                title="Swirls"
+                url={percentage}
+                pubDate={new Date("2022-09-11")}
+            />
+            <RenderPostCard
+                title="Nature's Gem"
+                url={diamond}
+                pubDate={new Date("2024-02-24")}
+            />
+            <RenderPostCard
+                title="The Void"
+                url={thevoid}
+                pubDate={new Date("2024-05-08")}
+            />
+            <RenderPostCard
+                title="Moon"
+                url={moon}
+                pubDate={new Date("2024-05-14")}
+            />
+            <RenderPostCard
+                title="Swirls"
                 url={percentage}
                 pubDate={new Date("2022-09-11")}
             />

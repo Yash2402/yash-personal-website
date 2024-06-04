@@ -12,6 +12,7 @@ import "@fontsource-variable/newsreader";
 
 import { ViewTransitions } from "astro:transitions";
 import Head from "../components/Head.astro";
+import "../styles/transition.css"
 
 interface BaseLayoutProps {
   title?: string;
@@ -30,7 +31,7 @@ const { title, current, breadcrumbs } = Astro.props as BaseLayoutProps;
     <ViewTransitions/>
     <ThemeManager/>
   </head>
-  <body class="bg-LM-Background dark:bg-DM-Background max-w-screen-2xl flex flex-col m-auto mt-6 md:mt-11">
+  <body class="bg-LM-Background dark:bg-DM-Background transition max-w-screen-2xl flex flex-col m-auto mt-6 md:mt-11">
       <Nav {current}/>
       <main class="flex flex-col items-start mx-8 mt-6 md:mx-[110px] md:my-4">
         <Breadcrumbs {breadcrumbs} />
