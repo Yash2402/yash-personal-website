@@ -22,7 +22,7 @@ export default {
       "DM-Theme-Toggler": "#EEEEEE",
       "DM-Background": "#1B1B1B",
       "DM-Secondary": "#444444",
-      "DM-Nav-Unselected": "#6DAAC0",
+      "DM-Nav-Unselected": "#98C3D2",
       "DM-Nav-Selected": "#89E1FF",
       "DM-Nav-Hover": "#0086B7",
       "DM-Title": "#FFFFFF",

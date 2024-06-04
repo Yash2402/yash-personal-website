@@ -10,7 +10,7 @@ interface Props{
 const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const { title, url, pubDate } = Astro.props as Props;
 ---
-<main class="bg-LM-Title-Bar dark:bg-DM-Title-Bar p-3 rounded-2xl shadow-2xl transition">
+<main class="bg-LM-Title-Bar dark:bg-DM-Title-Bar p-3 rounded-2xl shadow-md transition">
     <div class="space-y-4 w-full flex flex-col md:items-start md:flex-row md:space-x-8">
         <Image class="md:w-[200px] rounded-lg" src={url} alt={title}></Image>
         <div class="flex flex-col items-center md:items-start font-sans text-LM-Title dark:text-DM-Title transition-all ease-linear">
