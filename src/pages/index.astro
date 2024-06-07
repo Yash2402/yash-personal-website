@@ -19,8 +19,8 @@ const breadcrumbs: Array<Crumb> = [{ title: "HOME", href: "/" }];
 ---
 
 <BaseLayout title="yash sharma's homepage" {breadcrumbs}>
-  <main class="flex flex-col space-y-3 mb-8 md:space-y-14">
-    <div class="flex flex-col font-home items-between space-y-8 sm:flex sm:flex-col md:w-full xl:space-y-0 xl:flex xl:flex-row xl:w-full xl:justify-between xl:items-center">
+  <main class="flex flex-col space-y-10 mb-5 md:mb-8 md:space-y-14">
+    <div class="flex flex-col font-home items-between space-y-5 sm:flex sm:flex-col md:w-full xl:space-y-0 xl:flex xl:flex-row xl:w-full xl:justify-between xl:items-center">
       <p class="left text-[33px] font-normal tracking-tight xl:text-[40px]">
         Hey, I am <br/>
         <span>Yash Sharma</span>.
@@ -34,7 +34,7 @@ const breadcrumbs: Array<Crumb> = [{ title: "HOME", href: "/" }];
       </p>
     </div>
     <!-- Carousel -->
-    <div class="bg-LM-Title-Bar dark:bg-DM-Title-Bar transition p-3 pb-[6px] rounded-2xl">
+    <div class="hidden md:block bg-LM-Title-Bar dark:bg-DM-Title-Bar transition p-3 pb-[6px] rounded-2xl">
         <div class="carousel">
             <div id="item1" class="hidden carousel-item bg-LM-Title rounded-lg mx-3 items-center space-x-5 md:w-full md:flex md:justify-center">
                 <Image class="rounded-lg w-auto md:h-[400px] xl:h-[400px]" src={yash} alt="Moon"/>
