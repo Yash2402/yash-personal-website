@@ -17,14 +17,14 @@ const blogPosts = await getCollection("blogs");
 <div class="flex flex-col space-y-5 mb-4 md:space-y-7">
     <div class="flex flex-col space-y-2 md:space-y-4">
         <h1 class="uppercase text-[20px] font-title md:text-[25px] tracking-[-0.80px]">
-           thoughts & tutorials
+           thoughts 
         </h1>
-        <p class="md:w-10/12 font-para text-[14px] md:text-[17px] h-full font-normal">
+        <p class="md:w-10/12 font-title  text-[14px] md:text-[17px] h-full font-normal">
             Here, I will share my thoughts on technology, mathematics, physics, and occasionally history. I will try to be consistent <em class="text-[12px] tracking-wide">(hehe)</em> and hope you find the content helpful and engaging. Enjoy reading!
         </p>
     </div>
     <hr class="border-LM-Secondary dark:border-DM-Secondary border-[1px] opacity-[0.36] rounded-sm transition"/>
-    <div class="flex flex-col space-y-4 md:space-y-5 items-start transition">
+    <div class="-mx-2 flex flex-col space-y-4 md:space-y-5 items-start transition">
         {
             blogPosts.sort((a, b) => a.data.postNo - b.data.postNo).map((blogPost) => <BlogPostCard {blogPost} />)
         }

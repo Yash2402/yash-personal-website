@@ -10,9 +10,9 @@ import { footerLinks } from "../data/footerLinks.ts";
     <nav class="hidden md:mx-[100px] md:flex md:flex-row md:items-center md:justify-between md:my-2 xl:mx-[100px] xl:my-5 xl:flex xl:flex-row xl:items-center xl:justify-between">
         <div class="hidden md:flex md:flex-col md:items-start md:justify-between xl:flex xl:flex-row xl:items-center xl:justify-between xl:space-x-2 xl:space-y-0">
           <a href="/"> <Image src={yash} alt="Personal Logo" height={50} width={50} /> </a>
-          <p class="font-title tracking-[-0.4px] font-medium md:text-[16px] xl:text-[16px]">Designed and developed by <span class="">Yash Sharma</span></p>
+          <p class="font-title tracking-[-0.4px] font-medium md:text-[15px] xl:text-[16px]">Designed and developed by <span class="">Yash Sharma</span></p>
         </div>
-          <div class="flex flex-row items-center justify-between space-x-4 xl:flex xl:flex-row xl:items-center xl:justify-between xl:space-x-5"> { footerLinks.map( (footerLink) => ( <li class="list-none"> <a class="hover:text-LM-Para dark:hover:text-DM-Para md:text-[16px] xl:text-[16px]" href={footerLink.href}> {footerLink.title} </a> </li> ) ) } </div>
+          <div class="flex flex-row items-center space-x-7"> { footerLinks.map( (footerLink) => ( <li class="list-none"> <a class="hover:text-LM-Para dark:hover:text-DM-Para md:text-[15px] xl:text-[16px]" href={footerLink.href}> {footerLink.title} </a> </li> ) ) } </div>
     </nav>
     <nav class="md:hidden xl:hidden mx-[35px] my-[24px]">
         <div class="flex flex-row items-center justify-between"> { footerLinks.map( (footerLink) => ( <li class="list-none"> <a class="font-title font-[100] tracking-[-1px] hover:text-LM-Para dark:hover:text-DM-Para text-[16px]" href={footerLink.href}> {footerLink.title} </a> </li> ) ) } </div>

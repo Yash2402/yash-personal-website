@@ -9,8 +9,8 @@ import type { Crumb } from "../utils/types";
 const breadcrumbs: Array<Crumb> = [{ title: "ABOUT", href: "/about/" }];
 ---
 <BaseLayout title="about" current="about" breadcrumbs={breadcrumbs}>
-  <div class="flex flex-col items-center justify-between space-y-5 xl:flex xl:flex-row xl:items-center xl:w-full xl:justify-between">
-    <div class="font-para flex flex-col space-y-2 md:space-y-4 text-[16px] md:text-[19px] text-LM-Para dark:text-DM-Para xl:w-[800px] transition ease-linear">
+  <div class="flex flex-col mb-4 items-center justify-between space-y-5 xl:flex xl:flex-row xl:items-center xl:w-full xl:justify-between">
+    <div class="font-title flex flex-col space-y-2 md:space-y-4 text-[15px] md:text-[17px] text-LM-Para dark:text-DM-Para xl:max-w-[700px] transition ease-linear">
       <p>
         Hello, I am <span class="italic">Yash Sharma</span>, a sophomore studying 
         Mechanical Engineering. I love designing and developing. My interest in 
@@ -22,7 +22,7 @@ const breadcrumbs: Array<Crumb> = [{ title: "ABOUT", href: "/about/" }];
       </p>
       <p>
         I started my coding journey on that computer. In 10th grade, I wrote my 
-        first Python code(add here what sort of code you wrote), which sparked 
+        first Python code, which sparked 
         my interest in coding. In 11th grade, my father gifted me a MacBook. I 
         discovered <a class="text-LM-Link dark:text-DM-Link hover:underline transition ease-linear" href="https://blender.org">Blender</a>
          through a video of someone animating a ring, and so my passion for 3D Modelling began.
