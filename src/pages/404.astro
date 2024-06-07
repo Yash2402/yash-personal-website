@@ -3,13 +3,13 @@ import BaseLayout from "../layouts/baselayout.astro";
 ---
 
 <BaseLayout title="404">
-  <div class="flex flex-col items-center justify-center m-auto my-[150px] bg-[#ffffff] dark:bg-DM-Title-Bar rounded-xl p-8 shadow-xl md:my-[130px] md:p-12 md:flex md:flex-col md:items-center md:rounded-2xl">
-    <h1 class="text-[30px] font-title font-extrabold text-LM-Title dark:text-DM-Title mb-3 md:text-[35px] md:mb-5">
+  <div class="flex flex-col items-center justify-center transition bg-[#ffffff] m-auto my-[150px] shadow-md hover:shadow-xl dark:bg-DM-Title-Bar rounded-xl p-8 md:flex md:flex-col md:items-center md:rounded-2xl md:mt-[140px] md:mb-[170px] md:p-12">
+    <h1 class="text-[30px] font-sans font-[300] transition-all ease-linear text-LM-Title dark:text-DM-Title mb-3 md:text-[35px] md:mb-5">
       404 Not Found
     </h1>
-    <p class="text-[18px] font-para text-center text-LM-Para dark:text-DM-Para md:text-[20px]">
-      This page does not exist<br/>
-      perhaps visit the <a class="text-LM-Nav-Unselected dark:text-DM-Nav-Unselected hover:underline" href="/">home</a> page
+    <p class="text-[18px] font-para text-center transition-all ease-linear text-LM-Para dark:text-DM-Para md:text-[20px]">
+      You seem to be lost. This page does not exist.<br/>
+      Perhaps visit the <a class="text-LM-Nav-Unselected dark:text-DM-Nav-Unselected hover:underline" href="/">home</a> page or any other page from navigation bar.
     </p>
   </div>
 </BaseLayout>

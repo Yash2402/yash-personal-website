@@ -3,7 +3,6 @@ import BaseLayout from "../layouts/baselayout.astro";
 import "@fontsource-variable/playfair-display";
 
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
 
 import moon from "../imgs/blogs/moon.png";
 import yash from "../imgs/home/yash1.png"
@@ -13,12 +12,9 @@ import moon_sq from "../imgs/home/moon.png";
 import percentage from "../imgs/home/percentage.png";
 import roundedcube from "../imgs/home/roundedcube.png";
 import thevoid from "../imgs/home/thevoid.png";
-
-import type { Crumb } from "../utils/types";
-const breadcrumbs: Array<Crumb> = [{ title: "HOME", href: "/" }];
 ---
 
-<BaseLayout title="yash sharma's homepage" {breadcrumbs}>
+<BaseLayout title="yash sharma's homepage">
   <main class="flex flex-col space-y-10 mb-5 md:mb-8 md:space-y-14">
     <div class="flex flex-col font-home items-between space-y-5 sm:flex sm:flex-col md:w-full xl:space-y-0 xl:flex xl:flex-row xl:w-full xl:justify-between xl:items-center">
       <p class="left text-[33px] font-normal tracking-tight xl:text-[40px]">
@@ -37,23 +33,17 @@ const breadcrumbs: Array<Crumb> = [{ title: "HOME", href: "/" }];
     <div class="hidden md:block bg-LM-Title-Bar dark:bg-DM-Title-Bar transition p-3 pb-[6px] rounded-2xl">
         <div class="carousel">
             <div id="item1" class="hidden carousel-item bg-LM-Title rounded-lg mx-3 items-center space-x-5 md:w-full md:flex md:justify-center">
-                <Image class="rounded-lg w-auto md:h-[400px] xl:h-[400px]" src={yash} alt="Moon"/>
+                <Image class="rounded-lg w-auto md:h-[360px] xl:h-[360px]" src={yash} alt="Moon"/>
             </div>
             <div id="item2" class="hidden carousel-item bg-LM-Title rounded-lg mx-3 items-center space-x-5 md:w-full md:flex md:justify-center">
-                <Image class="rounded-lg w-auto md:h-[400px] xl:h-[400px]" src={moon} alt="Moon"/>
+                <Image class="rounded-lg w-auto md:h-[360px] xl:h-[360px]" src={moon} alt="Moon"/>
             </div>
             <div id="item3" class="hidden carousel-item bg-LM-Title rounded-lg mx-3 items-center space-x-5 md:w-full md:flex md:justify-center">
-                <Image class="rounded-lg w-auto md:h-[400px] xl:h-[400px]" src={thevoid} alt="Moon"/>
+                <Image class="rounded-lg w-auto md:h-[360px] xl:h-[360px]" src={thevoid} alt="Moon"/>
             </div>
             <div id="item4" class="hidden carousel-item bg-LM-Title rounded-lg mx-3 items-center space-x-5 md:w-full md:flex md:justify-center">
-                <Image class="rounded-lg w-auto md:h-[400px] xl:h-[400px]" src={jupiter} alt="Moon"/>
+                <Image class="rounded-lg w-auto md:h-[360px] xl:h-[360px]" src={jupiter} alt="Moon"/>
             </div>
-            <!-- <div class="hidden md:absolute md:left-[770px] md:bottom-[170px] md:text-DM-Secondary md:shadow-lg md:space-x-3 md:flex md:flex-row md:items-center md:justify-center">
-                <a id="indicator1" class="indicator1" href="#item1"><Icon name="dot" size={20}/> </a> 
-                <a id="indicator2" class="indicator2" href="#item2"><Icon name="dot" size={20}/> </a> 
-                <a id="indicator3" class="indicator3" href="#item3"><Icon name="dot" size={20}/> </a> 
-                <a id="indicator4" class="indicator4" href="#item4"><Icon name="dot" size={20}/> </a> 
-                </div> -->
         </div>
     </div>
     <!-- mobile display img -->
