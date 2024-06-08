@@ -5,6 +5,7 @@ import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
 import remarkObsidian from 'remark-obsidian';
 import katex from 'rehype-katex'
+import remarkObsidianCallout from "remark-obsidian-callout";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,11 +14,11 @@ export default defineConfig({
   integrations: [tailwind(), icon(), mdx({
     syntaxHighlight: 'shiki',
     shikiConfig: {
-      // themes:{light:'github-light'},
-      theme: "ayu-dark",
+      // themes:{light:'github-light', dark:'github-dark'},
+      theme: "material-theme-darker",
       defaultColor: false
     },
-    remarkPlugins: [remarkObsidian],
+    remarkPlugins: [remarkObsidianCallout, remarkObsidian],
     rehypePlugins: [katex],
     gfm: true
   }),],
