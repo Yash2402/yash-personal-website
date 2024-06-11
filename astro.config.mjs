@@ -4,13 +4,23 @@ import icon from "astro-icon";
 import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
 import remarkObsidian from 'remark-obsidian';
-import katex from 'rehype-katex'
+import remarkMath from 'remark-math';
+import mathjax from 'rehype-mathjax';
+import katex from "rehype-katex";
 import remarkObsidianCallout from "remark-obsidian-callout";
 
 // https://astro.build/config
 export default defineConfig({
   output: "static",
   adapter: vercel(),
+  markdown: {
+    remarkPlugins: [
+    remarkMath, remarkObsidianCallout
+    ],
+    rehypePlugins: [
+    katex
+    ]
+  },
   integrations: [tailwind(), icon(), mdx({
     syntaxHighlight: 'shiki',
     shikiConfig: {
@@ -18,8 +28,5 @@ export default defineConfig({
       theme: "material-theme-darker",
       defaultColor: false
     },
-    remarkPlugins: [remarkObsidianCallout, remarkObsidian],
-    rehypePlugins: [katex],
-    gfm: true
   }),],
 });
