@@ -13,16 +13,16 @@ const projectPosts = await getCollection("projects");
 <div class="flex flex-col space-y-5 mb-3 md:space-y-8">
   <div class="flex flex-col space-y-2 md:space-y-4">
     <h1 class="uppercase text-[20px] font-title tracking-[-0.88px] md:text-[25px]">
-       Welcome to my Projects
+      Welcome to my Projects
     </h1>
     <p class="font-title text-[15px] md:text-[17px] font-normal">
-      These are the projects I have done. If you have any project ideas and would like to collaborate,
+      These are the projects I've done. If you have any project ideas and would like to collaborate,
        just send me an <a class="transition text-LM-Link dark:text-DM-Link hover:underline underline-offset-3" href="mailto:yashsharma4583@gmail.com">e-mail</a> 
        we'll talk about it!
     </p>
   </div>
   <hr class="border-LM-Secondary dark:border-DM-Secondary border-[1px] opacity-[0.36] rounded-sm transition" />
-  <div class="-mx-2 flex flex-col items-start space-y-4 md:space-y-5 transition">
+  <div class="flex flex-col items-start space-y-4 md:space-y-5 transition">
         {projectPosts.sort((a, b) => a.data.postNo - b.data.postNo).map((projectPost) => <ProjectPostCard {projectPost} />)}
   </div>
 </div>

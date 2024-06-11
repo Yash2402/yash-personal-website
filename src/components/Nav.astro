@@ -16,9 +16,9 @@ interface NavProps {
 const { current } = Astro.props as NavProps;
 ---
 <header>
-  <nav class="hidden transition bg-LM-Title-Bar dark:bg-DM-Title-Bar px-4 py-3 mx-5 rounded-xl md:flex md:flex-row md:items-center md:justify-between md:px-5 md:py-3 md:rounded-2xl md:mx-20">
+  <nav class="hidden transition mx-5 md:bg-LM-Title-Bar md:dark:bg-DM-Title-Bar  md:flex md:flex-row md:items-center md:justify-between md:px-5 md:py-3 md:rounded-2xl md:mx-[88px]">
     <a href="/"><Icon name="yash" height={40} width={85}/></a>
-    <div class="hidden md:flex md:flex-row md:items-center md:space-x-7 xl:flex xl:flex-row xl:items-center xl:space-x-11">
+    <div class="hidden md:flex md:flex-row md:items-center md:space-x-8 xl:flex xl:flex-row xl:items-center xl:space-x-11">
       { navLinks.map((navLink) => ( <li class="list-none"> <a class:list={[
         navLink.title === current ? "text-LM-Nav-Selected dark:text-DM-Nav-Selected transition" : "text-LM-Nav-Unselected dark:text-DM-Nav-Unselected transition",
         "hover:text-LM-Nav-Selected dark:hover:text-DM-Nav-Selected transition",

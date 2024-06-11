@@ -24,10 +24,14 @@ const blogPosts = await getCollection("blogs");
         </p>
     </div>
     <hr class="border-LM-Secondary dark:border-DM-Secondary border-[1px] opacity-[0.36] rounded-sm transition"/>
-    <div class="-mx-2 flex flex-col space-y-4 md:space-y-5 items-start transition">
+    <div class="flex flex-col space-y-4 md:space-y-5 items-start transition">
         {
-            blogPosts.sort((a, b) => a.data.postNo - b.data.postNo).map((blogPost) => <BlogPostCard {blogPost} />)
+            blogPosts.sort((a, b) => a.data.postNo - b.data.postNo).map((blogPost) => 
+            <BlogPostCard {blogPost} /> 
+            
+            )
         }
     </div>
+    
 </div>
 </BaseLayout>
