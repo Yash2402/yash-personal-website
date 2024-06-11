@@ -7,15 +7,14 @@ export default {
       // Light Mode
       "LM-Logo": "#0B7DA5",
       "LM-Theme-Toggler": "#000000",
-      "LM-Background": "#EEEEEE",
+      "LM-Background": "#eeeeee",
       "LM-Secondary": "#cccccc",
       "LM-Nav-Unselected": "#67A0B5",
       "LM-Nav-Selected": "#416572",
       "LM-Title": "#000000",
       "LM-Para": "#585858",
-      "LM-Title-Bar": "#E5E5E5",
+      "LM-Title-Bar": "#E9E9E9",
       "LM-Link": "#0B7DA5",
-      "LM-Card": "#DDDDDD23",
 
       // Dark Mode
       "DM-Logo": "#6DAAC0",
@@ -27,9 +26,8 @@ export default {
       "DM-Nav-Hover": "#0086B7",
       "DM-Title": "#FFFFFF",
       "DM-Para": "#c4c4c4",
-      "DM-Title-Bar": "#262626",
+      "DM-Title-Bar": "#242424",
       "DM-Link": "#85CDE6",
-      "DM-Card": "#33333340",
     },
     fontFamily: {
 	    "title":'IBM Plex Sans Hebrew', /*"ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"*/

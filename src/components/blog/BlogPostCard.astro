@@ -25,7 +25,7 @@ const year = pubDate.getFullYear();
             <h3 class="font-title text-[20px] md:text-[25px] font-medium tracking-[-.05rem] text-LM-Title dark:text-DM-Title transition-all ease-linear">
                 <a class="hover:underline underline-offset-2 hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Selected" href={url} >{title}</a>
             </h3>
-            <p class="font-title text-LM-Secondary dark:text-DM-Secondary font-thin text-[20px]">|</p>
+            <p class="hidden md:block md:font-title md:text-LM-Secondary md:dark:text-DM-Secondary md:font-thin md:text-[20px]">|</p>
             <ul class="flex flex-row items-center space-x-1 font-sans text-[12px] md:text-[14px] text-LM-Title dark:text-DM-Title transition-all ease-linear">
                 {tags.map((tag: string, idx: number) => (
                         <> <li> <a class="hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Selected" href={`/blogs/tags/${tag}/`} > {tag} </a> </li>
