@@ -28,7 +28,7 @@ const { current } = Astro.props as NavProps;
     </div>
     
   </nav>
-  <nav class="md:hidden nav-bar flex flex-row itmes-center justify-between bg-LM-Title-Bar dark:bg-DM-Title-Bar px-4 py-2 mx-5 rounded-xl transition">
+  <nav class="md:hidden nav-bar flex flex-row itmes-center justify-between bg-LM-Title-Bar dark:bg-DM-Title-Bar px-4 py-2 mx-5 rounded-xl transition" transition:persist>
     <a class="w-[75px] md:w-[95px]" data-astro-reload href="/"><Image src={yash} alt="Personal Logo"/></a>
     <div class="flex flex-row justify-between items-center space-x-[20px]">
       <ThemeIcon/>
