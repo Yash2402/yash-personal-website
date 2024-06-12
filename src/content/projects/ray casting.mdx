@@ -1,10 +1,10 @@
 ---
 title: "Ray Casting"
-pubDate: 2024-06-01
+pubDate: 2024-03-11
 description: It is a Ray Casting algorithm. In this particle cast rays in its surrounding and an algorithm draw the environment around it.
-# banner:
-#     url: "./website_first.jpeg"
-#     alt: blocks
+banner:
+    url: "./ray_casting.png"
+    alt: ray casting window
 resources: [
     {url: https://youtu.be/TOEi6T2mtHo?si=G1l0LzggaP9wCyUH, name: The Coding Train},
     {url: https://en.wikipedia.org/wiki/Line%E2%80%93line_intersection, name: Line Intersection Wiki}
@@ -12,6 +12,8 @@ resources: [
 githubLink: "https://github.com/Yash2402/Ray-Casting.git"
 postNo: 1
 ---
+import Latex from '../../components/Latex.astro';
+
 ## Introduction
 This project implements a Ray Casting algorithm where particles cast rays in their surroundings, and an algorithm draws the environment around them. [Ray Casting](https://en.wikipedia.org/wiki/Ray_casting#:~:text=Ray%20casting%20is%20the%20most,scenes%20to%20two%2Ddimensional%20images.) is commonly used in computer graphics to simulate the way light interacts with objects in a scene.
 [Ray Casting](https://en.wikipedia.org/wiki/Ray_casting#:~:text=Ray%20casting%20is%20the%20most,scenes%20to%20two%2Ddimensional%20images.) is a technique used to render a 3D scene onto a 2D screen. It involves casting rays from a viewer (camera) into the scene, determining the intersections with objects, and using this information to create a 2D representation of the 3D environment.
@@ -21,49 +23,47 @@ The algorithm utilizes three main steps:
 - **Particle Emission**: The particle emits rays into its surrounding environment.
 - **Ray Intersection Detection**: The algorithm checks for [intersections](#intersection-between-two-lines) between the emitted rays and objects in the surrounding environment.
 - **Rectangle Drawing**: Based on the distance between the camera and the intersection points, the algorithm draws rectangles with corresponding heights and colors. (This process follows the [Inverse Square Law](#inverse-square-law).)
-
+***
 ### Intersection Between two lines
 In order to find the position of the intersection in respect to the line segments, we can define lines L1 and L2 in terms of first degree Bézier parameters:
-$$ \displaystyle L_{1}={\begin{bmatrix}x_{1}\\y_{1}\end{bmatrix}}+t{\begin{bmatrix}x_{2}-x_{1}\\y_{2}-y_{1}\end{bmatrix}},\qquad L_{2}={\begin{bmatrix}x_{3}\\y_{3}\end{bmatrix}}+u{\begin{bmatrix}x_{4}-x_{3}\\y_{4}-y_{3}\end{bmatrix}}$$
+$$\displaystyle L_{1}= {\begin{bmatrix}x_{1}\\y_{1}\end{bmatrix}}+t{\begin{bmatrix}x_{2}-x_{1}\\y_{2}-y_{1}\end{bmatrix}},\qquad L_{2}={\begin{bmatrix}x_{3}\\y_{3}\end{bmatrix}}+u{\begin{bmatrix}x_{4}-x_{3}\\y_{4}-y_{3}\end{bmatrix}} $$
 
 where t and u are real numbers:
-```math
-\displaystyle t={\frac {\begin{vmatrix}x_{1}-x_{3}&x_{3}-x_{4}\\y_{1}-y_{3}&y_{3}-y_{4}\end{vmatrix}}{\begin{vmatrix}x_{1}-x_{2}&x_{3}-x_{4}\\y_{1}-y_{2}&y_{3}-y_{4}\end{vmatrix}}}={\frac {(x_{1}-x_{3})(y_{3}-y_{4})-(y_{1}-y_{3})(x_{3}-x_{4})}{(x_{1}-x_{2})(y_{3}-y_{4})-(y_{1}-y_{2})(x_{3}-x_{4})}}
-```
-```math
-\displaystyle u=-{\frac {\begin{vmatrix}x_{1}-x_{2}&x_{1}-x_{3}\\y_{1}-y_{2}&y_{1}-y_{3}\end{vmatrix}}{\begin{vmatrix}x_{1}-x_{2}&x_{3}-x_{4}\\y_{1}-y_{2}&y_{3}-y_{4}\end{vmatrix}}}=-{\frac {(x_{1}-x_{2})(y_{1}-y_{3})-(y_{1}-y_{2})(x_{1}-x_{3})}{(x_{1}-x_{2})(y_{3}-y_{4})-(y_{1}-y_{2})(x_{3}-x_{4})}},
-```
+
+<Latex formula='\displaystyle t={\frac {\begin{vmatrix}x_{1}-x_{3}&x_{3}-x_{4}\\y_{1}-y_{3}&y_{3}-y_{4}\end{vmatrix}}{\begin{vmatrix}x_{1}-x_{2}&x_{3}-x_{4}\\y_{1}-y_{2}&y_{3}-y_{4}\end{vmatrix}}}={\frac {(x_{1}-x_{3})(y_{3}-y_{4})-(y_{1}-y_{3})(x_{3}-x_{4})}{(x_{1}-x_{2})(y_{3}-y_{4})-(y_{1}-y_{2})(x_{3}-x_{4})}}'/>
+
+<Latex formula='\displaystyle u=-{\frac {\begin{vmatrix}x_{1}-x_{2}&x_{1}-x_{3}\\y_{1}-y_{2}&y_{1}-y_{3}\end{vmatrix}}{\begin{vmatrix}x_{1}-x_{2}&x_{3}-x_{4}\\y_{1}-y_{2}&y_{3}-y_{4}\end{vmatrix}}}=-{\frac {(x_{1}-x_{2})(y_{1}-y_{3})-(y_{1}-y_{2})(x_{1}-x_{3})}{(x_{1}-x_{2})(y_{3}-y_{4})-(y_{1}-y_{2})(x_{3}-x_{4})}}'/>
+
 the point of intersection: 
-$$
-\displaystyle (P_{x},P_{y})={\bigl (}x_{1}+t(x_{2}-x_{1}),\;y_{1}+t(y_{2}-y_{1}){\bigr )}\quad {\text{or}}\quad (P_{x},P_{y})={\bigl (}x_{3}+u(x_{4}-x_{3}),\;y_{3}+u(y_{4}-y_{3}){\bigr )}
-$$
+
+<Latex formula='\displaystyle (P_{x},P_{y})={\bigl (}x_{1}+t(x_{2}-x_{1}),\;y_{1}+t(y_{2}-y_{1}){\bigr )}\quad {\text{or}}\quad (P_{x},P_{y})={\bigl (}x_{3}+u(x_{4}-x_{3}),\;y_{3}+u(y_{4}-y_{3}){\bigr )}'/>
 
 There will be an intersection if $$ 0 ≤ t ≤ 1$$ and $$0 ≤ u ≤ 1 $$. The intersection point falls within the first line segment if $$ 0 ≤ t ≤ 1 $$, and it falls within the second line segment if $$0 ≤ u ≤ 1$$.
 
 **How camera cast rays:**
 ```python
 def cast(self, wall: Boundary):
-        x1 = wall.a.x; y1 = wall.a.y
-        x2 = wall.b.x; y2 = wall.b.y
+    x1 = wall.a.x; y1 = wall.a.y
+    x2 = wall.b.x; y2 = wall.b.y
 
-        x3 = self.pos.x; y3 = self.pos.y
-        x4 = self.pos.x + self.dir.x; y4 = self.pos.y + self.dir.y
+    x3 = self.pos.x; y3 = self.pos.y
+    x4 = self.pos.x + self.dir.x; y4 = self.pos.y + self.dir.y
 
-        den = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4)
-        if den == 0:
-            return None
+    den = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4)
+    if den == 0:
+        return None
+    else:
+        t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / den
+        u = -((x1 - x2) * (y1 - y3) - (y1 - y2) * (x1 - x3)) / den
+
+        if t >= 0 and t <= 1 and u >= 0:
+            pt = Vector2D((x1 + t * (x2 - x1)), (y1 + t * (y2 - y1)))
+            return pt
+
         else:
-            t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / den
-            u = -((x1 - x2) * (y1 - y3) - (y1 - y2) * (x1 - x3)) / den
-
-            if t >= 0 and t <= 1 and u >= 0:
-                pt = Vector2D((x1 + t * (x2 - x1)), (y1 + t * (y2 - y1)))
-                return pt
-
-            else:
-                return None
+            return None
 ```
-
+***
 ### Inverse Square Law
 The **Inverse Square Law** of light states that the intensity of light or other radiative energy from a point source is inversely proportional to the square of the distance from the source. Mathematically, it can be expressed as:
 $$ I \propto \frac {1}{d^2}$$
@@ -71,7 +71,7 @@ or more specifically, $$ I = \frac {P}{4\pi d^2} $$
 
 where: 
 **P**: Power of the light source, **I**: Intensity of the light source, **d**: Distance from the light source.
-
+***
 ## Getting Started
 
 Clone the repository and navigate to the project:
