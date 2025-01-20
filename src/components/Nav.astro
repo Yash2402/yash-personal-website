@@ -16,7 +16,7 @@ interface NavProps {
 const { current } = Astro.props as NavProps;
 ---
 <header style={`view-transition-name: header`}>
-  <nav class="hidden transition mx-5 md:bg-LM-Title-Bar md:dark:bg-DM-Title-Bar  md:flex md:flex-row md:items-center md:justify-between md:px-5 md:py-3 md:rounded-2xl md:mx-[88px]">
+  <nav class="hidden transition mx-5 md:flex md:flex-row md:items-center md:justify-between md:px-5 md:py-3 md:rounded-2xl md:mx-[70px]">
     <a href="/"><Icon name="yash" height={40} width={85}/></a>
     <div class="hidden md:flex md:flex-row md:items-center md:space-x-8 xl:flex xl:flex-row xl:items-center xl:space-x-11">
       { navLinks.map((navLink) => ( <li class="list-none"> <a class:list={[
@@ -26,8 +26,8 @@ const { current } = Astro.props as NavProps;
       ]} href={navLink.href}> {navLink.title} </a> </li> )) }
       <ThemeIcon/>
     </div>
-    
   </nav>
+  <hr class="border-LM-Secondary dark:border-DM-Secondary border-[1px] opacity-[0.36] rounded-sm transition md:mx-[75px] md:my-[10px]"/>
   <nav class="md:hidden nav-bar flex flex-row itmes-center justify-between bg-LM-Title-Bar dark:bg-DM-Title-Bar px-4 py-2 mx-5 rounded-xl transition" transition:persist>
     <a class="w-[75px] md:w-[95px]" data-astro-reload href="/"><Image src={yash} alt="Personal Logo"/></a>
     <div class="flex flex-row justify-between items-center space-x-[20px]">

@@ -12,6 +12,7 @@ import { footerLinks } from "../data/footerLinks.ts";
         </div>
           <div class="flex flex-row items-center space-x-7"> { footerLinks.map( (footerLink) => ( <li class="list-none"> <a class="hover:text-LM-Para dark:hover:text-DM-Para md:text-[16px]" href={footerLink.href}> {footerLink.title} </a> </li> ) ) } </div>
     </nav>
+    <hr class="border-LM-Secondary dark:border-DM-Secondary border-[1px] opacity-[0.36] rounded-sm transition md:mx-[75px] md:my-[-20px]"/>
     <nav class="md:hidden xl:hidden mx-[35px] my-[24px]">
         <div class="flex flex-row items-center justify-between"> { footerLinks.map( (footerLink) => ( <li class="list-none"> <a class="font-title font-[100] tracking-[-1px] hover:text-LM-Para dark:hover:text-DM-Para text-[16px]" href={footerLink.href}> {footerLink.title} </a> </li> ) ) } </div>
     </nav>
