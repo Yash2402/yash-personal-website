@@ -5,15 +5,14 @@ import { footerLinks } from "../data/footerLinks.ts";
 ---
 
 <footer class="mob-footer w-full" style={`view-transition-name: footer`}>
-    <nav class="hidden md:mx-[100px] md:flex md:flex-row md:items-center md:justify-between md:my-5 xl:mx-[100px] xl:my-9 xl:flex xl:flex-row xl:items-center xl:justify-between">
-        <div class="hidden md:flex md:flex-col md:items-start md:justify-between xl:justify-between xl:space-y-0 md:-mt-3">
-          <a href="/"> <Icon name="yash" width={52} height={35} /> </a>
+    <nav class="hidden md:flex md:flex-row md:items-center md:justify-between md:my-5 xl:my-9 xl:flex xl:flex-row xl:items-center xl:justify-between mx-8">
+        <div class="hidden md:flex md:flex-col md:items-start md:justify-between xl:justify-between xl:-space-y-2.5 md:-mt-3">
+            <a href="/"> <Icon name="yash" size={38} /> </a>
           <p class="font-para tracking-[-0.2px] font-normal md:text-[15px]">Designed 🧑‍🎨 & developed  🛠️ by <span class="font-medium text-LM-Link dark:text-DM-Link transition-all ease-linear">Yash Sharma.</span></p>
         </div>
-          <div class="flex flex-row items-center space-x-7"> { footerLinks.map( (footerLink) => ( <li class="list-none"> <a class="hover:text-LM-Para dark:hover:text-DM-Para md:text-[16px]" href={footerLink.href}> {footerLink.title} </a> </li> ) ) } </div>
+          <div class="flex flex-row items-center space-x-7 font-title"> { footerLinks.map( (footerLink) => ( <li class="list-none"> <a class="hover:text-LM-Para dark:hover:text-DM-Para md:text-[16px]" href={footerLink.href}> {footerLink.title} </a> </li> ) ) } </div>
     </nav>
-    <hr class="border-LM-Secondary dark:border-DM-Secondary border-[1px] opacity-[0.36] rounded-sm transition md:mx-[75px] md:my-[-20px]"/>
     <nav class="md:hidden xl:hidden mx-[35px] my-[24px]">
-        <div class="flex flex-row items-center justify-between"> { footerLinks.map( (footerLink) => ( <li class="list-none"> <a class="font-title font-[100] tracking-[-1px] hover:text-LM-Para dark:hover:text-DM-Para text-[16px]" href={footerLink.href}> {footerLink.title} </a> </li> ) ) } </div>
+        <div class="flex flex-row items-center justify-between"> { footerLinks.map( (footerLink) => ( <li class="list-none"> <a class="font-title font-[100] tracking-[-0.2px] hover:text-LM-Para dark:hover:text-DM-Para text-[16px]" href={footerLink.href}> {footerLink.title} </a> </li> ) ) } </div>
     </nav>
 </footer>
