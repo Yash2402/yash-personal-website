@@ -1,5 +1,5 @@
 import { defineConfig } from "astro/config";
-import vercel from "@astrojs/vercel/static";
+import vercel from "@astrojs/vercel";
 import icon from "astro-icon";
 import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
@@ -10,6 +10,7 @@ import remarkObsidianCallout from "remark-obsidian-callout";
 
 // https://astro.build/config
 export default defineConfig({
+// experimental: { viewTransitions: true, },
   output: "static",
   adapter: vercel(),
   integrations: [tailwind(), icon(), mdx({syntaxHighlight: 'shiki',
@@ -20,7 +21,7 @@ export default defineConfig({
     },
     gfm: true,
     remarkPlugins: [
-    remarkMath, remarkObsidianCallout
+        remarkMath, remarkObsidianCallout
     ],
     rehypePlugins: [
       katex,
