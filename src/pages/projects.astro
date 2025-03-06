@@ -9,21 +9,21 @@ const breadcrumbs: Array<Crumb> = [{ title: "PROJECTS", href: "/projects/" }];
 const projectPosts = await getCollection("projects");
 ---
 
-<BaseLayout title="projects" current="projects" {breadcrumbs}>
-<div class="flex flex-col space-y-5 mb-4 md:space-y-7">
-  <div class="flex flex-col space-y-2 md:space-y-4">
-    <h1 class="uppercase text-[20px] font-title tracking-[-0.88px] md:text-[25px]">
+<BaseLayout title="yas / projects" current="projects" {breadcrumbs}>
+  <div class="flex flex-col space-y-5 mb-4 md:space-y-7">
+    <div class="flex flex-col space-y-2 md:space-y-4">
+      <h1 class="uppercase text-[20px] font-title tracking-[-0.88px] md:text-[25px]">
       Welcome to my Projects
-    </h1>
-    <p class="md:w-8/12 font-para text-[15px] md:text-[17px] font-normal">
+      </h1>
+      <p class="md:w-8/12 font-para text-[15px] md:text-[17px] font-normal">
       These are the projects I've done. If you have any project ideas and would like to collaborate,
-       just send me an <a class="transition text-LM-Link dark:text-DM-Link hover:underline underline-offset-3" href="mailto:yashsharma4583@gmail.com">e-mail</a> 
-       we'll talk about it!
+      just send me an <a class="transition text-LM-Link dark:text-DM-Link hover:underline underline-offset-3" href="mailto:yashsharma4583@gmail.com">e-mail</a>
+      we'll talk about it!
     </p>
-  </div>
-  <hr class="border-LM-Secondary dark:border-DM-Secondary border-[1px] opacity-[0.36] rounded-sm transition" />
-  <div class="flex flex-col items-start space-y-4 md:space-y-5 transition">
+    </div>
+    <hr class="border-LM-Secondary dark:border-DM-Secondary border-[1px] opacity-[0.36] rounded-sm transition" />
+    <div class="flex flex-col items-start space-y-4 md:space-y-5 transition">
         {projectPosts.sort((a, b) => a.data.postNo - b.data.postNo).map((projectPost) => <ProjectPostCard {projectPost} />)}
+    </div>
   </div>
-</div>
 </BaseLayout>

@@ -2,57 +2,43 @@
 import BaseLayout from "../layouts/baselayout.astro";
 import "@fontsource-variable/playfair-display";
 
+import type { Crumb } from "../utils/types";
 import { Image } from "astro:assets";
 
 import moon from "../imgs/blogs/moon.png";
 import yash from "../imgs/home/yash1.png"
-import jupiter from "../imgs/blogs/jupiter.png";
-import diamond from "../imgs/home/diamond.png";
+// import jupiter from "../imgs/blogs/jupiter.png";
+import vortex from "../imgs/home/vortex-ring-sobel-figma.png";
+import moon_lens from "../imgs/home/moonnlens.png";
 import moon_sq from "../imgs/home/moon.png";
-import percentage from "../imgs/home/percentage.png";
-import roundedcube from "../imgs/home/roundedcube.png";
+import golf_square from "../imgs/home/golf_square.png";
+// import percentage from "../imgs/home/percentage.png";
+// import roundedcube from "../imgs/home/roundedcube.png";
 import thevoid from "../imgs/home/thevoid.png";
+import diamond from "../imgs/home/diamond.png";
+
+const breadcrumbs: Array<Crumb> = [{ title: "HOME", href: "/" }];
 ---
 
-<BaseLayout title="yash sharma's homepage">
-  <main class="flex flex-col space-y-10 mb-5 md:mb-8 md:space-y-14">
-    <div class="flex flex-col font-home items-between space-y-5 sm:flex sm:flex-col md:w-full xl:space-y-0 xl:flex xl:flex-row xl:w-full xl:justify-between xl:items-center">
-      <p class="left text-[33px] font-normal tracking-tight xl:text-[40px]">
-        Hey, I am <br/>
-        <span>Yash Sharma</span>.
-      </p>
-      <p class="right text-[24px] font-normal transition ease-linear text-LM-Para dark:text-DM-Para xl:text-[35px]">
-        I am currently a <span1 class="italic">sophomore</span1> in a university studying 
-        <br/>
-        <span class="text-LM-Title dark:text-DM-Title transition ease-linear">
-          Mechanical Engineering
-        </span>
-      </p>
+<BaseLayout title="homepage" breadcrumbs={breadcrumbs}>
+  <main class="flex flex-col space-y-10 mb-5 md:mb-1 md:space-y-12">
+    <div class="flex flex-col font-home items-between space-y-5 lg:flex lg:flex-row lg:space-y-0  lg:justify-between lg:items-center">
+      <p class="left text-[33px] font-normal tracking-tight xl:text-[40px]"> Hey, I am <br/> <span class='text-[]'>Yash Sharma</span>. </p>
+      <p class="right text-[24px] font-normal transition ease-linear text-LM-Para dark:text-DM-Para xl:text-[35px]"> I am currently a <span1 class="italic">sophomore</span1> in a university studying  <br/> <span class="text-LM-Title dark:text-DM-Title transition ease-linear"> Mechanical Engineering </span> </p>
     </div>
-    <!-- Carousel -->
-    <!-- <div class="hidden md:block bg-LM-Title-Bar dark:bg-DM-Title-Bar transition p-3 pb-[6px] rounded-2xl">
-        <div class="carousel">
-            <div id="item1" class="hidden carousel-item bg-LM-Title rounded-lg mx-3 items-center space-x-5 md:w-full md:flex md:justify-center">
-                <Image class="rounded-lg w-auto md:h-[360px] xl:h-[360px]" src={yash} alt="Moon"/>
-            </div>
-            <div id="item2" class="hidden carousel-item bg-LM-Title rounded-lg mx-3 items-center space-x-5 md:w-full md:flex md:justify-center">
-                <Image class="rounded-lg w-auto md:h-[360px] xl:h-[360px]" src={moon} alt="Moon"/>
-            </div>
-            <div id="item3" class="hidden carousel-item bg-LM-Title rounded-lg mx-3 items-center space-x-5 md:w-full md:flex md:justify-center">
-                <Image class="rounded-lg w-auto md:h-[360px] xl:h-[360px]" src={thevoid} alt="Moon"/>
-            </div>
-            <div id="item4" class="hidden carousel-item bg-LM-Title rounded-lg mx-3 items-center space-x-5 md:w-full md:flex md:justify-center">
-                <Image class="rounded-lg w-auto md:h-[360px] xl:h-[360px]" src={jupiter} alt="Moon"/>
-            </div>
+    <div class='hidden lg:grid lg:grid-cols-3 lg:gap-2 lg:bg-DM-Title-Bar p-2 rounded-xl'>
+        <Image class="rounded-xl w-full invert dark:blend" src={diamond} alt="The Void"/>
+        <!-- <Image class="rounded-xl w-full" src={golf_square} alt="The Void"/> -->
+        <div class="lg:grid lg:grid-row-3 lg:gap-2 rounded-xl">
+            <Image class="rounded-xl w-full" src={vortex} alt="The Void"/>
+            <Image class="rounded-xl w-full" src={moon} alt="The Void"/>
         </div>
-    </div> -->
+        <Image class="rounded-xl w-full" src={moon_lens} alt="The Void"/>
+    </div>
+
     <!-- mobile display img -->
-    <div class="md:hidden carousel space-x-2">
-      <Image class="carousel-item rounded-xl" src={moon_sq} height={1050} width={1050} alt="Display Item Mobile" />
-      <Image class="carousel-item rounded-xl" src={diamond} height={1050} width={1050} alt="Display Item Mobile" />
-      <Image class="carousel-item rounded-xl" src={thevoid} height={1050} width={1050} alt="Display Item Mobile" />
-      <Image class="carousel-item rounded-xl" src={percentage} height={1050} width={1050} alt="Display Item Mobile" />
-      <Image class="carousel-item rounded-xl" src={roundedcube} height={1050} width={1050} alt="Display Item Mobile" />
+    <div class="lg:hidden carousel space-x-2">
+        <Image class="rounded-xl w-full invert dark:blend" src={diamond} alt="The Void"/>
     </div>
   </main>
 </BaseLayout>

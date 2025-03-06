@@ -1,12 +1,12 @@
 ---
 import BaseLayout from "../layouts/baselayout.astro";
 import type { Crumb } from "../utils/types";
+import RenderPostCard from "../components/render/RenderPostCard.astro";
 
 import diamond from "../imgs/renders/diamond.png";
 import moon from "../imgs/renders/moon.png";
 import thevoid from "../imgs/renders/thevoid.png";
 import percentage from "../imgs/renders/percentage.png";
-import RenderPostCard from "../components/render/RenderPostCard.astro";
 
 const breadcrumbs: Array<Crumb> = [{ title: "renders", href: "/renders/" }];
 ---
@@ -23,47 +23,11 @@ const breadcrumbs: Array<Crumb> = [{ title: "renders", href: "/renders/" }];
             </p>
         </div>
         <hr class="border-LM-Secondary dark:border-DM-Secondary border-[1px] opacity-[0.36] transition"/>
-        <main class="flex flex-col space-y-5 -mx-2 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-3">
-            <RenderPostCard
-                title="Nature's Gem"
-                url={diamond}
-                pubDate={new Date("2024-02-24")}
-            />
-            <RenderPostCard
-                title="The Void"
-                url={thevoid}
-                pubDate={new Date("2024-05-08")}
-            />
-            <RenderPostCard
-                title="Moon"
-                url={moon}
-                pubDate={new Date("2024-05-14")}
-            />
-            <RenderPostCard
-                title="Swirls"
-                url={percentage}
-                pubDate={new Date("2022-09-11")}
-            />
-            <RenderPostCard
-                title="Nature's Gem"
-                url={diamond}
-                pubDate={new Date("2024-02-24")}
-            />
-            <RenderPostCard
-                title="The Void"
-                url={thevoid}
-                pubDate={new Date("2024-05-08")}
-            />
-            <RenderPostCard
-                title="Moon"
-                url={moon}
-                pubDate={new Date("2024-05-14")}
-            />
-            <RenderPostCard
-                title="Swirls"
-                url={percentage}
-                pubDate={new Date("2022-09-11")}
-            />
+        <main class="flex flex-col space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-3">
+            <RenderPostCard title="Nature's Gem" url={diamond} pubDate={new Date("2024-02-24")} description=""/>
+            <RenderPostCard title="The Void" url={thevoid} pubDate={new Date("2024-05-08")} description=""/>
+            <RenderPostCard title="Moon" url={moon} pubDate={new Date("2024-05-14")} description=""/>
+            <RenderPostCard title="Swirls" url={percentage} pubDate={new Date("2022-09-11")} description=""/>
         </main>
     </div>
 </BaseLayout>
