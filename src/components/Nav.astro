@@ -2,7 +2,8 @@
 import { Image } from "astro:assets";
 import { navLinks } from "../data/navLinks";
 
-import yash from "../icons/yash.svg";
+import yash_LM from "../icons/yash_LM.svg";
+import yash_DM from "../icons/yash_DM.svg";
 import ThemeIcon from "./ThemeToggle.astro";
 
 import "@fontsource/ibm-plex-sans-hebrew";
@@ -15,26 +16,26 @@ interface NavProps {
 
 const { current } = Astro.props as NavProps;
 ---
-
-
 <header style={`view-transition-name: header`}>
 
-  <!-- DESKTOP NAVIGATION --> 
+  <!-- DESKTOP NAVIGATION -->
   <nav class="hidden transition md:flex md:flex-row md:items-center md:justify-between md:mx-8">
-      <a class="mt-2" href="/"><Icon name="yash" size={70} /></a>
+      <a class="mt-2 dark:hidden" href="/"><Icon name="yash_LM" size={70} /></a>
+      <a class="mt-2 invisible dark:visible" href="/"><Icon name="yash_DM" size={70} /></a>
       <div class="hidden md:flex md:flex-row md:items-center md:space-x-5 xl:flex xl:flex-row xl:items-center xl:space-x-8">
           { navLinks.map((navLink) => ( <li class="list-none"> <a class:list={[
             navLink.title === current ? "text-LM-Nav-Selected dark:text-DM-Nav-Selected transition" : "text-LM-Nav-Unselected dark:text-DM-Nav-Unselected transition",
             "hover:text-LM-Nav-Selected dark:hover:text-DM-Nav-Selected transition",
-            "font-title lowercase font-normal tracking-[-0.1px] md:text-[16px] xl:text-[17px]", 
+            "font-title lowercase font-normal tracking-[-0.1px] md:text-[16px] xl:text-[17px]",
           ]} href={navLink.href}> {navLink.title} </a> </li> )) }
-        <ThemeIcon/>
+        <ThemeIcon class:list={"ml-8"}/>
       </div>
   </nav>
- 
+
   <!-- MOBILE NAVIGATION COLLAPSED -->
-  <nav class="md:hidden nav-bar flex flex-row itmes-center justify-between bg-LM-Title-Bar dark:bg-DM-Title-Bar px-4 py-2 mx-5 rounded-xl transition" transition:persist>
-      <a class="w-[75px] md:w-[95px]" data-astro-reload href="/"><Image src={yash} alt="Personal Logo"/></a>
+  <nav class="md:hidden nav-bar flex flex-row itmes-center justify-between py-2 mx-8 rounded-xl transition" transition:persist>
+      <a class="mt-2 w-[75px] md:w-[95px] dark:hidden" data-astro-reload href="/"><Image src={yash_LM} alt="Personal Logo"/></a>
+      <a class="mt-2 w-[75px] md:w-[95px] invisible dark:visible" data-astro-reload href="/"><Image src={yash_DM} alt="Personal Logo"/></a>
       <div class="flex flex-row justify-between items-center space-x-[20px]">
           <ThemeIcon/>
           <button class="flex flex-row justify-between items-center text-LM-Nav-Unselected hover:text-LM-Nav-Selected" id="mob-nav-expand">
