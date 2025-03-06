@@ -19,8 +19,8 @@ const { breadcrumbs } = Astro.props as Props;
                 class:list={[
                   idx === breadcrumbs.length - 1
                     ? "text-LM-Title dark:text-DM-Title transition"
-                    : "text-LM-Para dark:text-DM-Para transition",
-                  "hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Selected transition",
+                    : "text-LM-Nav-Unselected dark:text-DM-Unselected transition",
+                  "hover:text-LM-Nav-Selected dark:hover:text-DM-Nav-Selected transition",
                 ]}
                 {...(idx === breadcrumbs.length - 1
                   ? { "aria-current": "page" }

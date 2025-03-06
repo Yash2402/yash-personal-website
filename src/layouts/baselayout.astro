@@ -12,7 +12,6 @@ import "@fontsource-variable/newsreader";
 
 import { ViewTransitions } from "astro:transitions";
 import Head from "../components/Head.astro";
-import "../styles/transition.css"
 
 interface BaseLayoutProps {
   title?: string;
@@ -25,7 +24,7 @@ const { title, current, breadcrumbs } = Astro.props as BaseLayoutProps;
 ---
 
 <!doctype html>
-<html lang="en" class="selection:bg-DM-Nav-Selected dark:selection:bg-LM-Nav-Selected antialiased scroll-smooth">
+<html lang="en" class="selection:bg-DM-Nav-Selected dark:selection:bg-LM-Nav-Unselected antialiased scroll-smooth">
   <head>
     <Head title={title}/>
     <ViewTransitions/>
