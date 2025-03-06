@@ -5,16 +5,8 @@ import "@fontsource-variable/playfair-display";
 import type { Crumb } from "../utils/types";
 import { Image } from "astro:assets";
 
-import moon from "../imgs/blogs/moon.png";
-import yash from "../imgs/home/yash1.png"
-// import jupiter from "../imgs/blogs/jupiter.png";
-import vortex from "../imgs/home/vortex-ring-sobel-figma.png";
+import vortex from "../imgs/home/vortex.png";
 import moon_lens from "../imgs/home/moonnlens.png";
-import moon_sq from "../imgs/home/moon.png";
-import golf_square from "../imgs/home/golf_square.png";
-// import percentage from "../imgs/home/percentage.png";
-// import roundedcube from "../imgs/home/roundedcube.png";
-import thevoid from "../imgs/home/thevoid.png";
 import diamond from "../imgs/home/diamond.png";
 
 const breadcrumbs: Array<Crumb> = [{ title: "HOME", href: "/" }];
@@ -28,7 +20,6 @@ const breadcrumbs: Array<Crumb> = [{ title: "HOME", href: "/" }];
     </div>
     <div class='hidden lg:grid lg:grid-cols-3 lg:gap-2 lg:bg-DM-Title-Bar p-2 rounded-xl'>
         <Image class="rounded-xl w-full invert dark:blend" src={diamond} alt="The Void"/>
-        <!-- <Image class="rounded-xl w-full" src={golf_square} alt="The Void"/> -->
         <Image class="rounded-xl w-full" src={vortex} alt="The Void"/>
         <Image class="rounded-xl w-full" src={moon_lens} alt="The Void"/>
     </div>
