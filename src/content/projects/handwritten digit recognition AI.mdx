@@ -2,32 +2,40 @@
 title: "Handwritten Digit Recognition AI"
 pubDate: 2024-01-24
 description: "This is a basic project on a neural network trained on the MNIST dataset using Python, Numpy and Matplotlib. This neural network can predict digits with 95% accuracy (when trained with 3000 max iterations and 0.5 learning rate)."
-resources: [
-    {url: https://youtube.com/3Blue1Brown, name: 3Blue1Brown},
-    {url: https://www.youtube.com/@SamsonZhangTheSalmon, name: Samson Zhang}
-]
+resources:
+  [
+    { url: https://youtube.com/3Blue1Brown, name: 3Blue1Brown },
+    { url: https://www.youtube.com/@SamsonZhangTheSalmon, name: Samson Zhang },
+  ]
 githubLink: "https://github.com/Yash2402/neural-network.git"
 postNo: 1
 ---
+
 import Resource from "../../components/Resource.astro";
 
 ## Overview
+
 This project is a basic implementation of a neural network trained on the MNIST dataset using Python and Numpy (without TensorFlow).
-The MNIST dataset is a classic benchmark dataset in the field of machine learning and computer vision. It consists of 28x28 grayscale images of handwritten digits (0-9). The task is to classify these images into their respective digit classes. 
+The MNIST dataset is a classic benchmark dataset in the field of machine learning and computer vision. It consists of 28x28 grayscale images of handwritten digits (0-9). The task is to classify these images into their respective digit classes.
 In this implementation, a simple feedforward neural network is used to classify the images. The architecture of the neural network is as follows:
 
 - Input layer: 784 neurons (28x28 pixels flattened)
 - Hidden layer: 10 neurons with ReLU activation
 - Output layer: 10 neurons with softmax activation (corresponding to the 10 digit classes)
 
-
 ## Acknowledgments
 
 This implementation is based on tutorials and resources from Youtube Channels like [3Blue1Brown](https://www.youtube.com/c/3blue1brown), [Samson Zhang](https://www.youtube.com/@SamsonZhangTheSalmon) and other online sources.
 Feel free to contribute or provide feedback to improve this implementation!
 
-## Resources 
+## Resources
 
-<Resource title="Samson Zhang's video on build neural network in python using numpy and pandas." url=""/>
-<Resource title="3Blue1Brown playlist on underline mathematics in neural networks." url="https://youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&si=OaSzJLS9RNrgr5Sv"/>
-<Resource title="My blog on neural network." url="/blogs/neural-network/"/>
+<Resource
+  title="Samson Zhang's video on build neural network in python using numpy and pandas."
+  url=""
+/>
+<Resource
+  title="3Blue1Brown playlist on underline mathematics in neural networks."
+  url="https://youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&si=OaSzJLS9RNrgr5Sv"
+/>
+<Resource title="My blog on neural network." url="/blogs/neural-network/" />
