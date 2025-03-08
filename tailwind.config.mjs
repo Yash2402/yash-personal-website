@@ -2,6 +2,7 @@
 
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  plugins: [require("@tailwindcss/typography")],
   theme: {
     colors: {
       // Light Mode
@@ -26,7 +27,7 @@ export default {
       "DM-Nav-Hover": "#0086B7",
       "DM-Title": "#FFFFFF",
       "DM-Para": "#c4c4c4",
-      "DM-Title-Bar": "#242424",
+      "DM-Title-Bar": "#1b1b1b",
       "DM-Link": "#4CCBDB",
     },
     fontFamily: {
@@ -36,7 +37,6 @@ export default {
       para: "Newsreader Variable",
       home: "Playfair Display Variable" /*"ui-serif", "Georgia", "Cambria", "Times New Roman", "Times", "serif"*/,
     },
-
     extend: {
       spacing: {
         // '6.5xl': '75rem',
@@ -84,16 +84,6 @@ export default {
         },
       }),
     },
-  },
-  plugins: ["daisyui", "@tailwindcss/typography"],
-  daisyui: {
-    themes: [], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"] // name of one of the included themes for dark mode
-    base: false, // applies background color and foreground color for root element by default
-    styled: true, // include daisyUI colors and design decisions for all components
-    utils: false, // adds responsive and modifier utility classes
-    prefix: "", // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
-    logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
-    themeRoot: "*", // The element that receives theme color CSS variables
   },
   darkMode: ["selector", '[data-theme="dark"]'],
 };
