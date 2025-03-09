@@ -5,23 +5,23 @@ interface footerLinks {
 
 export const footerLinks: footerLinks[] = [
   {
-    title: "E-mail",
+    title: "e-mail",
     href: "mailto:yashsharma4583@gmail.com",
   },
   {
-    title: "Art Station",
+    title: "art station",
     href: "https://www.artstation.com/yash2402",
   },
   {
-    title: "Github",
+    title: "github",
     href: "https://www.github.com/Yash2402",
   },
   {
-    title: "Youtube",
+    title: "youtube",
     href: "https://www.youtube.com/@YashSharma-qj8pd",
   },
   {
-    title: "Instagram",
+    title: "instagram",
     href: "https://www.instagram.com/yash.sharma.2402/",
   },
 ];
