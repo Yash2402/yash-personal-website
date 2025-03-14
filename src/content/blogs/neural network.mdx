@@ -60,10 +60,11 @@ Suppose you have an untrained neural network that recognise handwritten digits a
   \overbrace{\vec{A^{(k)}}}^{\text{output\ layer}} = \begin{pmatrix} y_0 \\ y_1 \\ y_2 \\ \vdots \\ y_{m-1} \end{pmatrix}
   $$
 - **Checking the Answer Key:** We have the correct answer (the 3) from the MNIST dataset. We compare the network's guess to the actual digit. We subtract the desired output $\vec{A^{(k)}}$ from the output column vector $\vec{A^{(k)}}$ and calculate the error $E$. For the given example $m = 10$.
+
   $$
-  C = \begin{pmatrix}  y_0 \\ y_1 \\ y_2 \\ \vdots \\ y_{m-1} \end{pmatrix} - \overbrace{{\begin{pmatrix} 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \end{pmatrix}}^{T}}^{\text{output corresponding to 3}}
+  C = \begin{pmatrix}  y_0 \\ y_1 \\ y_2 \\ \vdots \\ y_{m-1} \end{pmatrix} - \overbrace{{\begin{pmatrix} 0 \\ 0 \\ 0 \\ 1 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \end{pmatrix}}}^{\text{desired output}}
   $$
-  where, $T$ means transpose of a matrix.
+
 - **Learning from Mistakes:** If the guess was wrong, we calculate the difference between the network's output and the correct answer. This difference tells us how far off the guess was. We calculate the error and add the square of each error (to make them +ve) to get the cost function.
 - **Fine-Tuning _(Gradient Descent)_:** Like a student learning from corrections, the network adjusts the connections between its internal processing units (weights) based on the error.
 
