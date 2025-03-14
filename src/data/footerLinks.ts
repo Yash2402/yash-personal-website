@@ -18,7 +18,7 @@ export const footerLinks: footerLinks[] = [
   },
   {
     title: "youtube",
-    href: "https://www.youtube.com/@YashSharma-qj8pd",
+    href: "https://www.youtube.com/@yasshawrma",
   },
   {
     title: "instagram",
