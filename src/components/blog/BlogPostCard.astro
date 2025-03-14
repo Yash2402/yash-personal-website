@@ -23,21 +23,21 @@ const year = pubDate.getFullYear();
     <div class="flex flex-col space-y-2 transition-none">
         <div class="flex flex-col space-y-0 items-start sm:space-y-0 md:flex-row md:space-x-5 md:items-center">
             <h3 class="font-title text-[20px] md:text-[25px] font-normal tracking-[-.05rem] text-LM-Title dark:text-DM-Title transition-all ease-linear">
-                <a class="hover:underline underline-offset-2 hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Selected " href={url}>{title}</a>
+                <a class="hover:underline underline-offset-2 hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Unselected " href={url}>{title}</a>
             </h3>
             <p class="hidden md:block md:font-title md:text-LM-Secondary md:dark:text-DM-Secondary md:font-thin md:text-[20px] transition-all ease-linear">|</p>
             <ul class="flex flex-row items-center space-x-1 font-sans text-[12px] md:text-[14px] text-LM-Title dark:text-DM-Title transition-all ease-linear">
                 {tags.map((tag: string, idx: number) => (
                         <> <li> <a class="hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Selected" href={`/blogs/tags/${tag}/`} > {tag} </a> </li>
-                            {idx < tags.length - 1 && ( <Icon name="dot" size={8} class="text-LM-Nav-Unselected dark:text-DM-Nav-Selected transition-all ease-linear"/> )}
+                            {idx < tags.length - 1 && ( <Icon name="dot" size={8} class="text-LM-Nav-Selected dark:text-DM-Nav-Selected transition-all ease-linear"/> )}
                         </>  )) }
             </ul>
         </div>
         <p class="font-title text-[12px] md:text-[14px] text-LM-Para dark:text-DM-Para transition-all ease-linear"> {description.toString()} </p>
         <div class="flex flex-row items-center space-x-2 justify-start">
-            <a class="font-sans lowercase text-[13px] md:text-[14px] tracking-[-0.3px] font-normal text-LM-Nav-Unselected dark:text-DM-Nav-Selected transition-all ease-linear" href="#"> {author} </a>
+            <a class="font-sans text-[13px] md:text-[14px] tracking-[-0.3px] font-normal text-LM-Nav-Selected dark:text-DM-Nav-Selected transition-all ease-linear" href="#"> {author} </a>
             <!-- <p class="font-para text-[12px] text-LM-Title dark:text-DM-Title align-middle">|</p> -->
-            <Icon name="dot" size={8} class="text-LM-Nav-Unselected dark:text-DM-Nav-Selected transition-all ease-linear"/>
+            <Icon name="dot" size={8} class="text-LM-Nav-Selected dark:text-DM-Nav-Selected transition-all ease-linear"/>
             <span
                 class="font-sans text-[13px] md:text-[14px] tracking-[-0.02rem] font-normal text-LM-Title dark:text-DM-Title transition-all ease-linear"
                 >{`${dotw}, ${date} ${month} ${year}`}</span

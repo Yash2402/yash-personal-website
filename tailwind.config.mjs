@@ -10,7 +10,7 @@ export default {
       "LM-Theme-Toggler": "#000000",
       "LM-Background": "#eeeeee",
       "LM-Secondary": "#cccccc",
-      "LM-Nav-Unselected": "#666666",
+      "LM-Nav-Unselected": "#888888",
       "LM-Nav-Selected": "#2AA9B9",
       "LM-Title": "#000000",
       "LM-Para": "#585858",
