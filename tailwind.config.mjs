@@ -14,7 +14,7 @@ export default {
       "LM-Nav-Selected": "#2AA9B9",
       "LM-Title": "#000000",
       "LM-Para": "#585858",
-      "LM-Title-Bar": "#E9E9E9",
+      "LM-Title-Bar": "#e9e9e9bf",
       "LM-Link": "#0B7DA5",
 
       // Dark Mode
@@ -27,7 +27,7 @@ export default {
       "DM-Nav-Hover": "#0086B7",
       "DM-Title": "#FFFFFF",
       "DM-Para": "#c4c4c4",
-      "DM-Title-Bar": "#1b1b1b",
+      "DM-Title-Bar": "#1d1d1d",
       "DM-Link": "#4CCBDB",
     },
     fontFamily: {
