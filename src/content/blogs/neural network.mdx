@@ -12,11 +12,11 @@ postNo: -1
 
 import Latex from "../../components/Latex.astro";
 
-## What is Neural Network ?
+## What is a Neural Network ?
 
-_Neural networks_ are inspired by the structure and function of the human brain. They consist of interconnected nodes as neurons and they are arranged in layers and the layers are interconnected. Each node holds some value and the connections hold some weights.
+_Neural networks_ are inspired by the structure and function of the human brain. They consist of interconnected nodes as neurons and they are arranged in layers and the layers are interconnected. Each node holds some value and the connections holds some weight.
 
-A simplest neural network would be, when a node (input node) is connected with another node (output node).
+The simplest neural network would be, when a node (input node) is connected with another node (output node).
 
 $$
 x_0 \overbrace{\implies}^{w_1} y_1
@@ -27,7 +27,7 @@ where, $x_0$ is called input node and $y_1$ is called output node, and they are 
 Now, Let see a neural network with more nodes and connections:
 ![IMAGE](./neural_network/neural_network.png)
 Here we can see there are nodes are connected with multiple nodes through multiple weights.
-We call each column of nodes, a layer. First layer is input layer, last one is output layer and the layers in between are called hidden layers. We give input to the neural network through input layer then it do some [_fancy_ calculations](#maths-behind-the-neural-network) (we will come to that soon) and give us output in output layer.
+We call each column of nodes, a layer. First layer is input layer, last one is output layer and the layers in between are called hidden layers. We give input to the neural network through input layer then it does some [_fancy_ calculations](#maths-behind-the-neural-network) (we will come to that soon) and give us output in output layer.
 
 ## How Neural Network Learns?
 
