@@ -1,5 +1,5 @@
 import { defineConfig } from "astro/config";
-import vercel from "@astrojs/vercel";
+// import vercel from "@astrojs/vercel";
 import icon from "astro-icon";
 import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
@@ -10,14 +10,14 @@ import remarkObsidianCallout from "remark-obsidian-callout";
 // https://astro.build/config
 export default defineConfig({
   output: "static",
-  adapter: vercel(),
+  // adapter: vercel(),
   integrations: [
     tailwind(),
     icon(),
     mdx({
       syntaxHighlight: "shiki",
       shikiConfig: {
-        theme: "material-theme-darker",
+        theme: "github-dark",
         defaultColor: false,
       },
       gfm: true,
