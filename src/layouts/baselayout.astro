@@ -12,7 +12,7 @@ import "@fontsource/ibm-plex-sans-hebrew";
 import "@fontsource-variable/newsreader";
 
 import { ViewTransitions } from "astro:transitions";
-import Analytics from '@vercel/analytics/astro'
+// import Analytics from '@vercel/analytics/astro'
 
 interface BaseLayoutProps {
   title?: string;
@@ -30,7 +30,7 @@ const { title, current, breadcrumbs } = Astro.props as BaseLayoutProps;
     <Head title={title}/>
     <ViewTransitions/>
     <ThemeManager/>
-    <Analytics />
+    <!-- <Analytics /> -->
   </head>
   <body class="bg-LM-Background dark:bg-DM-Background transition max-w-screen-xl flex flex-col m-auto mt-5 sm:mt-4">
       <Nav {current}/>
