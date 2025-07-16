@@ -26,7 +26,7 @@ const year = pubDate.getFullYear();
                 <a class="hover:underline underline-offset-2 hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Unselected " href={url}>{title}</a>
             </h3>
             <p class="hidden md:block md:font-title md:text-LM-Secondary md:dark:text-DM-Secondary md:font-thin md:text-[20px] transition-all ease-linear">|</p>
-            <ul class="flex flex-row items-center space-x-1 font-sans text-[12px] md:text-[14px] text-LM-Title dark:text-DM-Title transition-all ease-linear">
+            <ul class="flex flex-row items-center space-x-1 italic lowercase font-sans text-[12px] md:text-[14px] text-LM-Title dark:text-DM-Title transition-all ease-linear">
                 {tags.map((tag: string, idx: number) => (
                         <> <li> <a class="hover:text-LM-Nav-Unselected dark:hover:text-DM-Nav-Selected" href={`/blogs/tags/${tag}/`} > {tag} </a> </li>
                             {idx < tags.length - 1 && ( <Icon name="dot" size={8} class="text-LM-Nav-Selected dark:text-DM-Nav-Selected transition-all ease-linear"/> )}
@@ -36,7 +36,6 @@ const year = pubDate.getFullYear();
         <p class="font-title text-[12px] md:text-[14px] text-LM-Para dark:text-DM-Para transition-all ease-linear"> {description.toString()} </p>
         <div class="flex flex-row items-center space-x-2 justify-start">
             <a class="font-sans text-[13px] md:text-[14px] tracking-[-0.3px] font-normal text-LM-Nav-Selected dark:text-DM-Nav-Selected transition-all ease-linear" href="#"> {author} </a>
-            <!-- <p class="font-para text-[12px] text-LM-Title dark:text-DM-Title align-middle">|</p> -->
             <Icon name="dot" size={8} class="text-LM-Nav-Selected dark:text-DM-Nav-Selected transition-all ease-linear"/>
             <span
                 class="font-sans text-[13px] md:text-[14px] tracking-[-0.02rem] font-normal text-LM-Title dark:text-DM-Title transition-all ease-linear"
