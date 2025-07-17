@@ -41,8 +41,8 @@ export default {
     extend: {
        dropShadow: {
         glowdark: [
-          "0 0px 15px rgba(76, 202, 219, 0.6)",
-          "0 0px 20px rgba(76, 202, 219, 0.2)",
+          "0 0px 10px rgba(42, 168, 185, 0.4)",
+          "0 0px 15px rgba(42, 168, 185, 0.3)",
         ],
         glowlight: [
           "0 0px 10px rgba(76, 202, 219, 0.55)",

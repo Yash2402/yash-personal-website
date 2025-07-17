@@ -1,13 +1,13 @@
 ---
-import { Icon } from "astro-icon/components";
-
+import { Image } from "astro:assets";
+import yash_LM from "../imgs/yash_LM.svg";
 import { footerLinks } from "../data/footerLinks.ts";
 ---
 
 <footer class="mob-footer w-full">
     <nav class="hidden md:flex md:flex-row md:items-center md:justify-between md:my-5 xl:my-9 xl:flex xl:flex-row xl:items-center xl:justify-between mx-8">
         <div class="hidden md:flex md:flex-col md:items-start md:justify-between xl:justify-between xl:-space-y-2.5 md:-mt-3">
-            <a href="/"> <Icon name="yash_DM" size={38} /> </a>
+          <a href="/"> <Image src={yash_LM} alt="yash's website logo" width={38} height={38} loading="eager" class="my-2.5 drop-shadow-glowlight dark:drop-shadow-glowdark"/></a>
           <p class="font-para tracking-[-0.2px] font-normal md:text-[15px]">Designed 🧑‍🎨 & developed  🛠️ by <span class="font-medium text-LM-Link dark:text-DM-Link transition-all ease-linear">Yash Sharma.</span></p>
         </div>
           <div class="flex flex-row items-center space-x-7 font-title"> { footerLinks.map( (footerLink) => ( <li class="list-none"> <a class="text-LM-Nav-Unselected dark:text-DM-Nav-Unselected hover:text-LM-Nav-Selected dark:hover:text-DM-Nav-Selected tracking-[-0.2px] md:text-[16px]" href={footerLink.href}> {footerLink.title} </a> </li> ) ) } </div>
