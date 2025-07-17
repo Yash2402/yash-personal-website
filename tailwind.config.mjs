@@ -6,7 +6,7 @@ export default {
   theme: {
     colors: {
       // Light Mode
-      "LM-Logo": "#0B7DA5",
+      "LM-Logo": "#2AA9B9",
       "LM-Theme-Toggler": "#000000",
       "LM-Background": "#eeeeee",
       "LM-Secondary": "#cccccc",
@@ -18,7 +18,7 @@ export default {
       "LM-Link": "#0B7DA5",
 
       // Dark Mode
-      "DM-Logo": "#6DAAC0",
+      "DM-Logo": "#4CCBDB",
       "DM-Theme-Toggler": "#EEEEEE",
       "DM-Background": "#1B1B1B",
       "DM-Secondary": "#444444",
@@ -36,8 +36,20 @@ export default {
       crumbs: "Comfortaa Variable",
       para: "Newsreader Variable",
       home: "Playfair Display Variable" /*"ui-serif", "Georgia", "Cambria", "Times New Roman", "Times", "serif"*/,
+      logo: "Calgary"
     },
     extend: {
+       dropShadow: {
+        glowdark: [
+          "0 0px 15px rgba(76, 202, 219, 0.6)",
+          "0 0px 20px rgba(76, 202, 219, 0.2)",
+        ],
+        glowlight: [
+          "0 0px 10px rgba(76, 202, 219, 0.55)",
+          "0 0px 25px rgba(76, 202, 219, 0.45)",
+          "0 0px 35px rgba(76, 202, 219, 0.40)"
+        ],
+      },
       spacing: {
         // '6.5xl': '75rem',
       },

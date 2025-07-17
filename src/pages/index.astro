@@ -9,10 +9,12 @@ import vortex from "../imgs/home/vortex.png";
 import moon_lens from "../imgs/home/moonnlens.png";
 import diamond from "../imgs/home/diamond.png";
 
+const title = "homepage";
+const current = "home";
 const breadcrumbs: Array<Crumb> = [{ title: "HOME", href: "/" }];
 ---
 
-<BaseLayout title="homepage" breadcrumbs={breadcrumbs}>
+<BaseLayout title={title} current={current} breadcrumbs={breadcrumbs}>
   <main class="flex flex-col space-y-10 mb-5 md:mb-1 md:space-y-12">
     <div class="flex flex-col font-home items-between space-y-5 lg:flex lg:flex-row lg:space-y-0  lg:justify-between lg:items-center">
       <p class="left text-[33px] font-normal tracking-tight xl:text-[40px]"> Hey, I am <br/> <span class='text-[]'>Yash Sharma</span>. </p>

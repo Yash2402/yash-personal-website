@@ -4,10 +4,12 @@ import type { Crumb } from "../utils/types";
 import RenderPostCard from "../components/render/RenderPostCard.astro";
 import { renders } from "../data/renders.ts";
 
+const title = "yas / renders";
+const current = "renders";
 const breadcrumbs: Array<Crumb> = [{ title: "renders", href: "/renders/" }];
 ---
 
-<BaseLayout title="yas / renders" current="renders" {breadcrumbs}>
+<BaseLayout title={title} current={current} {breadcrumbs}>
     <div class="flex flex-col space-y-5 mb-2 md:space-y-8 md:w-full md:mb-4">
         <div class="flex flex-col space-y-2 md:space-y-4">
             <h1 class="font-title uppercase text-[20px] tracking-[-0.8px] md:text-[25px]">

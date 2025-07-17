@@ -9,6 +9,7 @@ import ThemeIcon from "./ThemeToggle.astro";
 import "@fontsource/ibm-plex-sans-hebrew";
 import MobileNavLinks from "./MobileNavLinks.astro";
 import { Icon } from "astro-icon/components";
+import "../styles/styles.css";
 
 interface NavProps {
   current: string;
@@ -19,9 +20,9 @@ const { current } = Astro.props as NavProps;
 <header style={`view-transition-name: header`}>
 
   <!-- DESKTOP NAVIGATION -->
-  <nav class="hidden transition md:flex md:flex-row md:items-center md:justify-between md:mx-8">
-      <a class="mt-2 dark:hidden" href="/"><Icon name="yash_LM" size={70} /></a>
-      <a class="mt-2 invisible dark:visible" href="/"><Icon name="yash_DM" size={70} /></a>
+  <nav class="hidden transition md:flex md:flex-row md:items-center md:justify-between md:mx-8 md:mt-5 md:mb-3">
+      <a class="mt-2 dark:hidden" href="/"> <Image src={yash_LM} alt="yash's website logo" width={73} height={48} loading="eager" class:list={[ "select-none", current === "home" ? "drop-shadow-glowlight dark:drop-shadow-glowdark" : "", ]} /> </a>
+      <a class="mt-2 invisible dark:visible" href="/"> <Image src={yash_DM} alt="yash's website logo" width={73} height={48} loading="eager" class:list={[ "select-none", current === "home" ? "drop-shadow-glowlight dark:drop-shadow-glowdark" : "", ]} /> </a>
       <div class="hidden md:flex md:flex-row md:items-center md:space-x-5 xl:flex xl:flex-row xl:items-center xl:space-x-8">
           { navLinks.map((navLink) => ( <li class="list-none"> <a class:list={[
             navLink.title === current ? "text-LM-Nav-Selected dark:text-DM-Nav-Selected transition" : "text-LM-Nav-Unselected dark:text-DM-Nav-Unselected transition",
@@ -34,8 +35,8 @@ const { current } = Astro.props as NavProps;
 
   <!-- MOBILE NAVIGATION COLLAPSED -->
   <nav class="md:hidden nav-bar flex flex-row itmes-center justify-between py-2 mx-8 rounded-xl transition" transition:persist>
-      <a class="mt-2 w-[75px] md:w-[95px] dark:hidden" data-astro-reload href="/"><Image src={yash_LM} alt="Personal Logo"/></a>
-      <a class="mt-2 w-[75px] md:w-[95px] invisible dark:visible" data-astro-reload href="/"><Image src={yash_DM} alt="Personal Logo"/></a>
+      <a class="mt-2 dark:hidden" href="/"> <Image src={yash_LM} alt="yash's website logo" width={73} height={48} loading="eager" class:list={[ "select-none", current === "home" ? "drop-shadow-glowlight dark:drop-shadow-glowdark" : "", ]} /> </a>
+      <a class="mt-2 invisible dark:visible" href="/"> <Image src={yash_DM} alt="yash's website logo" width={73} height={48} loading="eager" class:list={[ "select-none", current === "home" ? "drop-shadow-glowlight dark:drop-shadow-glowdark" : "", ]} /> </a>
       <div class="flex flex-row justify-between items-center space-x-[20px]">
           <ThemeIcon/>
           <button class="flex flex-row justify-between items-center text-LM-Nav-Unselected hover:text-LM-Nav-Selected" id="mob-nav-expand">
