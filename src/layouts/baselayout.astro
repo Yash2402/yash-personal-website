@@ -34,7 +34,7 @@ const { title, current, breadcrumbs } = Astro.props as BaseLayoutProps;
   </head>
   <body class="bg-LM-Background dark:bg-DM-Background transition max-w-screen-xl flex flex-col m-auto mt-5 sm:mt-4">
       <Nav {current}/>
-      <main class="flex flex-col items-start mx-8 mt-6 md:my-3">
+      <main class="flex flex-col items-start mx-8 mt-4 md:my-1">
         <Breadcrumbs {breadcrumbs} />
         <slot />
       </main>
