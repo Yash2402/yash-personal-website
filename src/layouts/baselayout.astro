@@ -10,8 +10,9 @@ import "@fontsource-variable/comfortaa";
 import "@fontsource-variable/playfair-display";
 import "@fontsource/ibm-plex-sans-hebrew";
 import "@fontsource-variable/newsreader";
+import  SpeedInsights  from "@vercel/speed-insights/astro"
 
-import { ViewTransitions } from "astro:transitions";
+// import { ViewTransitions } from "astro:transitions";
 // import Analytics from '@vercel/analytics/astro'
 
 interface BaseLayoutProps {
@@ -28,8 +29,9 @@ const { title, current, breadcrumbs } = Astro.props as BaseLayoutProps;
 <html lang="en" class="selection:bg-DM-Nav-Selected dark:selection:bg-LM-Nav-Unselected antialiased scroll-smooth">
   <head>
     <Head title={title}/>
-    <ViewTransitions/>
+    <!-- <ViewTransitions/> -->
     <ThemeManager/>
+    <SpeedInsights />
     <!-- <Analytics /> -->
   </head>
   <body class="bg-LM-Background dark:bg-DM-Background transition max-w-screen-xl flex flex-col m-auto mt-5 sm:mt-4">

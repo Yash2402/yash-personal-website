@@ -19,6 +19,7 @@
     "@fontsource-variable/playfair-display": "^5.0.25",
     "@fontsource/ibm-plex-sans": "^5.0.20",
     "@fontsource/ibm-plex-sans-hebrew": "^5.0.13",
+    "@vercel/speed-insights": "^1.2.0",
     "astro": "^5.4.1",
     "astro-icon": "^1.1.5",
     "frontmatter": "^0.0.3",
